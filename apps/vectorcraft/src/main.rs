@@ -1,4 +1,5 @@
-//! VectorCraft desktop app.
+//! The DLightroom desktop app (built on the VectorCraft engine and UI, see
+//! `vectorcraft_engine::brand`).
 //!
 //! Usage: `vectorcraft [--control <port> [--automation-read-root <dir>] [--automation-write-root <dir>]]
 //! [--in-window-menus] [files…]`, `vectorcraft --version`, `vectorcraft --help` (or `-h`)
@@ -124,9 +125,9 @@ impl App {
             // eframe can't give a window a new device: the user saves and starts again.
             self.graphics_lost = self.app.graphics_lost(&why);
             self.app.status(if self.graphics_lost {
-                "The graphics device was lost: unsaved changes are kept for Data Recovery. Save your documents and restart VectorCraft"
+                "The graphics device was lost: unsaved changes are kept for Data Recovery. Save your documents and restart DLightroom"
             } else {
-                "The graphics device was lost: save your documents and restart VectorCraft"
+                "The graphics device was lost: save your documents and restart DLightroom"
             });
         }
         if self.graphics_lost && ctx.input(|i| i.viewport().close_requested()) {
@@ -190,16 +191,10 @@ fn discard_marked_text() {
     }
 }
 
-/// Where UI preferences live: ~/Library/Application Support/VectorCraft (macOS),
-/// %APPDATA%\VectorCraft (Windows), $XDG_CONFIG_HOME or ~/.config/vectorcraft (Linux).
+/// Where UI preferences live: ~/Library/Application Support/DLightroom (macOS),
+/// %APPDATA%\DLightroom (Windows), $XDG_CONFIG_HOME or ~/.config/dlightroom (Linux).
 fn prefs_path() -> Option<std::path::PathBuf> {
-    prefs_dir::prefs_path_for("VectorCraft", "vectorcraft")
-}
-
-/// The same place under the project's former name (DrawCraft): read once if there are no
-/// VectorCraft preferences yet, so settings survive the rename.
-fn legacy_prefs_path() -> Option<std::path::PathBuf> {
-    prefs_dir::prefs_path_for("DrawCraft", "drawcraft")
+    prefs_dir::prefs_path_for("DLightroom", "dlightroom")
 }
 
 /// Where the log files live: `logs` in the preferences folder (see `logging`).
@@ -217,7 +212,9 @@ fn read_prefs() -> Option<vectorcraft_ui_egui::UiState> {
     if !prefs_enabled() {
         return None;
     }
-    let bytes = prefs_path().and_then(|p| std::fs::read(p).ok()).or_else(|| legacy_prefs_path().and_then(|p| std::fs::read(p).ok()))?;
+    // With no settings of its own yet, DLightroom starts from the upstream VectorCraft's (or the
+    // older DrawCraft's), read once and saved to its own folder from then on.
+    let bytes = prefs_path().and_then(|p| std::fs::read(p).ok()).or_else(|| prefs_dir::legacy_prefs_paths().find_map(|p| std::fs::read(p).ok()))?;
     decode_saved_prefs(&bytes)
 }
 
@@ -571,7 +568,7 @@ fn open_file(path: &str) -> Result<(), String> {
 /// `packaging/linux/ai.storyteller.vectorcraft.desktop` so Wayland docks find the launcher icon.
 fn app_icon() -> egui::IconData {
     #[cfg(target_os = "macos")]
-    let png: &[u8] = include_bytes!("../../../assets/app-icon/vectorcraft-macos-512.png");
+    let png: &[u8] = include_bytes!("../../../assets/app-icon/dlightroom-macos-512.png");
     #[cfg(not(target_os = "macos"))]
     let png: &[u8] = include_bytes!("../../../assets/app-icon/hicolor/256x256/apps/ai.storyteller.vectorcraft.png");
     eframe::icon_data::from_png_bytes(png).unwrap_or_default()
@@ -609,7 +606,7 @@ fn custom_titlebar(saved: Option<&vectorcraft_ui_egui::UiState>) -> bool {
 fn native_options(custom_titlebar: bool) -> eframe::NativeOptions {
     eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()
-            .with_title("VectorCraft")
+            .with_title(vectorcraft_engine::brand::APP_NAME)
             .with_inner_size(window::DEFAULT_SIZE)
             .with_min_inner_size(window::MIN_SIZE)
             .with_drag_and_drop(true)
@@ -618,6 +615,7 @@ fn native_options(custom_titlebar: bool) -> eframe::NativeOptions {
             .with_titlebar_shown(false)
             .with_title_shown(false)
             .with_icon(app_icon())
+            // The Linux desktop-entry id the Linux packages install (packaging/linux), not yet renamed.
             .with_app_id("ai.storyteller.vectorcraft"),
         #[cfg(feature = "windows7")]
         renderer: eframe::Renderer::Glow,
@@ -629,7 +627,7 @@ fn native_options(custom_titlebar: bool) -> eframe::NativeOptions {
 const USAGE: &str = "\
 Usage: vectorcraft [options] [files…]
 
-Opens the VectorCraft desktop app with the given files.
+Opens the DLightroom desktop app with the given files.
 
 Options:
   --control <port>               Start the localhost JSON-lines control server on <port>
@@ -701,7 +699,7 @@ fn main() -> std::process::ExitCode {
     system_fonts::install();
     #[cfg(target_os = "macos")]
     mac_fonts::install();
-    // VectorCraft's own Fonts folder, which text.addFontFiles copies fonts into.
+    // DLightroom's own Fonts folder, which text.addFontFiles copies fonts into.
     prefs_dir::install_fonts();
     // The log file lives in the settings directory, next to the preferences; opened after the
     // arguments, so `--version` leaves no file behind. Records logged until now are written to it
@@ -710,7 +708,7 @@ fn main() -> std::process::ExitCode {
     if let Some(logger) = logger {
         match log_dir().filter(|_| prefs_enabled()) {
             Some(dir) => match logger.attach_dir(&dir) {
-                Ok(path) => log::info!("VectorCraft {}, log file {}", env!("CARGO_PKG_VERSION"), path.display()),
+                Ok(path) => log::info!("{} {}, log file {}", vectorcraft_engine::brand::APP_NAME, env!("CARGO_PKG_VERSION"), path.display()),
                 // Standard error only by now (`attach_dir` gave up on the file); unlike `eprintln!`, never panics.
                 Err(e) => log::warn!("no log file: {e}"),
             },
@@ -838,7 +836,7 @@ fn main() -> std::process::ExitCode {
     // A panic that ends the window (egui-wgpu's own, #502) is caught here: never a crash.
     let outcome = vectorcraft_engine::guard::catch_panic(|| {
         eframe::run_native(
-            "VectorCraft",
+            vectorcraft_engine::brand::APP_NAME,
             options,
             Box::new(move |cc| {
                 let mut app = VectorcraftApp::new(Session::new(), services(cc.winit_window().cloned(), cc.egui_ctx.clone()));
@@ -880,15 +878,15 @@ fn main() -> std::process::ExitCode {
                             ""
                         };
                         app.status(format!(
-                            "The graphics processor tried first couldn't show the window, so VectorCraft started again on {summary}{hint}"
+                            "The graphics processor tried first couldn't show the window, so DLightroom started again on {summary}{hint}"
                         ));
                     } else if let Some(crash) = &crash {
                         app.status(match crash {
                             gpu::Crash::Adapter { name, .. } => format!(
-                                "The last start of VectorCraft ended on {name} before its window appeared, so it started on {summary}. To try that graphics processor again, change Preferences › Performance › Graphics Processor or start with WGPU_BACKEND set"
+                                "The last start of DLightroom ended on {name} before its window appeared, so it started on {summary}. To try that graphics processor again, change Preferences › Performance › Graphics Processor or start with WGPU_BACKEND set"
                             ),
                             gpu::Crash::Listing => format!(
-                                "The last start of VectorCraft ended while it listed the graphics processors, so it started on {summary} with OpenGL alone. To try the other graphics backends again, change Preferences › Performance › Graphics Processor or start with WGPU_BACKEND set"
+                                "The last start of DLightroom ended while it listed the graphics processors, so it started on {summary} with OpenGL alone. To try the other graphics backends again, change Preferences › Performance › Graphics Processor or start with WGPU_BACKEND set"
                             ),
                         });
                     }
@@ -938,7 +936,7 @@ fn main() -> std::process::ExitCode {
     match outcome {
         Ok(()) => std::process::ExitCode::SUCCESS,
         Err(e) => {
-            log::error!("VectorCraft stopped: {e}");
+            log::error!("{} stopped: {e}", vectorcraft_engine::brand::APP_NAME);
             std::process::ExitCode::FAILURE
         }
     }
@@ -1040,5 +1038,26 @@ mod tests {
         let types = plist.matches("<key>CFBundleTypeName</key>").count();
         assert!(types > 1 && plist.matches("<key>LSHandlerRank</key>").count() == types, "every document type has a rank");
         assert_eq!(plist.matches("<string>Owner</string>").count(), 2, "only VectorCraft documents and templates are owned");
+    }
+
+    /// The bundle is DLightroom's, with a bundle id of its own, and still opens the native
+    /// VectorCraft documents (`.vectorcraft`, and `.drawcraft` from before that rename).
+    #[test]
+    fn the_macos_bundle_is_branded_dlightroom() {
+        let plist = include_str!("../../../packaging/macos/Info.plist.in");
+        let value = |key: &str| {
+            plist.split(&format!("<key>{key}</key>")).nth(1).and_then(|r| r.split("<string>").nth(1)).and_then(|r| r.split("</string>").next())
+        };
+        for key in ["CFBundleName", "CFBundleDisplayName", "CFBundleExecutable", "CFBundleIconFile"] {
+            assert_eq!(value(key), Some(vectorcraft_engine::brand::APP_NAME), "{key}");
+        }
+        assert_eq!(value("CFBundleIdentifier"), Some(vectorcraft_engine::brand::BUNDLE_ID));
+        assert!(!plist.contains("<string>ai.storyteller.vectorcraft</string>"), "not upstream's bundle id");
+        assert!(plist.contains("<array><string>vectorcraft</string><string>drawcraft</string></array>"), "native documents still open");
+        assert!(plist.contains("<string>ai.storyteller.vectorcraft.document</string>"), "the same document type as upstream");
+        assert!(!plist.contains("UTExportedTypeDeclarations"), "the document type is upstream's: imported");
+        // The window icon DLightroom shows at run time is its own artwork, not upstream's.
+        let png = super::app_icon();
+        assert!(png.width >= 256 && png.height == png.width, "{}x{}", png.width, png.height);
     }
 }

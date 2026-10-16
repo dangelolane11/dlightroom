@@ -56,7 +56,7 @@
 	A lower value follows the stroke closely; a higher one gives fewer points and smoother curves.	數值較小時會貼近筆畫，較大時則錨點較少、曲線較平滑。
 	A new preset starting from the selected one	以所選預設集為基礎建立新預設集
 	A saved copy of the selected preset	所選預設集的已儲存拷貝
-	About VectorCraft	關於 VectorCraft
+	About DLightroom	關於 DLightroom
 	above	以上
 	Absolute Position	絕對位置
 	Accurate	精確
@@ -159,7 +159,7 @@
 	Appearance Panel	外觀面板
 	Appearance panel	外觀面板
 	Applies when the linked file is relinked or updated.	重新連結或更新連結檔案時套用。
-	Applies the next time VectorCraft starts.	下次啟動 VectorCraft 時生效。
+	Applies the next time DLightroom starts.	下次啟動 DLightroom 時生效。
 	Apply	套用
 	Apply Brush	套用筆刷
 	Apply Character Style	套用字元樣式
@@ -196,8 +196,6 @@
 	Artboard {number}	工作區域 {number}
 	Artboard:	工作區域：
 	Artboards	工作區域
-	ArtCraft Website	ArtCraft 網站
-	ArtCraft website	ArtCraft 網站
 	Artwork Colors	圖稿顏色
 	As Multiple Assets	作為多個資產
 	As Single Asset	作為單一資產
@@ -345,7 +343,7 @@
 	Check Script	檢查指令碼
 	Check Script…	檢查指令碼…
 	Copy Report	複製報告
-	VectorCraft read this script without running it.	VectorCraft 已讀取此指令碼，但沒有執行。
+	DLightroom read this script without running it.	DLightroom 已讀取此指令碼，但沒有執行。
 	Needs nothing beyond plain JavaScript	只需要一般的 JavaScript
 	Needs the script language's own objects or directives	需要指令碼語言本身的物件或指示詞
 	Needs the document model	需要文件模型
@@ -717,7 +715,6 @@
 	Discard Recovered Documents	捨棄已復原的文件
 	Discard White Overprint in Output	輸出時捨棄白色疊印
 	Discarded {} recovered document(s)	已捨棄 {} 份復原的文件
-	Discord	Discord
 	Discretionary Hyphen	選擇性連字號
 	Discretionary Ligatures	任意連字
 	Display All Blacks Accurately	精確顯示所有黑色
@@ -1398,9 +1395,6 @@
 	Italian	義大利文
 	Japanese	日文
 	Join	連接
-	Join Our Discord	加入我們的 Discord
-	Join our Discord	加入我們的 Discord
-	Join the ArtCraft community on Discord (discord.gg/artcraft)	加入 Discord 上的 ArtCraft 社群 (discord.gg/artcraft)
 	Join the lines of each paragraph	合併每個段落的各行
 	Join Tool	連接工具
 	Justification…	對齊設定…
@@ -1424,7 +1418,7 @@
 # Import Shortcut Set (Keyboard Shortcuts › Import…, File › Open of a .kys file) and its commands.
 	Import Shortcut Set	匯入快速鍵組
 	Import Shortcut Set…	匯入快速鍵組…
-	Each entry of the file is matched to a VectorCraft tool, command or panel. Check the matches and answer what is left.	檔案中的每個項目都會對應到 VectorCraft 的工具、指令或面板。請檢查對應結果，並回答其餘項目。
+	Each entry of the file is matched to a DLightroom tool, command or panel. Check the matches and answer what is left.	檔案中的每個項目都會對應到 DLightroom 的工具、指令或面板。請檢查對應結果，並回答其餘項目。
 	Keys	按鍵
 	The file writes keys and modifiers as codes. Check the proposed meanings and answer the codes that are not known yet.	檔案以代碼記錄按鍵與輔助鍵。請檢查建議的意義，並回答尚未得知的代碼。
 	Click, then press the key this code stands for (Esc cancels)	按一下，然後按下此代碼代表的按鍵 (Esc 取消)
@@ -1435,7 +1429,7 @@
 	Shortcuts	快速鍵
 	Shortcut	快速鍵
 	In the File	檔案中的名稱
-	In VectorCraft	VectorCraft 中的對應
+	In DLightroom	DLightroom 中的對應
 	Needs Attention Only	僅顯示需要處理的項目
 	Ready	就緒
 	Needs a choice	需要選擇
@@ -2051,7 +2045,7 @@
 	Paragraph Style Options	段落樣式選項
 	Paragraph Styles	段落樣式
 	Paragraph Symbol	段落符號
-	Part of ArtCraft. MIT OR Apache-2.0. Fonts: Source Sans 3, Inter, JetBrains Mono (OFL). Icons: Lucide (ISC) + VectorCraft.	ArtCraft 的一部分。MIT OR Apache-2.0。字體：Source Sans 3、Inter、JetBrains Mono (OFL)。圖示：Lucide (ISC) + VectorCraft。
+	Based on VectorCraft. MIT OR Apache-2.0. Fonts: Source Sans 3, Inter, JetBrains Mono (OFL). Icons: Lucide (ISC) + VectorCraft.	基於 VectorCraft。MIT OR Apache-2.0。字體：Source Sans 3、Inter、JetBrains Mono (OFL)。圖示：Lucide (ISC) + VectorCraft。
 	Password	密碼
 	Paste	貼上
 	Paste in Back	貼至後方
@@ -2231,7 +2225,7 @@
 	Quarter Space	四分之一空格
 	Quick Actions	快速動作
 	Quickly start a new file	快速開始新檔案
-	Quit VectorCraft	結束 VectorCraft
+	Quit DLightroom	結束 DLightroom
 	Radar Graph Tool	雷達圖工具
 	Radial	放射狀
 	Radial Glows	放射狀光暈
@@ -2355,7 +2349,7 @@
 	{count} folder(s) or file(s) couldn't be read	有 {count} 個資料夾或檔案無法讀取
 	The search stopped at its limit: search a smaller folder.	搜尋已達上限而停止：請搜尋較小的資料夾。
 	Copy only fonts you own or are licensed to install.	只複製您擁有或已取得安裝授權的字體。
-	VectorCraft copies the fonts to {folder}.	VectorCraft 會將字體複製到 {folder}。
+	DLightroom copies the fonts to {folder}.	DLightroom 會將字體複製到 {folder}。
 	Registered Trademark Symbol	註冊商標符號
 	Registration marks	對位標記
 	Registry name:	登錄名稱：
@@ -2464,7 +2458,7 @@
 	Revert	回復
 	Revert to the saved version of “{name}”?	要回復為「{name}」已儲存的版本嗎？
 	Replace “{name}”, the file this document was opened from?	要取代「{name}」（開啟此文件的來源檔案）嗎？
-	Opening it left out what VectorCraft can't read yet ({what}), so replacing it loses that for good. Save under another name to keep it.	開啟時略過了 VectorCraft 尚無法讀取的內容（{what}），取代該檔案會永久遺失這些內容。若要保留，請以其他名稱儲存。
+	Opening it left out what DLightroom can't read yet ({what}), so replacing it loses that for good. Save under another name to keep it.	開啟時略過了 DLightroom 尚無法讀取的內容（{what}），取代該檔案會永久遺失這些內容。若要保留，請以其他名稱儲存。
 	Revolve…	迴轉…
 	RGB Color	RGB 色彩
 	Right	右
@@ -2884,7 +2878,6 @@
 	Sort by Kind	依類型排序
 	Sort by Name	依名稱排序
 	Sort by Status	依狀態排序
-	Source code on GitHub	GitHub 上的原始碼
 	Source Sans 3	Source Sans 3
 	Space After Paragraph	段後間距
 	Space Before Paragraph	段前間距
@@ -3303,10 +3296,10 @@
 	Vector Halftone	向量半色調
 	Vector Halftone…	向量半色調…
 	Vector illustration — fast, open, scriptable.	向量插圖：快速、開放、可用指令碼操控。
-	VectorCraft	VectorCraft
-	VectorCraft didn't quit normally last time. These documents had unsaved changes:	VectorCraft 上次未正常結束。下列文件有未儲存的變更：
-	VectorCraft Help…	VectorCraft 說明…
-	VectorCraft on getartcraft.com	getartcraft.com 上的 VectorCraft
+	DLightroom	DLightroom
+	DLightroom didn't quit normally last time. These documents had unsaved changes:	DLightroom 上次未正常結束。下列文件有未儲存的變更：
+	DLightroom Help…	DLightroom 說明…
+	DLightroom on GitHub	GitHub 上的 DLightroom
 	VectorCraft on GitHub	GitHub 上的 VectorCraft
 	Vectors	向量
 	Version {version} — open-source vector illustration in pure Rust.	版本 {version} — 以純 Rust 打造的開放原始碼向量插畫軟體。
@@ -3348,7 +3341,7 @@
 	Web Snap:	網頁靠齊：
 	Weight	寬度
 	Weight:	寬度：
-	Welcome to VectorCraft	歡迎使用 VectorCraft
+	Welcome to DLightroom	歡迎使用 DLightroom
 	When pasting text	貼上文字時
 	White	白色
 	Widget Position:	Widget 位置：
@@ -3538,7 +3531,7 @@ axis	Both	兩者
 
 # The macOS menu bar (native_menu): the app and Window menus' system items, Settings pages.
 	Services	服務
-	Hide VectorCraft	隱藏 VectorCraft
+	Hide DLightroom	隱藏 DLightroom
 	Zoom	縮放
 	Bring All to Front	將全部移至最前
 	Settings	設定

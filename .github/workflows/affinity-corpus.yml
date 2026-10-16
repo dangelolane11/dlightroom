@@ -1,11 +1,8 @@
+# DLightroom: manual-only. This upstream VectorCraft workflow relies on storytold's shared workflows,
+# corpora or signing secrets; run it from the Actions tab when wanted. macos-intel.yml is DLightroom's build.
 name: Affinity 3 corpus
 
 on:
-  push:
-    branches: [main]
-    paths: ["crates/**", "xtask/**", "Cargo.toml", "Cargo.lock", ".github/workflows/affinity-corpus.yml"]
-  pull_request:
-    paths: ["crates/**", "xtask/**", "Cargo.toml", "Cargo.lock", ".github/workflows/affinity-corpus.yml"]
   workflow_dispatch:
 
 permissions:

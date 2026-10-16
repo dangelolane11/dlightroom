@@ -611,7 +611,7 @@ pub fn show(app: &mut VectorcraftApp, ctx: &egui::Context) {
         ui.add_space(4.0);
         ui.label(
             egui::RichText::new(tl!(
-                "Each entry of the file is matched to a VectorCraft tool, command or panel. Check the matches and answer what is left."
+                "Each entry of the file is matched to a DLightroom tool, command or panel. Check the matches and answer what is left."
             ))
             .color(t.text_dim)
             .size(11.5),
@@ -825,7 +825,7 @@ fn rows_section(ui: &mut egui::Ui, d: &mut Dialog, review: &mut Review, statuses
     let list = egui::Frame::NONE.fill(t.input).stroke(egui::Stroke::new(1.0, t.input_border)).inner_margin(egui::Margin::same(4)).show(ui, |ui| {
         ui.horizontal(|ui| {
             ui.add_space(22.0);
-            for (label, w) in [(tl!("In the File"), NAME_W), (tl!("In VectorCraft"), TARGET_W), (tl!("Shortcut"), CHORD_W)] {
+            for (label, w) in [(tl!("In the File"), NAME_W), (tl!("In DLightroom"), TARGET_W), (tl!("Shortcut"), CHORD_W)] {
                 cell(ui, w, |ui| ui.label(egui::RichText::new(label).color(t.text_dim).size(11.0)));
             }
             ui.label(egui::RichText::new(tl!("Status")).color(t.text_dim).size(11.0));

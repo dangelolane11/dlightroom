@@ -198,7 +198,7 @@ impl Builder {
             Blend::Color => BlendMode::Color,
             Blend::Luminosity => BlendMode::Luminosity,
             _ => {
-                self.warn("blend modes VectorCraft doesn't have (Add, Linear Light, Vivid Light, Pin Light, Hard Mix, Subtract, Darker/Lighter Colour, Average, Negation, Reflect, Glow, Erase) import as Normal");
+                self.warn("blend modes DLightroom doesn't have (Add, Linear Light, Vivid Light, Pin Light, Hard Mix, Subtract, Darker/Lighter Colour, Average, Negation, Reflect, Glow, Erase) import as Normal");
                 BlendMode::Normal
             }
         }

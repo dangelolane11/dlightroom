@@ -1,4 +1,4 @@
-//! Windows only: embed the app icon and version info (VERSIONINFO) into `vectorcraft.exe`.
+//! Windows only: embed the DLightroom app icon and version info (VERSIONINFO) into `vectorcraft.exe`.
 //!
 //! On every other target this does nothing. A missing resource compiler is a warning, so a
 //! cross-compile from macOS or Linux still links, unless `VECTORCRAFT_REQUIRE_WINRES=1` turns it into
@@ -6,17 +6,17 @@
 
 fn main() -> Result<(), String> {
     println!("cargo:rerun-if-changed=build.rs");
-    println!("cargo:rerun-if-changed=../../assets/app-icon/vectorcraft.ico");
+    println!("cargo:rerun-if-changed=../../assets/app-icon/dlightroom.ico");
     println!("cargo:rerun-if-env-changed=VECTORCRAFT_REQUIRE_WINRES");
     if std::env::var("CARGO_CFG_TARGET_OS").as_deref() != Ok("windows") {
         return Ok(());
     }
     let mut res = winresource::WindowsResource::new();
-    res.set_icon("../../assets/app-icon/vectorcraft.ico")
-        .set("ProductName", "VectorCraft")
-        .set("FileDescription", "VectorCraft vector illustration editor")
-        .set("CompanyName", "Learning Machines LLC")
-        .set("LegalCopyright", "Copyright (c) the VectorCraft authors. MIT OR Apache-2.0.")
+    res.set_icon("../../assets/app-icon/dlightroom.ico")
+        .set("ProductName", "DLightroom")
+        .set("FileDescription", "DLightroom vector illustration editor (built on VectorCraft)")
+        .set("CompanyName", "DLightroom contributors")
+        .set("LegalCopyright", "Copyright (c) the VectorCraft authors and DLightroom contributors. MIT OR Apache-2.0.")
         .set("OriginalFilename", "vectorcraft.exe")
         .set("InternalName", "vectorcraft");
     if let Err(e) = res.compile() {

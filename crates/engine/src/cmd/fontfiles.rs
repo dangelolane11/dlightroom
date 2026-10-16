@@ -336,7 +336,7 @@ fn add(s: &mut Session, p: &Value) -> Result<Value> {
     files.sort();
     files.dedup();
     let dir = vectorcraft_text::app_font_dir()
-        .ok_or_else(|| EngineError::Other("VectorCraft's Fonts folder isn't set here: the desktop app and vectorcraft-cli set it".into()))?;
+        .ok_or_else(|| EngineError::Other("DLightroom's Fonts folder isn't set here: the desktop app and vectorcraft-cli set it".into()))?;
     let found: Vec<PathBuf> =
         s.font_search.as_ref().map(|f| f.search.progress().hits.into_iter().map(|(path, _)| path).collect()).unwrap_or_default();
     if let Some(f) = files.iter().find(|f| !found.contains(f)) {

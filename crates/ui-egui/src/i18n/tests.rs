@@ -241,7 +241,7 @@ fn language_command_sets_the_preference() {
     // Every registered language is in the Mac App menu's Language, by its own name (the in-window
     // bar has no Language menu).
     let layout = crate::native_menu::mac_layout(&app, &crate::native_menu::from_tree(&app, &crate::menus::menu_tree()), Lang::EN);
-    let app_menu = layout.bar.menus.into_iter().find(|m| m.title == "VectorCraft").expect("App menu");
+    let app_menu = layout.bar.menus.into_iter().find(|m| m.title == "DLightroom").expect("App menu");
     fn items(nodes: &[crate::native_menu::Node], out: &mut Vec<String>) {
         for n in nodes {
             match n {
@@ -487,7 +487,7 @@ const KEEPS_MENU_NAMES: [&str; 16] = ["cs", "de", "el", "es", "fr", "hu", "it", 
 /// names and the perspective grid presets (names, shown untranslated wherever else they appear).
 /// Each language's own name in the Language menu is left alone too.
 const MENU_KEEP_AS_IS: &[&str] = &[
-    "VectorCraft",
+    "DLightroom",
     "OpenType",
     "Essentials",
     "Essentials Classic",

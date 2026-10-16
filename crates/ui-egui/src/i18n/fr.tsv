@@ -92,7 +92,7 @@
 	A lower value follows the stroke closely; a higher one gives fewer points and smoother curves.	Une valeur faible suit le contour de près ; une valeur élevée donne moins de points et des courbes plus lisses.
 	A new preset starting from the selected one	Un nouveau paramètre prédéfini basé sur celui sélectionné
 	A saved copy of the selected preset	Une copie enregistrée du paramètre prédéfini sélectionné
-	About VectorCraft	À propos de VectorCraft
+	About DLightroom	À propos de DLightroom
 	above	au-dessus
 	Absolute Position	Position absolue
 	Accurate	Précis
@@ -195,7 +195,7 @@
 	Appearance Panel	Panneau Aspect
 	Appearance panel	Panneau Aspect
 	Applies when the linked file is relinked or updated.	S’applique lorsque le fichier lié est de nouveau lié ou mis à jour.
-	Applies the next time VectorCraft starts.	S’applique au prochain démarrage de VectorCraft.
+	Applies the next time DLightroom starts.	S’applique au prochain démarrage de DLightroom.
 	Apply	Appliquer
 	Apply Brush	Appliquer la forme
 	Apply Character Style	Appliquer le style de caractère
@@ -232,8 +232,6 @@
 	Artboard {number}	Plan de travail {number}
 	Artboard:	Plan de travail :
 	Artboards	Plans de travail
-	ArtCraft Website	Site web d’ArtCraft
-	ArtCraft website	Site web d’ArtCraft
 	Artwork Colors	Couleurs de l’illustration
 	As Multiple Assets	En plusieurs ressources
 	As Single Asset	En une seule ressource
@@ -377,7 +375,7 @@
 	Check Script	Vérifier le script
 	Check Script…	Vérifier le script…
 	Copy Report	Copier le rapport
-	VectorCraft read this script without running it.	VectorCraft a lu ce script sans l’exécuter.
+	DLightroom read this script without running it.	DLightroom a lu ce script sans l’exécuter.
 	Needs nothing beyond plain JavaScript	Ne demande que du JavaScript simple
 	Needs the script language's own objects or directives	Demande les objets ou directives propres au langage du script
 	Needs the document model	Demande le modèle de document
@@ -750,7 +748,6 @@
 	Discard Recovered Documents	Ignorer les documents récupérés
 	Discard White Overprint in Output	Ignorer la surimpression du blanc en sortie
 	Discarded {} recovered document(s)	{} document(s) récupéré(s) ignoré(s)
-	Discord	Discord
 	Discretionary Hyphen	Tiret conditionnel
 	Discretionary Ligatures	Ligatures conditionnelles
 	Display All Blacks Accurately	Afficher tous les noirs avec précision
@@ -1426,9 +1423,6 @@
 	Italian	Italien
 	Japanese	Japonais
 	Join	Joindre
-	Join Our Discord	Rejoignez notre Discord
-	Join our Discord	Rejoignez notre Discord
-	Join the ArtCraft community on Discord (discord.gg/artcraft)	Rejoignez la communauté ArtCraft sur Discord (discord.gg/artcraft)
 	Join the lines of each paragraph	Joindre les lignes de chaque paragraphe
 	Join Tool	Outil Jonction
 	Justification…	Justification…
@@ -1452,7 +1446,7 @@
 # Import Shortcut Set (Keyboard Shortcuts › Import…, File › Open of a .kys file) and its commands.
 	Import Shortcut Set	Importer un jeu de raccourcis
 	Import Shortcut Set…	Importer un jeu de raccourcis…
-	Each entry of the file is matched to a VectorCraft tool, command or panel. Check the matches and answer what is left.	Chaque entrée du fichier est mise en correspondance avec un outil, une commande ou un panneau de VectorCraft. Vérifiez les correspondances et répondez à ce qui reste.
+	Each entry of the file is matched to a DLightroom tool, command or panel. Check the matches and answer what is left.	Chaque entrée du fichier est mise en correspondance avec un outil, une commande ou un panneau de DLightroom. Vérifiez les correspondances et répondez à ce qui reste.
 	Keys	Touches
 	The file writes keys and modifiers as codes. Check the proposed meanings and answer the codes that are not known yet.	Le fichier enregistre les touches et les modificateurs sous forme de codes. Vérifiez les significations proposées et indiquez les codes encore inconnus.
 	Click, then press the key this code stands for (Esc cancels)	Cliquez, puis appuyez sur la touche que ce code représente (Échap pour annuler)
@@ -1462,7 +1456,7 @@
 	not known yet	encore inconnu
 	Shortcuts	Raccourcis
 	In the File	Dans le fichier
-	In VectorCraft	Dans VectorCraft
+	In DLightroom	Dans DLightroom
 	Needs Attention Only	À vérifier uniquement
 	Ready	Prêt
 	Needs a choice	Choix nécessaire
@@ -2073,7 +2067,7 @@
 	Paragraph Style Options	Options de style de paragraphe
 	Paragraph Styles	Styles de paragraphe
 	Paragraph Symbol	Symbole de paragraphe
-	Part of ArtCraft. MIT OR Apache-2.0. Fonts: Source Sans 3, Inter, JetBrains Mono (OFL). Icons: Lucide (ISC) + VectorCraft.	Fait partie d’ArtCraft. MIT OR Apache-2.0. Polices : Source Sans 3, Inter, JetBrains Mono (OFL). Icônes : Lucide (ISC) + VectorCraft.
+	Based on VectorCraft. MIT OR Apache-2.0. Fonts: Source Sans 3, Inter, JetBrains Mono (OFL). Icons: Lucide (ISC) + VectorCraft.	Basé sur VectorCraft. MIT OR Apache-2.0. Polices : Source Sans 3, Inter, JetBrains Mono (OFL). Icônes : Lucide (ISC) + VectorCraft.
 	Password	Mot de passe
 	Paste	Coller
 	Paste in Back	Coller derrière
@@ -2252,7 +2246,7 @@
 	Quarter Space	Quart d’espace
 	Quick Actions	Actions rapides
 	Quickly start a new file	Commencer rapidement un nouveau fichier
-	Quit VectorCraft	Quitter VectorCraft
+	Quit DLightroom	Quitter DLightroom
 	Radar Graph Tool	Outil Graphe radar
 	Radial	Radial
 	Radial Glows	Halos radiaux
@@ -2376,7 +2370,7 @@
 	{count} folder(s) or file(s) couldn't be read	{count} dossier(s) ou fichier(s) illisible(s)
 	The search stopped at its limit: search a smaller folder.	La recherche s’est arrêtée à sa limite : recherchez dans un dossier plus petit.
 	Copy only fonts you own or are licensed to install.	Ne copiez que des polices qui vous appartiennent ou dont la licence vous autorise l’installation.
-	VectorCraft copies the fonts to {folder}.	VectorCraft copie les polices dans {folder}.
+	DLightroom copies the fonts to {folder}.	DLightroom copie les polices dans {folder}.
 	Registered Trademark Symbol	Symbole de marque déposée
 	Registration marks	Repères de montage
 	Registry name:	Nom du registre :
@@ -2484,7 +2478,7 @@
 	Revert	Version précédente
 	Revert to the saved version of “{name}”?	Revenir à la version enregistrée de « {name} » ?
 	Replace “{name}”, the file this document was opened from?	Remplacer « {name} », le fichier à partir duquel ce document a été ouvert ?
-	Opening it left out what VectorCraft can't read yet ({what}), so replacing it loses that for good. Save under another name to keep it.	Son ouverture a laissé de côté ce que VectorCraft ne sait pas encore lire ({what}) : le remplacer le perd définitivement. Enregistrez sous un autre nom pour le conserver.
+	Opening it left out what DLightroom can't read yet ({what}), so replacing it loses that for good. Save under another name to keep it.	Son ouverture a laissé de côté ce que DLightroom ne sait pas encore lire ({what}) : le remplacer le perd définitivement. Enregistrez sous un autre nom pour le conserver.
 	Revolve…	Révolution…
 	RGB Color	Couleur RVB
 	Right	Droite
@@ -2905,7 +2899,6 @@
 	Sort by Kind	Trier par type
 	Sort by Name	Trier par nom
 	Sort by Status	Trier par état
-	Source code on GitHub	Code source sur GitHub
 	Source Sans 3	Source Sans 3
 	Space After Paragraph	Espace après le paragraphe
 	Space Before Paragraph	Espace avant le paragraphe
@@ -3317,9 +3310,9 @@
 	Vector Halftone	Trame de demi-teintes vectorielle
 	Vector Halftone…	Trame de demi-teintes vectorielle…
 	Vector illustration — fast, open, scriptable.	Illustration vectorielle — rapide, ouverte, scriptable.
-	VectorCraft didn't quit normally last time. These documents had unsaved changes:	VectorCraft ne s’est pas fermé normalement la dernière fois. Ces documents comportaient des modifications non enregistrées :
-	VectorCraft Help…	Aide de VectorCraft…
-	VectorCraft on getartcraft.com	VectorCraft sur getartcraft.com
+	DLightroom didn't quit normally last time. These documents had unsaved changes:	DLightroom ne s’est pas fermé normalement la dernière fois. Ces documents comportaient des modifications non enregistrées :
+	DLightroom Help…	Aide de DLightroom…
+	DLightroom on GitHub	DLightroom sur GitHub
 	VectorCraft on GitHub	VectorCraft sur GitHub
 	Vectors	Vecteurs
 	Version {version} — open-source vector illustration in pure Rust.	Version {version} — illustration vectorielle open source en pur Rust.
@@ -3360,7 +3353,7 @@
 	Web Snap:	Magnétisme Web :
 	Weight	Épaisseur
 	Weight:	Épaisseur :
-	Welcome to VectorCraft	Bienvenue dans VectorCraft
+	Welcome to DLightroom	Bienvenue dans DLightroom
 	When pasting text	Lors du collage de texte
 	White	Blanc
 	Widget Position:	Position du widget :
@@ -3648,7 +3641,7 @@ axis	Both	Les deux
 @msg	Split Into Grid: select paths large enough for the grid	Découper en grille : sélectionnez des tracés assez grands pour la grille
 @msg	Targa files are RGB: colorModel rgb	Les fichiers Targa sont en RVB : colorModel rgb
 @msg	Text Wrap: select a wrap object	Habillage de texte : sélectionnez un objet d’habillage
-@msg	This shortcut file is in a form VectorCraft can't read.	Ce fichier de raccourcis est dans un format que VectorCraft ne sait pas lire.
+@msg	This shortcut file is in a form DLightroom can't read.	Ce fichier de raccourcis est dans un format que DLightroom ne sait pas lire.
 @msg	`aspect` must be a number (%)	`aspect` doit être un nombre (%)
 @msg	`at` must be [x, y]	`at` doit être [x, y]
 @msg	`color` must be a colour	`color` doit être une couleur
@@ -3735,7 +3728,7 @@ axis	Both	Les deux
 @msg	can't encode the document: {0}	impossible d’encoder le document : {0}
 @msg	can't parse shortcut `{c}`	impossible d’interpréter le raccourci `{c}`
 @msg	can't parse shortcut `{s}` for `{k}`	impossible d’interpréter le raccourci `{s}` pour `{k}`
-@msg	can't save version {0}: VectorCraft writes versions {MIN_VERSION} to {VERSION}	impossible d’enregistrer la version {0} : VectorCraft écrit les versions {MIN_VERSION} à {VERSION}
+@msg	can't save version {0}: DLightroom writes versions {MIN_VERSION} to {VERSION}	impossible d’enregistrer la version {0} : DLightroom écrit les versions {MIN_VERSION} à {VERSION}
 @msg	can't write .{ext} images	impossible d’écrire des images .{ext}
 @msg	cannot distort a zero-size bounding box	impossible de déformer un cadre de sélection de taille nulle
 @msg	cannot read PDF: {0}	impossible de lire le PDF : {0}
@@ -3761,7 +3754,7 @@ axis	Both	Les deux
 @msg	empty brush stroke	tracé de forme vide
 @msg	empty cutter	objet de découpe vide
 @msg	empty path	tracé vide
-@msg	file version {0} is newer than this VectorCraft supports ({VERSION})	la version de fichier {0} est plus récente que celles que prend en charge cette version de VectorCraft ({VERSION})
+@msg	file version {0} is newer than this DLightroom supports ({VERSION})	la version de fichier {0} est plus récente que celles que prend en charge cette version de DLightroom ({VERSION})
 @msg	freeform point {i} needs `at` [x, y] and a valid `color`	le point de forme libre {i} nécessite `at` [x, y] et une `color` valide
 @msg	freeform line {i} must be an array of point indices	la ligne de forme libre {i} doit être un tableau d’indices de points
 @msg	give both `start` and `end` [x, y] (or neither)	indiquez à la fois `start` et `end` [x, y] (ou aucun des deux)
@@ -3780,9 +3773,9 @@ axis	Both	Les deux
 @msg	invalid PDF setting: {0}	réglage PDF non valide : {0}
 @msg	invalid image data for `{0}`	données d’image non valides pour `{0}`
 @msg	invalid parameters for `{cmd}`: {msg}	paramètres non valides pour `{cmd}` : {msg}
-@msg	is not an image VectorCraft reads	n’est pas une image que VectorCraft sait lire
-@msg	it uses `{at}`, which VectorCraft's PostScript reader doesn't know	il utilise `{at}`, que le lecteur PostScript de VectorCraft ne connaît pas
-@msg	it uses `{at}`, which VectorCraft's PostScript reader doesn't know, in {procs}	il utilise `{at}`, que le lecteur PostScript de VectorCraft ne connaît pas, dans {procs}
+@msg	is not an image DLightroom reads	n’est pas une image que DLightroom sait lire
+@msg	it uses `{at}`, which DLightroom's PostScript reader doesn't know	il utilise `{at}`, que le lecteur PostScript de DLightroom ne connaît pas
+@msg	it uses `{at}`, which DLightroom's PostScript reader doesn't know, in {procs}	il utilise `{at}`, que le lecteur PostScript de DLightroom ne connaît pas, dans {procs}
 @msg	its Windows metafile preview was opened instead, which may simplify the art	son aperçu en métafichier Windows a été ouvert à la place, ce qui peut simplifier l’illustration
 @msg	its preview was placed instead, at screen resolution	son aperçu a été importé à la place, en résolution d’écran
 @msg	join needs open paths	la jonction nécessite des tracés ouverts
@@ -4115,11 +4108,11 @@ axis	Both	Les deux
 @msg	Sent to {_1}	Envoyé à {_1}
 @msg	{_1} files	Fichiers {_1}
 @msg	The graphics were lost and have been restarted	Le contexte graphique a été perdu puis redémarré
-@msg	The graphics processor tried first couldn't show the window, so VectorCraft started again on {summary}	Le processeur graphique essayé en premier n’a pas pu afficher la fenêtre : VectorCraft a redémarré sur {summary}
-@msg	The last start of VectorCraft ended on {name} before its window appeared, so it started on {summary}. To try that graphics processor again, change Preferences › Performance › Graphics Processor or start with WGPU_BACKEND set	Le dernier démarrage de VectorCraft s’est arrêté sur {name} avant l’affichage de la fenêtre, donc VectorCraft a démarré sur {summary}. Pour réessayer ce processeur graphique, modifiez Préférences › Performances › Processeur graphique ou démarrez avec la variable WGPU_BACKEND définie
-@msg	The last start of VectorCraft ended while it listed the graphics processors, so it started on {summary} with OpenGL alone. To try the other graphics backends again, change Preferences › Performance › Graphics Processor or start with WGPU_BACKEND set	Le dernier démarrage de VectorCraft s’est arrêté pendant l’énumération des processeurs graphiques, donc VectorCraft a démarré sur {summary} avec OpenGL seul. Pour réessayer les autres interfaces graphiques, modifiez Préférences › Performances › Processeur graphique ou démarrez avec la variable WGPU_BACKEND définie
-@msg	Loading VectorCraft…	Chargement de VectorCraft…
-@msg	VectorCraft failed to start: {e}	Le démarrage de VectorCraft a échoué : {e}
+@msg	The graphics processor tried first couldn't show the window, so DLightroom started again on {summary}	Le processeur graphique essayé en premier n’a pas pu afficher la fenêtre : DLightroom a redémarré sur {summary}
+@msg	The last start of DLightroom ended on {name} before its window appeared, so it started on {summary}. To try that graphics processor again, change Preferences › Performance › Graphics Processor or start with WGPU_BACKEND set	Le dernier démarrage de DLightroom s’est arrêté sur {name} avant l’affichage de la fenêtre, donc DLightroom a démarré sur {summary}. Pour réessayer ce processeur graphique, modifiez Préférences › Performances › Processeur graphique ou démarrez avec la variable WGPU_BACKEND définie
+@msg	The last start of DLightroom ended while it listed the graphics processors, so it started on {summary} with OpenGL alone. To try the other graphics backends again, change Preferences › Performance › Graphics Processor or start with WGPU_BACKEND set	Le dernier démarrage de DLightroom s’est arrêté pendant l’énumération des processeurs graphiques, donc DLightroom a démarré sur {summary} avec OpenGL seul. Pour réessayer les autres interfaces graphiques, modifiez Préférences › Performances › Processeur graphique ou démarrez avec la variable WGPU_BACKEND définie
+@msg	Loading DLightroom…	Chargement de DLightroom…
+@msg	DLightroom failed to start: {e}	Le démarrage de DLightroom a échoué : {e}
 @msg	A browser with WebGPU or WebGL2 is required.	Un navigateur prenant en charge WebGPU ou WebGL2 est nécessaire.
 @msg	The graphics were lost and couldn't be restarted.	Le contexte graphique a été perdu et n’a pas pu être redémarré.
 @msg	Your unsaved changes are kept in this browser: reload the page to get them back.	Vos modifications non enregistrées sont conservées dans ce navigateur : rechargez la page pour les récupérer.
@@ -4141,25 +4134,25 @@ axis	Both	Les deux
 @msg	it has more than {MAX_NODES} objects	elles contiennent plus de {MAX_NODES} objets
 @msg	it has no layers	elles n’ont aucun calque
 @msg	it has too many values in a row	elles contiennent trop de valeurs à la suite
-@msg	it has {_1}, which VectorCraft doesn't read from it yet	elles contiennent {_1}, que VectorCraft n’y lit pas encore
+@msg	it has {_1}, which DLightroom doesn't read from it yet	elles contiennent {_1}, que DLightroom n’y lit pas encore
 @msg	its objects are nested too deeply	leurs objets sont imbriqués trop profondément
 @msg	its section ending with `%{end}` doesn't end	leur section qui se termine par `%{end}` ne se termine pas
 @msg	objects with several fills or strokes, effects or brushes came in as their drawn look ({_1}): their appearance isn't editable yet	les objets à plusieurs fonds ou contours, effets ou formes ont été importés tels qu’ils sont dessinés ({_1}) : leur aspect n’est pas encore modifiable
 @msg	gradient “{name}” isn't defined in the file: a plain colour stands in for it	le dégradé « {name} » n’est pas défini dans le fichier : une couleur unie le remplace
-@msg	an image VectorCraft can't read was left out	une image que VectorCraft ne peut pas lire a été ignorée
+@msg	an image DLightroom can't read was left out	une image que DLightroom ne peut pas lire a été ignorée
 @msg	an image whose data is cut short was left out	une image aux données tronquées a été ignorée
 @msg	linked pictures show the low-resolution preview saved in the file until their files are found: relink them in the Links panel	les images liées affichent l’aperçu basse résolution enregistré dans le fichier tant que leurs fichiers ne sont pas trouvés : liez-les à nouveau dans le panneau Liens
 @msg	area type in frames too short for a line of the font it shows in got taller frames ({_1}): their type wouldn't show otherwise	le texte captif dans des cadres trop bas pour une ligne de la police dans laquelle il s’affiche a reçu des cadres plus hauts ({_1}) : il ne s’afficherait pas autrement
 @msg	its editing data doesn't say where its art is	ses données d’édition ne disent pas où se trouve son illustration
 @msg	this file was saved without PDF compatibility, and its editing data can't be read ({why})	ce fichier a été enregistré sans compatibilité PDF et ses données d’édition sont illisibles ({why})
 @msg	No fonts are missing in this document	Aucune police ne manque dans ce document
-@msg	VectorCraft doesn't search other apps' or the system's folders: {path}	VectorCraft ne recherche pas dans les dossiers d’autres apps ni du système : {path}
-@msg	VectorCraft doesn't search the Shared or Public folder in Users: {path}	VectorCraft ne recherche pas dans les dossiers Shared et Public de Users : {path}
+@msg	DLightroom doesn't search other apps' or the system's folders: {path}	DLightroom ne recherche pas dans les dossiers d’autres apps ni du système : {path}
+@msg	DLightroom doesn't search the Shared or Public folder in Users: {path}	DLightroom ne recherche pas dans les dossiers Shared et Public de Users : {path}
 @msg	{path} is not a folder	{path} n’est pas un dossier
 @msg	the search couldn't start: try again in a moment	la recherche n’a pas pu démarrer : réessayez dans un instant
 @msg	searching a folder isn't available on the web	la recherche dans un dossier n’est pas disponible sur le web
 @msg	every search thread stopped on an internal error (please report this bug)	tous les fils de recherche se sont arrêtés sur une erreur interne (veuillez signaler ce bogue)
-@msg	VectorCraft's Fonts folder isn't set here: the desktop app and vectorcraft-cli set it	Le dossier Fonts de VectorCraft n’est pas défini ici : l’application de bureau et vectorcraft-cli le définissent
+@msg	DLightroom's Fonts folder isn't set here: the desktop app and vectorcraft-cli set it	Le dossier Fonts de DLightroom n’est pas défini ici : l’application de bureau et vectorcraft-cli le définissent
 @msg	choose the font files to add	choisissez les fichiers de polices à ajouter
 @msg	{n} font file(s) are now in {folder}	{n} fichier(s) de polices se trouvent maintenant dans {folder}
 @msg	{n} font file(s) are now in {folder}; {failed} couldn't be added: {reason}	{n} fichier(s) de polices se trouvent maintenant dans {folder} ; {failed} n’ont pas pu être ajoutés : {reason}
@@ -4176,7 +4169,7 @@ axis	Both	Les deux
 
 # The macOS menu bar (native_menu): the app and Window menus' system items, Settings pages.
 	Services	Services
-	Hide VectorCraft	Masquer VectorCraft
+	Hide DLightroom	Masquer DLightroom
 	Zoom	Zoom
 	Bring All to Front	Tout ramener au premier plan
 	Settings	Réglages
@@ -4409,7 +4402,7 @@ lighting	Light	Lumière
 	Artistic	Artistique
 	Film Grain…	Grain photographique…
 	Highlight Area	Zone des tons clairs
-@msg	the compressed file unpacks to more than VectorCraft reads ({_1} MB of document, {_2} MB per image)	le fichier compressé dépasse une fois décompressé ce que VectorCraft lit ({_1} Mo de document, {_2} Mo par image)
+@msg	the compressed file unpacks to more than DLightroom reads ({_1} MB of document, {_2} MB per image)	le fichier compressé dépasse une fois décompressé ce que DLightroom lit ({_1} Mo de document, {_2} Mo par image)
 @msg	the document is too large to save compressed ({0}): save it with Use Compression off	le document est trop volumineux pour être enregistré compressé ({0}) : enregistrez-le avec Utiliser la compression désactivé
 @msg	the file stopped being read (please report this bug)	la lecture du fichier s’est interrompue (veuillez signaler ce bogue)
 	Concentric Dividers:	Divisions concentriques :
@@ -4677,7 +4670,7 @@ lighting	Light	Lumière
 	PDF/X-4:2010	PDF/X-4:2010
 	PRs	PR
 	Page Cover 1640×624	Couverture de page 1640×624
-	Part of ArtCraft. MIT OR Apache-2.0. Fonts: Source Sans 3, Inter, JetBrains Mono, Noto Sans SC (OFL). Icons: Lucide (ISC) + VectorCraft.	Fait partie d’ArtCraft. MIT OR Apache-2.0. Polices : Source Sans 3, Inter, JetBrains Mono, Noto Sans SC (OFL). Icônes : Lucide (ISC) + VectorCraft.
+	Based on VectorCraft. MIT OR Apache-2.0. Fonts: Source Sans 3, Inter, JetBrains Mono, Noto Sans SC (OFL). Icons: Lucide (ISC) + VectorCraft.	Basé sur VectorCraft. MIT OR Apache-2.0. Polices : Source Sans 3, Inter, JetBrains Mono, Noto Sans SC (OFL). Icônes : Lucide (ISC) + VectorCraft.
 	Pattern Swatches	Nuances de motif
 	Pen	Plume
 	Pentagram	Pentagramme

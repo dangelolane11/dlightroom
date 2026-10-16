@@ -1,3 +1,5 @@
+# DLightroom: manual-only. This upstream VectorCraft workflow relies on storytold's shared workflows,
+# corpora or signing secrets; run it from the Actions tab when wanted. macos-intel.yml is DLightroom's build.
 # Experimental, unsupported Windows 7 SP1 x64 portable build (docs/windows7.md). It runs by hand and
 # weekly and for changes to the compatibility path; the weekly run shows when a dependency update starts
 # importing a post-Windows-7 API. packaging/windows/windows7.ps1 does the work: it is the only build
@@ -6,19 +8,6 @@
 name: Windows 7 x64 compatibility
 
 on:
-  pull_request:
-    paths:
-      - "Cargo.toml"
-      - "Cargo.lock"
-      - "apps/vectorcraft/Cargo.toml"
-      - "apps/vectorcraft/src/printing.rs"
-      - "apps/vectorcraft/src/printing/**"
-      - "crates/ui-egui/src/print.rs"
-      - "crates/ui-egui/src/tests_printps.rs"
-      - "packaging/windows/windows7.ps1"
-      - ".github/workflows/windows7.yml"
-  schedule:
-    - cron: "23 5 * * 1" # weekly
   workflow_dispatch:
 
 permissions:

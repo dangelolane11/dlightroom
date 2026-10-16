@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=VectorCraft
+Name=DLightroom
 GenericName=Vector Graphics Editor
 Comment=Draw and edit vector illustrations, SVG and PDF
 Exec=vectorcraft %F

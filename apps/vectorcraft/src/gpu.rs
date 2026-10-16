@@ -625,7 +625,7 @@ impl Startup {
         let (file, previous) = match StartFile::open(dir) {
             Ok(Some(opened)) => opened,
             Ok(None) => {
-                log::info!("{START_FILE}: another VectorCraft is starting, so this start isn't recorded");
+                log::info!("{START_FILE}: another DLightroom is starting, so this start isn't recorded");
                 return LeftOut::default();
             }
             Err(e) => {

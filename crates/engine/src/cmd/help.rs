@@ -1,33 +1,27 @@
-//! Help → community and project links (the ArtCraft Discord, website, this app's page and its
-//! GitHub repository). The commands return the URL; the frontend opens it.
+//! Help → project links: DLightroom's own repository and the upstream VectorCraft project it is
+//! built on. The commands return the URL; the frontend opens it.
 
 use serde_json::{Value, json};
 
 use super::*;
+use crate::brand::{PROJECT_URL, UPSTREAM_URL};
 
-/// The app's id on getartcraft.com and GitHub.
-pub const APP_ID: &str = "vectorcraft";
-pub const DISCORD_URL: &str = "https://discord.gg/artcraft";
-pub const WEBSITE_URL: &str = "https://getartcraft.com";
-
-/// This app's page on the website.
+/// This app's page: its source repository (code, issues and releases).
 pub fn app_page_url() -> String {
-    format!("{WEBSITE_URL}/apps/{APP_ID}")
+    PROJECT_URL.to_string()
 }
 
-/// This app's source repository.
+/// The upstream project's source repository.
 pub fn github_url() -> String {
-    format!("https://github.com/storytold/{APP_ID}")
+    UPSTREAM_URL.to_string()
 }
 
 pub fn specs() -> Vec<CommandSpec> {
     vec![
-        cmd!(query "help.discord", "Join Our Discord", ["Help"], None, "{} → {url} the ArtCraft community Discord", always, |_, _| url(DISCORD_URL.into())),
-        cmd!(query "help.website", "ArtCraft Website", ["Help"], None, "{} → {url}", always, |_, _| url(WEBSITE_URL.into())),
-        cmd!(query "help.appPage", "VectorCraft on getartcraft.com", ["Help"], None, "{} → {url} this app's page", always, |_, _| url(app_page_url())),
-        cmd!(query "help.github", "VectorCraft on GitHub", ["Help"], None, "{} → {url} source code, issues and releases", always, |_, _| url(github_url())),
-        cmd!(query "help.links", "Links", [], None, "{} → {discord, website, appPage, github}", always, |_, _| {
-            Ok(json!({ "discord": DISCORD_URL, "website": WEBSITE_URL, "appPage": app_page_url(), "github": github_url() }))
+        cmd!(query "help.appPage", "DLightroom on GitHub", ["Help"], None, "{} → {url} this app's source code, issues and releases", always, |_, _| url(app_page_url())),
+        cmd!(query "help.github", "VectorCraft on GitHub", ["Help"], None, "{} → {url} the upstream open-source project this app is built on", always, |_, _| url(github_url())),
+        cmd!(query "help.links", "Links", [], None, "{} → {appPage, github}", always, |_, _| {
+            Ok(json!({ "appPage": app_page_url(), "github": github_url() }))
         }),
     ]
 }
@@ -43,9 +37,11 @@ mod tests {
     #[test]
     fn links() {
         let mut s = Session::new();
-        assert_eq!(s.execute("help.discord", &json!({})).unwrap()["url"], "https://discord.gg/artcraft");
-        assert_eq!(s.execute("help.appPage", &json!({})).unwrap()["url"], "https://getartcraft.com/apps/vectorcraft");
+        assert_eq!(s.execute("help.appPage", &json!({})).unwrap()["url"], "https://github.com/dangelolane11/dlightroom");
         assert_eq!(s.execute("help.github", &json!({})).unwrap()["url"], "https://github.com/storytold/vectorcraft");
-        assert_eq!(s.execute("help.links", &json!({})).unwrap()["website"], "https://getartcraft.com");
+        assert_eq!(s.execute("help.links", &json!({})).unwrap()["appPage"], "https://github.com/dangelolane11/dlightroom");
+        // The ArtCraft community links are not part of DLightroom.
+        assert!(s.execute("help.discord", &json!({})).is_err());
+        assert!(s.execute("help.website", &json!({})).is_err());
     }
 }
