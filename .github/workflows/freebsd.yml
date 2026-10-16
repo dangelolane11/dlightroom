@@ -1,25 +1,9 @@
+# DLightroom: manual-only. This upstream VectorCraft workflow relies on storytold's shared workflows,
+# corpora or signing secrets; run it from the Actions tab when wanted. macos-intel.yml is DLightroom's build.
 # FreeBSD build and package check in a QEMU VM.
 name: FreeBSD
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - ".github/workflows/freebsd.yml"
-      - "packaging/freebsd/**"
-      - "packaging/env.sh"
-      - "Cargo.toml"
-      - "Cargo.lock"
-      - "crates/**"
-  pull_request:
-    branches: [main]
-    paths:
-      - ".github/workflows/freebsd.yml"
-      - "packaging/freebsd/**"
-      - "packaging/env.sh"
-      - "Cargo.toml"
-      - "Cargo.lock"
-      - "crates/**"
   workflow_dispatch:
 
 concurrency:

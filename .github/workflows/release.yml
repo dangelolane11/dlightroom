@@ -1,10 +1,10 @@
+# DLightroom: manual-only. This upstream VectorCraft workflow relies on storytold's shared workflows,
+# corpora or signing secrets; run it from the Actions tab when wanted. macos-intel.yml is DLightroom's build.
 # Release pipeline: every push to `release` builds signed installers for every platform and
 # creates or updates the draft GitHub Release "VectorCraft v<version>". See docs/releasing.md.
 name: Release
 
 on:
-  push:
-    branches: [release]
   workflow_dispatch:
     inputs:
       version:

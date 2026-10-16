@@ -1,3 +1,5 @@
+# DLightroom: manual-only. This upstream VectorCraft workflow relies on storytold's shared workflows,
+# corpora or signing secrets; run it from the Actions tab when wanted. macos-intel.yml is DLightroom's build.
 # Windows ARM64 build and smoke test.
 #
 # Release packages on arm64-windows are produced on x64 runners via cross-compilation
@@ -6,22 +8,6 @@
 name: Windows ARM64
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - ".github/workflows/windows-arm64.yml"
-      - "packaging/windows/**"
-      - "Cargo.toml"
-      - "Cargo.lock"
-      - "crates/**"
-  pull_request:
-    branches: [main]
-    paths:
-      - ".github/workflows/windows-arm64.yml"
-      - "packaging/windows/**"
-      - "Cargo.toml"
-      - "Cargo.lock"
-      - "crates/**"
   workflow_dispatch:
 
 concurrency:

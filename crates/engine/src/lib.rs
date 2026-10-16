@@ -1,4 +1,4 @@
-//! The VectorCraft engine façade.
+//! The VectorCraft engine façade (DLightroom's editing engine, see [`brand`]).
 //!
 //! Every user-visible action is a command with a stable id (`object.group`, `select.same.fillColor`,
 //! `shape.rectangle`…) and JSON parameters. The egui UI, the CLI, the control channel and the MCP
@@ -6,6 +6,7 @@
 //! reduce to commands, so every gesture is journaled and replayable.
 #![forbid(unsafe_code)]
 
+pub mod brand;
 pub mod cmd;
 pub mod file_access;
 pub mod guard;

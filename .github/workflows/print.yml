@@ -1,16 +1,9 @@
+# DLightroom: manual-only. This upstream VectorCraft workflow relies on storytold's shared workflows,
+# corpora or signing secrets; run it from the Actions tab when wanted. macos-intel.yml is DLightroom's build.
 name: Desktop printing
 on:
-  pull_request:
-    paths:
-      - "Cargo.toml"
-      - "Cargo.lock"
-      - "apps/vectorcraft/Cargo.toml"
-      - "apps/vectorcraft/src/printing.rs"
-      - "apps/vectorcraft/src/printing/**"
-      - "crates/ui-egui/src/print.rs"
-      - "crates/ui-egui/src/tests_printps.rs"
-      - ".github/workflows/print.yml"
   workflow_dispatch:
+
 permissions:
   contents: read
 env:

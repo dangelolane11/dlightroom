@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!-- Template: packaging/macos/package.sh (release) and `cargo xtask bundle` (development)
-     substitute @VERSION@ (full, e.g. 0.2.0-rc.1), @SHORT_VERSION@ (numeric X.Y.Z) and @BUILD_SHA@. -->
+<!-- DLightroom, built on the open-source VectorCraft workspace.
+     Template: packaging/macos/package.sh (release), packaging/macos/build-app.sh (unsigned local
+     and CI builds) and `cargo xtask bundle` (development) substitute @VERSION@ (full, e.g.
+     0.2.0-rc.1), @SHORT_VERSION@ (numeric X.Y.Z) and @BUILD_SHA@.
+     CFBundleIdentifier is a temporary identifier for local testing, distinct from upstream's
+     ai.storyteller.vectorcraft so both apps can be installed side by side. -->
 <plist version="1.0">
 <dict>
   <key>CFBundleDevelopmentRegion</key>
   <string>en</string>
   <key>CFBundleDisplayName</key>
-  <string>VectorCraft</string>
+  <string>DLightroom</string>
   <key>CFBundleName</key>
-  <string>VectorCraft</string>
+  <string>DLightroom</string>
   <key>CFBundleExecutable</key>
-  <string>VectorCraft</string>
+  <string>DLightroom</string>
   <key>CFBundleIdentifier</key>
-  <string>ai.storyteller.vectorcraft</string>
+  <string>com.dangelolane11.dlightroom.dev</string>
   <key>CFBundleInfoDictionaryVersion</key>
   <string>6.0</string>
   <key>CFBundlePackageType</key>
@@ -24,12 +28,12 @@
   <string>@SHORT_VERSION@</string>
   <key>CFBundleVersion</key>
   <string>@SHORT_VERSION@</string>
-  <key>VectorCraftVersion</key>
+  <key>DLightroomVersion</key>
   <string>@VERSION@</string>
-  <key>VectorCraftBuildCommit</key>
+  <key>DLightroomBuildCommit</key>
   <string>@BUILD_SHA@</string>
   <key>CFBundleIconFile</key>
-  <string>VectorCraft</string>
+  <string>DLightroom</string>
   <key>LSApplicationCategoryType</key>
   <string>public.app-category.graphics-design</string>
   <!-- Must match MACOSX_DEPLOYMENT_TARGET in package.sh. Big Sur is the first release on
@@ -43,11 +47,11 @@
   <key>NSRequiresAquaSystemAppearance</key>
   <false/>
   <key>NSHumanReadableCopyright</key>
-  <string>Copyright © the VectorCraft authors. MIT OR Apache-2.0.</string>
+  <string>DLightroom, built on VectorCraft. Copyright © the VectorCraft authors and DLightroom contributors. MIT OR Apache-2.0.</string>
 
   <!-- Every format File › Open reads (OPEN_EXTS in crates/engine/src/cmd/fileio/mod.rs; a test in
-       apps/vectorcraft checks this list), so Finder offers VectorCraft for them (Open With,
-       double-click, Dock drop). VectorCraft owns its own formats; for the others it is an
+       apps/vectorcraft checks this list), so Finder offers DLightroom for them (Open With,
+       double-click, Dock drop). DLightroom owns the VectorCraft formats it edits; for the others it is an
        alternate, so it doesn't take over another app's files. The app isn't NSDocument-based (no
        NSDocumentClass): it opens these files itself (apps/vectorcraft/src/open_documents.rs). -->
   <key>CFBundleDocumentTypes</key>
@@ -118,8 +122,10 @@
     </dict>
   </array>
 
-  <!-- VectorCraft's own format (.drawcraft is its name from before the rename). -->
-  <key>UTExportedTypeDeclarations</key>
+  <!-- The native VectorCraft document format DLightroom keeps for compatibility (.drawcraft is its
+       name from before VectorCraft's rename). Imported, not exported: the type belongs to the
+       upstream VectorCraft, and a Mac with both apps installed keeps a single declaration. -->
+  <key>UTImportedTypeDeclarations</key>
   <array>
     <dict>
       <key>UTTypeIdentifier</key>
@@ -132,7 +138,7 @@
         <string>public.image</string>
       </array>
       <key>UTTypeIconFile</key>
-      <string>VectorCraft</string>
+      <string>DLightroom</string>
       <key>UTTypeTagSpecification</key>
       <dict>
         <key>public.filename-extension</key>

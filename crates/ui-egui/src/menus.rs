@@ -416,9 +416,9 @@ pub const UI_COMMANDS: &[(&str, &str, &str, &str)] = &[
         "",
         "{} opens the Save PDF dialog; with params = document.exportPdf options written to path (asked when missing; viewAfterSaving opens the file) → {path, bytes, warnings}",
     ),
-    ("help.about", "About VectorCraft", "", "{}"),
+    ("help.about", "About DLightroom", "", "{}"),
     ("help.commandPalette", "Search Commands…", "Cmd+Shift+/", "{}"),
-    ("app.quit", "Quit VectorCraft", "Cmd+Q", "{}"),
+    ("app.quit", "Quit DLightroom", "Cmd+Q", "{}"),
     (
         "ui.swatchOptions",
         "Swatch Options…",
@@ -2238,7 +2238,7 @@ fn selected_image(app: &VectorcraftApp, keep: impl Fn(&vectorcraft_doc::ImageObj
     })
 }
 
-/// The in-window and native menu tree. The in-window bar skips the VectorCraft menu (see
+/// The in-window and native menu tree. The in-window bar skips the DLightroom menu (see
 /// `menu_bar`); the native Mac bar is composed from the whole tree (see `native_menu`).
 /// `english_names` is Preferences › Type › Show Font Names in English (the Type → Font labels
 /// follow it; tests use the default `true`).
@@ -2250,13 +2250,13 @@ pub fn menu_tree_named(english_names: bool) -> Vec<(&'static str, Vec<Item>)> {
     let panel = |label: &'static str, id: &'static str| cp(label, "window.panel", json!({ "panel": id, "toggle": true }));
     vec![
         (
-            // The application menu: About and Discord only. The in-window bar never shows it (File
+            // The application menu: About only. The in-window bar never shows it (File
             // is first there, as in Illustrator); on macOS `native_menu::mac_layout` composes the
             // App menu from this entry and the other menus (About from Help, Settings from Edit,
             // Quit from File, Language and Appearance synthesized). It stays first: `from_tree`
             // gives the first menu the App role.
-            "VectorCraft",
-            vec![c("About VectorCraft", "help.about"), c("Join Our Discord", "help.discord")],
+            "DLightroom",
+            vec![c("About DLightroom", "help.about")],
         ),
         (
             "File",
@@ -2892,15 +2892,13 @@ pub fn menu_tree_named(english_names: bool) -> Vec<(&'static str, Vec<Item>)> {
         (
             "Help",
             vec![
-                c("Join Our Discord", "help.discord"),
-                c("ArtCraft Website", "help.website"),
-                c("VectorCraft on getartcraft.com", "help.appPage"),
+                c("DLightroom on GitHub", "help.appPage"),
                 c("VectorCraft on GitHub", "help.github"),
                 Sep,
                 c("Search Commands…", "help.commandPalette"),
-                todos("VectorCraft Help…", "F1"),
+                todos("DLightroom Help…", "F1"),
                 Sep,
-                c("About VectorCraft", "help.about"),
+                c("About DLightroom", "help.about"),
             ],
         ),
     ]
@@ -3095,8 +3093,8 @@ pub fn menu_bar(app: &mut VectorcraftApp, ui: &mut egui::Ui) -> f32 {
     let mut clicked: Option<(String, Value)> = None;
     let tree = menu_tree_named(app.session.prefs.font_names_in_english);
     // No application menu in the window (as in Illustrator): the bar starts at File on every
-    // platform. The VectorCraft menu stays in the tree: the native Mac bar takes it from there.
-    let tree: Vec<(&str, Vec<Item>)> = tree.into_iter().filter(|(title, _)| *title != "VectorCraft").collect();
+    // platform. The DLightroom menu stays in the tree: the native Mac bar takes it from there.
+    let tree: Vec<(&str, Vec<Item>)> = tree.into_iter().filter(|(title, _)| *title != vectorcraft_engine::brand::APP_NAME).collect();
     let (end, open) = egui::MenuBar::new()
         .ui(ui, |ui| {
             let mut titles = Vec::with_capacity(tree.len());
@@ -3482,7 +3480,7 @@ pub fn invoke(app: &mut VectorcraftApp, id: &str, p: Value) {
         return;
     }
     // Help links: the command returns the URL; a menu click opens it (agents just get the URL).
-    if matches!(id, "help.discord" | "help.website" | "help.appPage" | "help.github") {
+    if matches!(id, "help.appPage" | "help.github") {
         app.open_link(id);
         return;
     }
@@ -3880,7 +3878,7 @@ pub fn menu_strings() -> std::collections::BTreeSet<String> {
                         .strip_suffix('°')
                         .map(|n| n.strip_prefix('-').unwrap_or(n))
                         .is_some_and(|n| !n.is_empty() && n.chars().all(|c| c.is_ascii_digit()));
-                    // VectorCraft › Language lists each language by its own name.
+                    // DLightroom › Language lists each language by its own name.
                     let language_name = *id == "app.language" && crate::i18n::Lang::all().any(|lang| lang.name() == *l);
                     if !user_data(id) && !size && !angle && !language_name && *l != "—" {
                         out.insert(l.to_string());
@@ -4003,7 +4001,7 @@ mod tests {
         for t in titles {
             assert!(shown.iter().any(|s| s == t), "{t} missing from {shown:?}");
         }
-        assert!(!shown.iter().any(|s| s == "VectorCraft"), "{shown:?}");
+        assert!(!shown.iter().any(|s| s == "DLightroom"), "{shown:?}");
     }
 
     #[test]

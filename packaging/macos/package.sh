@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 # Build, sign and (optionally) notarize the macOS release artifacts:
 #
-#   $DIST/vectorcraft-<version>-macos-<arch>.dmg          VectorCraft.app on a drag-to-Applications DMG
-#   $DIST/vectorcraft-cli-<version>-macos-<arch>.zip      the headless CLI
+#   $DIST/dlightroom-<version>-macos-<arch>.dmg          DLightroom.app on a drag-to-Applications DMG
+#   $DIST/dlightroom-cli-<version>-macos-<arch>.zip      the headless CLI (vectorcraft-cli)
+#
+# Needs a signing identity for a release; for an unsigned local or CI build of DLightroom.app as a
+# ZIP, use packaging/macos/build-app.sh instead.
 #
 # Usage: packaging/macos/package.sh [--arch universal|aarch64|x86_64] [--skip-build]
 #
@@ -39,9 +42,9 @@ export MACOSX_DEPLOYMENT_TARGET=11.0
 IDENTITY="${MACOS_SIGN_IDENTITY:--}"
 SHORT_VERSION="${VERSION%%-*}"
 WORK="$CARGO_TARGET_DIR/macos-package"
-APP="$WORK/VectorCraft.app"
-DMG="$DIST/vectorcraft-$VERSION-macos-$ARCH.dmg"
-CLI_ZIP="$DIST/vectorcraft-cli-$VERSION-macos-$ARCH.zip"
+APP="$WORK/DLightroom.app"
+DMG="$DIST/dlightroom-$VERSION-macos-$ARCH.dmg"
+CLI_ZIP="$DIST/dlightroom-cli-$VERSION-macos-$ARCH.zip"
 
 NOTARIZE=0
 if [ "$IDENTITY" = "-" ]; then
@@ -52,7 +55,7 @@ else
   warn "macOS: APPLE_ID / APPLE_PASSWORD / APPLE_TEAM_ID incomplete; signed but not notarized"
 fi
 
-echo "==> VectorCraft $VERSION for macOS ($ARCH), identity: $IDENTITY, notarize: $NOTARIZE"
+echo "==> DLightroom $VERSION for macOS ($ARCH), identity: $IDENTITY, notarize: $NOTARIZE"
 
 # ---- build -------------------------------------------------------------------------------------
 if [ "$SKIP_BUILD" = 0 ]; then
@@ -97,12 +100,12 @@ notarize() {
   fi
 }
 
-# ---- VectorCraft.app ----------------------------------------------------------------------------
+# ---- DLightroom.app -----------------------------------------------------------------------------
 echo "==> assembling $APP"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
 # Executable and icon carry the display name (CFBundleExecutable / CFBundleIconFile).
-cp "$WORK/bin/vectorcraft" "$APP/Contents/MacOS/VectorCraft"
-cp "$ROOT/assets/app-icon/vectorcraft.icns" "$APP/Contents/Resources/VectorCraft.icns"
+cp "$WORK/bin/vectorcraft" "$APP/Contents/MacOS/DLightroom"
+cp "$ROOT/assets/app-icon/dlightroom.icns" "$APP/Contents/Resources/DLightroom.icns"
 sed -e "s/@VERSION@/$VERSION/g" -e "s/@SHORT_VERSION@/$SHORT_VERSION/g" \
   -e "s/@BUILD_SHA@/${VECTORCRAFT_BUILD_SHA:-unknown}/g" \
   "$HERE/Info.plist.in" >"$APP/Contents/Info.plist"
@@ -113,13 +116,13 @@ copy_docs "$APP/Contents/Resources"
 
 # Sign inside-out: nested code first, then the bundle itself (no --deep on the final signature).
 # Today the only nested code is the main executable; frameworks/helpers would be signed here too.
-sign --options runtime --entitlements "$HERE/entitlements.plist" "$APP/Contents/MacOS/VectorCraft"
+sign --options runtime --entitlements "$HERE/entitlements.plist" "$APP/Contents/MacOS/DLightroom"
 sign --options runtime --entitlements "$HERE/entitlements.plist" "$APP"
 codesign --verify --strict --deep --verbose=2 "$APP"
 
 if [ "$NOTARIZE" = 1 ]; then
-  ditto -c -k --keepParent "$APP" "$WORK/VectorCraft-notarize.zip"
-  notarize "$WORK/VectorCraft-notarize.zip"
+  ditto -c -k --keepParent "$APP" "$WORK/DLightroom-notarize.zip"
+  notarize "$WORK/DLightroom-notarize.zip"
   xcrun stapler staple "$APP"
   xcrun stapler validate "$APP"
   spctl --assess --type execute -vvv "$APP"
@@ -129,7 +132,7 @@ fi
 echo "==> building $DMG"
 STAGE="$WORK/dmg"
 mkdir -p "$STAGE"
-ditto "$APP" "$STAGE/VectorCraft.app"
+ditto "$APP" "$STAGE/DLightroom.app"
 ln -s /Applications "$STAGE/Applications"
 # Finder window layout: background, icon size and positions (packaging/macos/dmg/README.md).
 mkdir -p "$STAGE/.background"
@@ -155,7 +158,7 @@ hdiutil_retry() {
     sleep $((attempt * 10))
   done
 }
-hdiutil_retry create create -srcfolder "$STAGE" -volname "VectorCraft" -fs HFS+ -format UDZO -imagekey zlib-level=9 -ov "$DMG"
+hdiutil_retry create create -srcfolder "$STAGE" -volname "DLightroom" -fs HFS+ -format UDZO -imagekey zlib-level=9 -ov "$DMG"
 sign "$DMG"
 codesign --verify --strict --verbose=2 "$DMG"
 # The app inside the image must still pass --strict, so a makehybrid-style regression can't ship.
@@ -163,7 +166,7 @@ MOUNT="$WORK/dmg-check"
 rm -rf "$MOUNT"
 mkdir -p "$MOUNT"
 hdiutil_retry attach attach -nobrowse -readonly -mountpoint "$MOUNT" "$DMG" >/dev/null
-if ! codesign --verify --strict --deep --verbose=2 "$MOUNT/VectorCraft.app"; then
+if ! codesign --verify --strict --deep --verbose=2 "$MOUNT/DLightroom.app"; then
   hdiutil_retry detach detach "$MOUNT" >/dev/null || true
   exit 1
 fi
@@ -177,7 +180,7 @@ fi
 
 # ---- CLI ---------------------------------------------------------------------------------------
 echo "==> building $CLI_ZIP"
-CLI_DIR="$WORK/vectorcraft-cli-$VERSION-macos-$ARCH"
+CLI_DIR="$WORK/dlightroom-cli-$VERSION-macos-$ARCH"
 mkdir -p "$CLI_DIR"
 cp "$WORK/bin/vectorcraft-cli" "$CLI_DIR/"
 copy_docs "$CLI_DIR"

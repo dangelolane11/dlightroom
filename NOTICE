@@ -1,3 +1,20 @@
+DLightroom
+Copyright (c) 2026 the DLightroom contributors.
+
+DLightroom is an independently branded application built on VectorCraft, the open-source vector
+illustration workspace by the ArtCraft Team and the VectorCraft contributors
+(https://github.com/storytold/vectorcraft). Nearly all of its source code is VectorCraft's, used
+and modified under VectorCraft's licence; DLightroom's changes (branding, app icon, packaging and
+build scripts) are licensed the same way. DLightroom is not made, sponsored or endorsed by the
+ArtCraft Team, and it is not affiliated with Adobe or any Adobe product.
+
+Licensed under the MIT License or the Apache License, Version 2.0, at your option
+(LICENSE-MIT, LICENSE-APACHE).
+
+The upstream VectorCraft notice follows, unchanged except where marked.
+
+----------------------------------------------------------------------------------------------------
+
 VectorCraft
 Copyright (c) 2026 ArtCraft Team and the VectorCraft contributors.
 Licensed under the MIT License or the Apache License, Version 2.0, at your option
@@ -5,7 +22,9 @@ Licensed under the MIT License or the Apache License, Version 2.0, at your optio
 
 The ArtCraft name, wordmark and logos in docs/brand/ are trademarks of the ArtCraft Team. They are
 not open source and are not covered by the license above; their terms are in
-docs/brand/LICENSE-brand.txt.
+docs/brand/LICENSE-brand.txt. [DLightroom: as that licence requires of modified versions, the
+logo files have been removed from this fork and nothing in DLightroom uses the ArtCraft marks; the
+licence text is kept in docs/brand/.]
 
 Third-party material
 

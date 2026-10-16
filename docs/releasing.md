@@ -71,12 +71,13 @@ The rules are in craftrules `standards/fonts.md`, the build option in
 ### macOS
 
 `packaging/macos/package.sh` builds `aarch64-apple-darwin` and `x86_64-apple-darwin` with
-`MACOSX_DEPLOYMENT_TARGET=11.0`, joins them with `lipo` and assembles `VectorCraft.app`:
+`MACOSX_DEPLOYMENT_TARGET=11.0`, joins them with `lipo` and assembles `DLightroom.app` (DLightroom
+fork; `packaging/macos/build-app.sh` makes the same bundle unsigned, as a ZIP, with no credentials):
 
-- `Info.plist` is generated from `Info.plist.in` (bundle id `ai.storyteller.vectorcraft`,
-  `LSMinimumSystemVersion` 11.0, the version and the build commit). The icon is
-  `assets/app-icon/vectorcraft.icns`. `cargo xtask bundle` fills in the same template for its
-  development app.
+- `Info.plist` is generated from `Info.plist.in` (temporary bundle id
+  `com.dangelolane11.dlightroom.dev`, `LSMinimumSystemVersion` 11.0, the version and the build
+  commit). The icon is `assets/app-icon/dlightroom.icns`. `cargo xtask bundle` fills in the same
+  template for its development app.
 - **Document types:** `Info.plist.in` declares every format File › Open reads, so Finder opens
   them with VectorCraft (double-click, Open With, a drop on the Dock icon). VectorCraft owns its own
   formats and is an alternate for the others. A test keeps the list in step with the engine's

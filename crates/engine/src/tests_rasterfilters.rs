@@ -246,7 +246,7 @@ fn glass_refuses_a_texture_that_is_not_an_image() {
     let junk = vectorcraft_format::base64_encode(b"not an image");
     let not_stored = "textureImage: give {path} or {name, dataBase64}";
     let refused = [
-        (json!({"name": "a.png", "dataBase64": junk}), "not an image VectorCraft reads"),
+        (json!({"name": "a.png", "dataBase64": junk}), "not an image DLightroom reads"),
         (json!("bm90IGEgdGV4dHVyZQ=="), not_stored),
         (json!(5), not_stored),
         (json!({"path": "C:/no/such/texture.png"}), "texture.png"),

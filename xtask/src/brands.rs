@@ -299,6 +299,15 @@ mod tests {
         scan_rust(src).into_iter().map(|(l, t, _)| (l, t)).collect()
     }
 
+    /// The app's own name is one word: it is not the vendor product name it contains, which
+    /// stays denied on its own.
+    #[test]
+    fn the_app_name_is_not_a_vendor_name() {
+        assert!(terms_in("About DLightroom", DENY).is_empty());
+        assert!(terms_in("dlightroom.icns, DLightroom.app, DLightroom's", DENY).is_empty());
+        assert_eq!(terms_in("an app like Lightroom", DENY), ["lightroom"]);
+    }
+
     #[test]
     fn rust_literals_skip_comments_identifiers_tests_and_marked_lines() {
         let src = r##"// Illustrator in a comment

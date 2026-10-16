@@ -1,4 +1,4 @@
-//! `vectorcraft-cli`: VectorCraft from the command line.
+//! `vectorcraft-cli`: DLightroom's VectorCraft engine from the command line.
 //!
 //! ```text
 //! vectorcraft-cli mcp [--connect 127.0.0.1:7979 | --headless] [--automation-read-root DIR] [--automation-write-root DIR]
@@ -65,7 +65,7 @@ fn stdout_failed(e: std::io::Error) -> ! {
 }
 
 const USAGE: &str = "\
-vectorcraft-cli — VectorCraft automation
+vectorcraft-cli — DLightroom automation (the VectorCraft engine, headless)
 
 USAGE:
   vectorcraft-cli mcp [--connect ADDR | --headless] [--automation-read-root DIR] [--automation-write-root DIR]

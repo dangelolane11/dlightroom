@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
-# Regenerate every app icon from assets/app-icon/vectorcraft.svg (the canonical artwork).
+# Regenerate every app icon from assets/app-icon/dlightroom.svg (the canonical DLightroom artwork).
 #
-# Needs: resvg (brew install resvg / cargo install resvg). On macOS, iconutil also writes the
-# .icns. The outputs are committed, so building and packaging never need these tools.
+# Needs: resvg (brew install resvg / cargo install resvg). The .icns is written by iconutil on macOS,
+# else by Pillow (python3 -m pip install pillow). The outputs are committed, so building and
+# packaging never need these tools.
 #
 #   packaging/icons.sh
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 DIR="$ROOT/assets/app-icon"
-SVG="$DIR/vectorcraft.svg"
+SVG="$DIR/dlightroom.svg"
+# The Linux desktop-entry id (packaging/linux) the hicolor files are named after.
 ID="ai.storyteller.vectorcraft"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
@@ -23,9 +25,9 @@ grep -q 'viewBox="-62.136' "$MAC" || { echo "error: $SVG has no 512 viewBox" >&2
 
 render() { resvg -w "$2" -h "$2" "$1" "$3" </dev/null; }
 
-render "$SVG" 1024 "$DIR/vectorcraft-1024.png"
+render "$SVG" 1024 "$DIR/dlightroom-1024.png"
 # Runtime window/Dock icon on macOS (embedded by apps/vectorcraft/src/main.rs).
-render "$MAC" 512 "$DIR/vectorcraft-macos-512.png"
+render "$MAC" 512 "$DIR/dlightroom-macos-512.png"
 
 # Linux hicolor theme (the 256 one is also the runtime icon on Windows and Linux).
 for s in 16 24 32 48 64 128 256 512; do
@@ -33,7 +35,7 @@ for s in 16 24 32 48 64 128 256 512; do
   render "$SVG" "$s" "$DIR/hicolor/${s}x${s}/apps/$ID.png"
 done
 mkdir -p "$DIR/hicolor/scalable/apps"
-cp "$DIR/vectorcraft-small.svg" "$DIR/hicolor/scalable/apps/$ID.svg"
+cp "$SVG" "$DIR/hicolor/scalable/apps/$ID.svg"
 
 # Windows .ico.
 ICO_PNGS=()
@@ -41,18 +43,20 @@ for s in 16 20 24 32 40 48 64 128 256; do
   render "$SVG" "$s" "$TMP/ico-$s.png"
   ICO_PNGS+=("$TMP/ico-$s.png")
 done
-(cd "$ROOT" && cargo run -q -p xtask -- ico "$DIR/vectorcraft.ico" "${ICO_PNGS[@]}")
+(cd "$ROOT" && cargo run -q -p xtask -- ico "$DIR/dlightroom.ico" "${ICO_PNGS[@]}")
 
 # macOS .icns.
+SET="$TMP/dlightroom.iconset"
+mkdir -p "$SET"
+for s in 16 32 128 256 512; do
+  render "$MAC" "$s" "$SET/icon_${s}x${s}.png"
+  render "$MAC" $((s * 2)) "$SET/icon_${s}x${s}@2x.png"
+done
 if command -v iconutil >/dev/null; then
-  SET="$TMP/vectorcraft.iconset"
-  mkdir -p "$SET"
-  for s in 16 32 128 256 512; do
-    render "$MAC" "$s" "$SET/icon_${s}x${s}.png"
-    render "$MAC" $((s * 2)) "$SET/icon_${s}x${s}@2x.png"
-  done
-  iconutil -c icns -o "$DIR/vectorcraft.icns" "$SET"
+  iconutil -c icns -o "$DIR/dlightroom.icns" "$SET"
 else
-  echo "warning: iconutil not found (macOS only); vectorcraft.icns not regenerated" >&2
+  # Pillow writes every size an .icns holds from the 1024 px image.
+  python3 -c 'import sys; from PIL import Image; Image.open(sys.argv[1]).save(sys.argv[2])' \
+    "$SET/icon_512x512@2x.png" "$DIR/dlightroom.icns"
 fi
 echo "icons written to $DIR"
