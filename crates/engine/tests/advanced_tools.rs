@@ -418,3 +418,64 @@ fn walk(dir: &std::path::Path) -> Vec<PathBuf> {
     }
     out
 }
+
+// ---------- Gaps closed in this milestone ----------
+
+#[test]
+fn curvature_recurve_neighbours_option_reshapes_smooth_neighbours_in_one_step() {
+    let mut s = session();
+    let pts = json!({"points": [{"x": 100, "y": 300}, {"x": 200, "y": 250}, {"x": 300, "y": 300}, {"x": 400, "y": 250}, {"x": 500, "y": 300}]});
+    let a = id_of(&run(&mut s, "path.curvature", pts.clone()));
+    let b = id_of(&run(&mut s, "path.curvature", pts));
+    run(&mut s, "path.curvatureEdit", json!({"id": a, "op": "move", "anchor": 2, "x": 300, "y": 150}));
+    run(&mut s, "path.curvatureEdit", json!({"id": b, "op": "move", "anchor": 2, "x": 300, "y": 150, "recurve": "neighbours"}));
+    let anchors = |s: &Session, id: u64| match &node(s, id).kind {
+        NodeKind::Path { path, .. } => path.subpaths[0].anchors.clone(),
+        k => panic!("{k:?}"),
+    };
+    let (pa, pb) = (anchors(&s, a), anchors(&s, b));
+    assert_eq!(pa[2], pb[2], "the moved point is the same either way");
+    assert_ne!(pa[1].h_out, pb[1].h_out, "its smooth neighbour re-curves with the option");
+    assert_eq!((pa[0].p, pa[4].p), (pb[0].p, pb[4].p));
+    run(&mut s, "edit.undo", json!({}));
+    assert_ne!(anchors(&s, b)[2].p, pb[2].p, "one undo step");
+    assert!(s.execute("path.curvatureEdit", &json!({"id": b, "op": "move", "anchor": 2, "x": 1, "y": 1, "recurve": "everything"})).is_err());
+}
+
+#[test]
+fn blend_easing_persists_and_changes_rendered_steps() {
+    let mut s = session();
+    let a = id_of(&run(&mut s, "shape.rectangle", json!({"x": 50, "y": 250, "width": 40, "height": 40})));
+    let b = id_of(&run(&mut s, "shape.rectangle", json!({"x": 650, "y": 250, "width": 40, "height": 40})));
+    run(&mut s, "paint.setFill", json!({"ids": [a], "color": "#ff0000"}));
+    run(&mut s, "paint.setFill", json!({"ids": [b], "color": "#0000ff"}));
+    run(&mut s, "select.set", json!({"ids": [a, b]}));
+    let blend = id_of(&run(&mut s, "object.blend.make", json!({"steps": 5})));
+    let linear = png(&mut s, "ease-lin");
+    run(&mut s, "select.set", json!({"ids": [blend]}));
+    run(&mut s, "object.blend.options", json!({"easeIn": 100, "easeOut": 0, "colorAcceleration": 50}));
+    let info = run(&mut s, "object.blend.info", json!({}));
+    assert_eq!((info["easeIn"].as_f64(), info["colorAcceleration"].as_f64()), (Some(100.0), Some(50.0)), "{info}");
+    let eased = png(&mut s, "ease-eased");
+    assert_ne!(linear.as_raw(), eased.as_raw(), "the eased steps render differently");
+    let t = reopen(&mut s, "ease");
+    assert_eq!(node_json(&t, blend), node_json(&s, blend), "easing survives save and reopen");
+    run(&mut s, "edit.undo", json!({}));
+    assert_eq!(run(&mut s, "object.blend.info", json!({}))["easeIn"].as_f64(), Some(0.0));
+}
+
+#[test]
+fn symbol_instance_overrides_reset_keeps_the_link_and_persists() {
+    let mut s = session();
+    let r = id_of(&run(&mut s, "shape.rectangle", json!({"x": 10, "y": 10, "width": 40, "height": 20})));
+    run(&mut s, "select.set", json!({"ids": [r]}));
+    let inst = id_of(&run(&mut s, "symbol.new", json!({"name": "Tag"})));
+    run(&mut s, "object.scale", json!({"ids": [inst], "sx": 300, "sy": 300}));
+    run(&mut s, "transparency.set", json!({"ids": [inst], "opacity": 25}));
+    let mut t = reopen(&mut s, "ovr");
+    let o = run(&mut t, "symbol.instance.overrides", json!({"id": inst}));
+    assert_eq!((o["instances"][0]["scaleX"].as_f64(), o["instances"][0]["opacity"].as_f64()), (Some(300.0), Some(25.0)), "{o}");
+    run(&mut t, "select.set", json!({"ids": [inst]}));
+    run(&mut t, "symbol.instance.reset", json!({}));
+    assert_eq!(run(&mut t, "symbol.instance.overrides", json!({}))["instances"][0]["overridden"], false);
+}

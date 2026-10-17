@@ -20,6 +20,7 @@ pub const SYMBOLISM: &[&str] =
 
 const ROWS: &[Row] = &[
     (&["dimension"], None, &["mode", "style"]),
+    (&["curvature"], None, &["recurveNeighbours"]),
     // Global Brush Dimensions.
     (LIQUIFY, Some("liquify"), &["width", "height", "angle", "intensity", "usePressure", "showBrush"]),
     (LIQUIFY, None, &["detail", "simplify", "simplifyOn", "rate", "complexity", "horizontal", "vertical", "affectAnchors", "affectIn", "affectOut"]),

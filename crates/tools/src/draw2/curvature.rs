@@ -40,6 +40,9 @@ pub struct CurvatureTool {
     /// The end the last click on a selected path placed.
     placed: Option<Placed>,
     snap: DrawSnap,
+    /// Re-curve Neighbours (option `recurveNeighbours`, Control bar): dragging a point of a selected
+    /// path also re-curves its smooth neighbours through their own neighbours, as drawing did.
+    recurve: bool,
 }
 
 /// What a press grabbed for a drag.
@@ -170,6 +173,21 @@ pub fn curvature_move(sp: &mut SubPath, i: usize, q: Point) -> bool {
         *x = m;
     }
     true
+}
+
+/// Re-curve the smooth neighbours of anchor `i` of `sp` (after [`curvature_move`] moved it), as the
+/// Curvature tool curves a point: each takes [`smooth_handles`] through its own neighbours, so the
+/// curve flows evenly through the moved point. Corner neighbours, ends of an open path and the rest
+/// of the path keep their shape. The neighbours re-curved.
+pub fn curvature_recurve_neighbours(sp: &mut SubPath, i: usize) -> Vec<usize> {
+    let mut done = vec![];
+    for j in neighbours(sp, i).into_iter().flatten() {
+        let interior = neighbours(sp, j).iter().all(Option::is_some);
+        if j != i && interior && sp.anchors.get(j).is_some_and(|a| a.kind == AnchorKind::Smooth) && curvature_smooth(sp, j) {
+            done.push(j);
+        }
+    }
+    done
 }
 
 /// Add a smooth anchor at `t` on segment `seg` of `sp` without changing its shape: the new anchor's
@@ -439,6 +457,14 @@ impl Tool for CurvatureTool {
     fn id(&self) -> &'static str {
         "curvature"
     }
+    fn options(&self) -> Value {
+        json!({ "recurveNeighbours": self.recurve })
+    }
+    fn set_option(&mut self, key: &str, value: &Value) {
+        if key == "recurveNeighbours" {
+            self.recurve = value.as_bool().unwrap_or(false);
+        }
+    }
     fn busy(&self) -> bool {
         self.drag.is_some()
     }
@@ -508,7 +534,11 @@ impl Tool for CurvatureTool {
                         Action::Preview("path.curvature".into(), self.params())
                     }
                     Grab::Anchor(id, si, ai) => {
-                        Action::Preview(EDIT.into(), json!({"id": id.0, "subpath": si, "op": "move", "anchor": ai, "x": p.x, "y": p.y}))
+                        let mut v = json!({"id": id.0, "subpath": si, "op": "move", "anchor": ai, "x": p.x, "y": p.y});
+                        if self.recurve {
+                            v["recurve"] = json!("neighbours");
+                        }
+                        Action::Preview(EDIT.into(), v)
                     }
                     Grab::Inserted(id, si, seg, t) => {
                         Action::Preview(EDIT.into(), json!({"id": id.0, "subpath": si, "op": "insert", "segment": seg, "t": t, "x": p.x, "y": p.y}))
@@ -952,6 +982,45 @@ mod tests {
         assert_eq!(t.pointer(&cx, &PointerEvent::new(PointerKind::Up, 260.0, 140.0)), vec![Action::Commit]);
         // A press without a drag only selects.
         assert_eq!(press(&mut t, &cx, 100.0, 0.0, false).len(), 1);
+    }
+
+    #[test]
+    fn re_curve_neighbours_is_an_option_of_the_drag() {
+        let (d, id) = doc_with(wave());
+        let (s, p) = (selected(id, None), paint());
+        let cx = quiet(&d, &s, &p);
+        let mut t = CurvatureTool::default();
+        assert_eq!(t.options()["recurveNeighbours"], json!(false));
+        t.pointer(&cx, &PointerEvent::new(PointerKind::Down, 251.0, 81.0));
+        let a = t.pointer(&cx, &PointerEvent::new(PointerKind::Drag, 260.0, 140.0));
+        assert!(edit_op(&a[1]).is_some_and(|(_, v)| v.get("recurve").is_none()), "off by default: {a:?}");
+        t.pointer(&cx, &PointerEvent::new(PointerKind::Up, 260.0, 140.0));
+        t.set_option("recurveNeighbours", &json!(true));
+        // The document here doesn't take the previews: the point is still where it was.
+        t.pointer(&cx, &PointerEvent::new(PointerKind::Down, 251.0, 81.0));
+        let a = t.pointer(&cx, &PointerEvent::new(PointerKind::Drag, 270.0, 160.0));
+        assert!(edit_op(&a[1]).is_some_and(|(_, v)| v["recurve"] == "neighbours"), "{a:?}");
+    }
+
+    #[test]
+    fn recurving_turns_smooth_neighbours_and_leaves_corners() {
+        let mut sp = SubPath::polyline(&[pt(0.0, 0.0), pt(100.0, 0.0), pt(200.0, 0.0), pt(300.0, 0.0), pt(400.0, 0.0)], false);
+        for i in 1..4 {
+            assert!(curvature_smooth(&mut sp, i));
+        }
+        sp.anchors[3].kind = AnchorKind::Corner;
+        let before = sp.clone();
+        assert!(curvature_move(&mut sp, 2, pt(200.0, 120.0)));
+        let moved_only = sp.clone();
+        let done = curvature_recurve_neighbours(&mut sp, 2);
+        assert_eq!(done, vec![1], "the smooth neighbour turns, the corner one doesn't");
+        assert_ne!(sp.anchors[1].h_out, moved_only.anchors[1].h_out);
+        assert_eq!(sp.anchors[3], moved_only.anchors[3]);
+        assert_eq!((sp.anchors[0].p, sp.anchors[4]), (before.anchors[0].p, before.anchors[4]), "the rest of the path stays");
+        // The re-curved neighbour stays smooth: its handles are collinear through it.
+        let a = sp.anchors[1];
+        let (u, v) = (a.h_in - a.p, a.h_out - a.p);
+        assert!((u.x * v.y - u.y * v.x).abs() < 1e-6 * u.hypot() * v.hypot().max(1.0), "{a:?}");
     }
 
     /// #2120: the dragged end of a slanted straight path keeps to its extension (Smart Guides).

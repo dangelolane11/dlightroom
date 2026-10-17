@@ -124,6 +124,24 @@ pub fn specs() -> Vec<CommandSpec> {
             symbol_place
         ),
         cmd!(
+            query "symbol.instance.overrides",
+            "Instance Overrides",
+            [],
+            None,
+            "{ids?|id?} what each selected instance changes of its symbol: its own transform (scale %, rotation °, whether it differs from the symbol's size), tint (#rrggbb and amount %, or null), opacity (%) and blend mode → {instances: [{id, symbol, transformed, scaleX, scaleY, rotation, tint, tintAmount, opacity, blendMode, overridden}]}",
+            has_doc,
+            symbol_instance_overrides
+        ),
+        cmd!(
+            "symbol.instance.reset",
+            "Reset Instance Overrides",
+            [],
+            None,
+            "{ids?|id?, what?: [transform|tint|opacity|blendMode…] (default: all)} put the selected instances back to their symbol as placed: the symbol's own size and no rotation (the instance's centre stays), no tint, 100% opacity, Normal blending; the link to the symbol stays. One undo step → {ids}",
+            has_selection,
+            symbol_instance_reset
+        ),
+        cmd!(
             "symbol.breakLink",
             "Break Link to Symbol",
             [],
@@ -770,6 +788,106 @@ fn selected_instances(s: &Session, p: &Value) -> Result<Vec<NodeId>> {
         }
     }
     Ok(out)
+}
+
+/// The transform instance `inst` of a symbol of natural size `size` was placed with, at its
+/// current centre: what its own transform is measured against.
+fn natural_xf(xf: Affine, (w, h): (f64, f64)) -> Affine {
+    let c = xf * Point::ZERO;
+    Affine::translate(c.to_vec2()) * Affine::scale_non_uniform(w / (2.0 * HALF), h / (2.0 * HALF))
+}
+
+/// The instance's own transform, natural placement taken out: scale (x, y), rotation (degrees,
+/// counter-clockwise on the page as Rotate takes them: the document's y axis points down).
+fn own_transform(xf: Affine, size: (f64, f64)) -> (f64, f64, f64) {
+    let own = xf * natural_xf(xf, size).inverse();
+    let [a, b, c, d, _, _] = own.as_coeffs();
+    let sx = a.hypot(b);
+    let rot = b.atan2(a);
+    let det = a * d - b * c;
+    let sy = if sx > 1e-12 { det / sx } else { c.hypot(d) };
+    (sx, sy, -rot.to_degrees())
+}
+
+fn symbol_instance_overrides(s: &mut Session, p: &Value) -> Result<Value> {
+    let ids = selected_instances(s, p)?;
+    if ids.is_empty() {
+        return Err(EngineError::Other("select a symbol instance".into()));
+    }
+    let d = &s.doc()?.doc;
+    let mut out = vec![];
+    for id in ids {
+        let Some(n) = d.node(id) else { continue };
+        let NodeKind::SymbolInstance { symbol, xf } = &n.kind else { continue };
+        let (sx, sy, rot) = own_transform(*xf, natural_size(d, symbol));
+        let transformed = (sx - 1.0).abs() > 1e-6 || (sy - 1.0).abs() > 1e-6 || rot.abs() > 1e-6;
+        let tint = brush::stain(n);
+        let round = |v: f64| (v * 100.0).round() / 100.0;
+        let overridden = transformed || tint.is_some() || n.opacity < 1.0 || n.blend != vectorcraft_color::BlendMode::Normal;
+        out.push(json!({
+            "id": id.0,
+            "symbol": symbol,
+            "transformed": transformed,
+            "scaleX": round(sx * 100.0),
+            "scaleY": round(sy * 100.0),
+            "rotation": round(rot),
+            "tint": tint.map(|(c, _)| c.to_hex()),
+            "tintAmount": tint.map(|(_, a)| round(f64::from(a) * 100.0)),
+            "opacity": round(f64::from(n.opacity) * 100.0),
+            "blendMode": n.blend.label(),
+            "overridden": overridden,
+        }));
+    }
+    Ok(json!({ "instances": out }))
+}
+
+fn symbol_instance_reset(s: &mut Session, p: &Value) -> Result<Value> {
+    const C: &str = "symbol.instance.reset";
+    let ids = selected_instances(s, p)?;
+    if ids.is_empty() {
+        return Err(EngineError::Other("select a symbol instance".into()));
+    }
+    let all = ["transform", "tint", "opacity", "blendMode"];
+    let what: Vec<String> = match p.get("what") {
+        None => all.iter().map(|w| w.to_string()).collect(),
+        Some(v) => {
+            let list = v.as_array().ok_or_else(|| bad(C, "`what` lists transform, tint, opacity or blendMode"))?;
+            let mut out = vec![];
+            for w in list {
+                let w = w.as_str().filter(|w| all.contains(w)).ok_or_else(|| bad(C, "`what` lists transform, tint, opacity or blendMode"))?;
+                out.push(w.to_string());
+            }
+            out
+        }
+    };
+    let has = |w: &str| what.iter().any(|x| x == w);
+    let (transform, tint, opacity, blend) = (has("transform"), has("tint"), has("opacity"), has("blendMode"));
+    s.edit("Reset Instance Overrides", |d, _| {
+        for id in &ids {
+            let size = match d.node(*id).map(|n| &n.kind) {
+                Some(NodeKind::SymbolInstance { symbol, .. }) => natural_size(d, symbol),
+                _ => continue,
+            };
+            let Some(n) = d.node_mut(*id) else { continue };
+            if let NodeKind::SymbolInstance { xf, .. } = &mut n.kind
+                && transform
+            {
+                *xf = natural_xf(*xf, size);
+                n.bbox_angle = 0.0;
+            }
+            if tint {
+                n.appearance.items.retain(|i| !i.is_fill());
+            }
+            if opacity {
+                n.opacity = 1.0;
+            }
+            if blend {
+                n.blend = vectorcraft_color::BlendMode::Normal;
+            }
+        }
+        Ok(())
+    })?;
+    Ok(json!({ "ids": ids_json(&ids) }))
 }
 
 fn symbol_break_link(s: &mut Session, p: &Value) -> Result<Value> {

@@ -23,10 +23,12 @@ incomplete when audited · **Added** = implemented in this milestone.
 | Undo/redo, selection, native persistence, SVG export | Works | `advanced_tools::curvature_*` |
 | Dragging a point re-curves its neighbours too (#1236, open upstream) | **Gap** | the dragged point's two segments re-curved; its smooth neighbours kept stale handles |
 
-**This milestone:** `path.curvatureEdit` `move` takes `recurve: "neighbours"` (the Curvature tool's
-default from now on), which also re-curves the dragged point's smooth neighbours along the circle
-through them and their own neighbours, as drawing them did. Corner points and the rest of the path
-are untouched.
+**This milestone:** the Curvature tool has a **Re-curve Neighbours** option in the Control bar
+(tool option `recurveNeighbours`, kept with the preferences). With it on, dragging a point of a
+selected path also re-curves its smooth neighbours along the circle through them and their own
+neighbours, as drawing them did (`path.curvatureEdit` `move` with `recurve: "neighbours"`). Corner
+points and the rest of the path are untouched, and it stays off by default so paths drawn with the
+Pen keep the shape the user gave them.
 
 ## 2. Variable width tool (Shift+W)
 

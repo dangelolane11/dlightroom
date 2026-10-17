@@ -666,3 +666,44 @@ fn symbol_registration_places_the_chosen_point_on_xy() {
     assert!(close(bounds(&s, p), Rect::new(300.0, 200.0, 380.0, 240.0), 1e-9), "{:?}", bounds(&s, p));
     assert!(s.execute("symbol.new", &json!({"registration": 9})).is_err());
 }
+
+/// Instance overrides: an instance's own transform, tint, opacity and blend mode are reported, and
+/// reset one by one (or all at once) in one undo step, keeping the link to the symbol.
+#[test]
+fn instance_overrides_are_reported_and_reset() {
+    let mut s = session();
+    rect(&mut s, 0.0, 0.0, 80.0, 40.0);
+    let inst = s.execute("symbol.new", &json!({"name": "Box"})).unwrap()["id"].as_u64().unwrap();
+    let natural = bounds(&s, NodeId(inst));
+    let report = |s: &mut Session| s.execute("symbol.instance.overrides", &json!({"id": inst})).unwrap()["instances"][0].clone();
+    assert_eq!(report(&mut s)["overridden"], false);
+    s.execute("object.scale", &json!({"ids": [inst], "sx": 150, "sy": 150})).unwrap();
+    s.execute("object.rotate", &json!({"ids": [inst], "angle": 30})).unwrap();
+    s.execute("transparency.set", &json!({"ids": [inst], "opacity": 40, "blend": "Multiply"})).unwrap();
+    s.execute("paint.setFill", &json!({"ids": [inst], "color": "#ff0000"})).unwrap();
+    let r = report(&mut s);
+    assert_eq!(r["transformed"], true, "{r}");
+    assert!((r["scaleX"].as_f64().unwrap() - 150.0).abs() < 0.01 && (r["rotation"].as_f64().unwrap() - 30.0).abs() < 0.01, "{r}");
+    assert_eq!((r["tint"].as_str(), r["opacity"].as_f64(), r["blendMode"].as_str()), (Some("#ff0000"), Some(40.0), Some("Multiply")));
+    // Reset the transform alone: the symbol's size and no rotation, centred where it was.
+    let centre = bounds(&s, NodeId(inst)).center();
+    let steps = s.doc().unwrap().history.undo.len();
+    s.execute("symbol.instance.reset", &json!({"ids": [inst], "what": ["transform"]})).unwrap();
+    assert_eq!(s.doc().unwrap().history.undo.len(), steps + 1);
+    let b = bounds(&s, NodeId(inst));
+    assert!((b.width() - natural.width()).abs() < 1e-6 && (b.height() - natural.height()).abs() < 1e-6, "{b:?}");
+    assert!(b.center().distance(centre) < 1e-6);
+    let r = report(&mut s);
+    assert_eq!((r["transformed"].as_bool(), r["tint"].as_str()), (Some(false), Some("#ff0000")), "the tint stays: {r}");
+    // Everything else, then undo.
+    s.execute("symbol.instance.reset", &json!({"ids": [inst]})).unwrap();
+    let r = report(&mut s);
+    assert_eq!((r["overridden"].as_bool(), r["opacity"].as_f64(), r["blendMode"].as_str()), (Some(false), Some(100.0), Some("Normal")), "{r}");
+    assert!(
+        matches!(&s.doc().unwrap().doc.node(NodeId(inst)).unwrap().kind, NodeKind::SymbolInstance { symbol, .. } if symbol == "Box"),
+        "still linked"
+    );
+    s.execute("edit.undo", &json!({})).unwrap();
+    assert_eq!(report(&mut s)["tint"], "#ff0000");
+    assert!(s.execute("symbol.instance.reset", &json!({"ids": [inst], "what": ["colour"]})).is_err());
+}

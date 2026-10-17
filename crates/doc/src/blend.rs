@@ -1014,6 +1014,33 @@ pub fn steps_knockout_shows(steps: &[Arc<Node>]) -> bool {
     !steps.iter().all(|c| paints_opaquely(c))
 }
 
+/// Give `dst` the paint of `src` (the same blend step at another colour fraction): appearance,
+/// opacity, type colours and mesh point colours, member by member, keeping `dst`'s geometry.
+fn take_paint(dst: &mut Node, src: &Node) {
+    dst.appearance = src.appearance.clone();
+    dst.opacity = src.opacity;
+    match (&mut dst.kind, &src.kind) {
+        (NodeKind::Text(d), NodeKind::Text(s)) => {
+            for (dr, sr) in d.runs.iter_mut().zip(&s.runs) {
+                dr.style.fill = sr.style.fill.clone();
+                dr.style.stroke = sr.style.stroke.clone();
+            }
+        }
+        (NodeKind::Mesh(d), NodeKind::Mesh(s)) => {
+            for (dp, sp) in d.points.iter_mut().zip(&s.points) {
+                dp.color = sp.color;
+                dp.opacity = sp.opacity;
+            }
+        }
+        _ => {}
+    }
+    if let (Some(dc), Some(sc)) = (dst.children_mut(), src.children()) {
+        for (d, s) in dc.iter_mut().zip(sc) {
+            take_paint(Arc::make_mut(d), s);
+        }
+    }
+}
+
 /// Evaluate a blend: the keys and generated steps in paint order.
 pub fn blend_expand(keys: &[Arc<Node>], spec: &BlendSpec) -> Vec<Node> {
     let k = keys.len();
@@ -1032,9 +1059,14 @@ pub fn blend_expand(keys: &[Arc<Node>], spec: &BlendSpec) -> Vec<Node> {
         let len = rail.as_ref().map_or_else(|| center_of(a).distance(center_of(b)), |r| r.len(i));
         let n = blend_step_count(a, b, spec.spacing, len);
         let lerp = Lerp::new(a, b, (spec.start(i), spec.start(i + 1)));
+        let easing = spec.easing.clamped();
         for j in 1..=n {
-            let t = j as f64 / (n + 1) as f64;
+            let t = easing.position(j as f64 / (n + 1) as f64);
             let mut s = lerp.at(t);
+            let tc = easing.color(t);
+            if (tc - t).abs() > 1e-9 {
+                take_paint(&mut s, &lerp.at(tc));
+            }
             if let Some(r) = &rail {
                 r.place(&mut s, i, t);
             }
@@ -1047,6 +1079,7 @@ pub fn blend_expand(keys: &[Arc<Node>], spec: &BlendSpec) -> Vec<Node> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::live::BlendEasing;
     use vectorcraft_geom::{Rect, shapes};
 
     #[test]
@@ -1143,6 +1176,55 @@ mod tests {
         let p = lerp_profile(Some(&WidthProfile::lens()), None, 0.5).unwrap();
         assert_eq!(p.at(0.0), (0.5, 0.5));
         assert_eq!(p.at(0.5), (1.0, 1.0));
+    }
+
+    #[test]
+    fn easing_is_linear_by_default_and_monotone_when_set() {
+        let linear = BlendEasing::default();
+        for i in 0..=10 {
+            let t = i as f64 / 10.0;
+            assert!((linear.position(t) - t).abs() < 1e-12 && (linear.color(t) - t).abs() < 1e-12);
+        }
+        let eased = BlendEasing { ease_in: 0.8, ease_out: 0.3, color_acceleration: 0.5 };
+        let mut last = 0.0;
+        for i in 1..=20 {
+            let p = eased.position(i as f64 / 20.0);
+            assert!(p >= last - 1e-12 && (0.0..=1.0).contains(&p), "monotone: {p} after {last}");
+            last = p;
+        }
+        assert!(eased.position(0.25) < 0.25, "ease in starts slowly");
+        assert!(eased.color(0.25) > 0.25, "positive acceleration changes colour sooner");
+        let wild = BlendEasing { ease_in: f64::NAN, ease_out: 7.0, color_acceleration: -9.0 }.clamped();
+        assert_eq!((wild.ease_in, wild.ease_out, wild.color_acceleration), (0.0, 1.0, -1.0));
+    }
+
+    #[test]
+    fn eased_steps_bunch_up_and_colour_runs_ahead() {
+        let square = |x: f64, c: Color| {
+            Node::path(NodeId(1), shapes::rectangle(Rect::new(x, 0.0, x + 10.0, 10.0)), Appearance::basic(Paint::solid(c), Paint::None, 0.0))
+        };
+        let a = square(0.0, Color::rgb(1.0, 0.0, 0.0));
+        let b = square(100.0, Color::rgb(0.0, 0.0, 1.0));
+        let keys = [Arc::new(a), Arc::new(b)];
+        let x = |n: &Node| n.geometric_bounds().unwrap().x0;
+        let red = |n: &Node| n.appearance.fill_paint().color().unwrap().to_rgb()[0];
+        let linear = blend_expand(&keys, &BlendSpec { spacing: BlendSpacing::Steps(3), ..Default::default() });
+        let spec = BlendSpec {
+            spacing: BlendSpacing::Steps(3),
+            easing: BlendEasing { ease_in: 1.0, ease_out: 0.0, color_acceleration: 0.0 },
+            ..Default::default()
+        };
+        let eased = blend_expand(&keys, &spec);
+        assert_eq!(eased.len(), 5);
+        assert!(x(&eased[1]) < x(&linear[1]), "eased steps start closer to the first key");
+        let accel = BlendSpec {
+            spacing: BlendSpacing::Steps(3),
+            easing: BlendEasing { color_acceleration: 1.0, ..Default::default() },
+            ..Default::default()
+        };
+        let accel = blend_expand(&keys, &accel);
+        assert!((x(&accel[1]) - x(&linear[1])).abs() < 1e-9, "acceleration leaves the positions alone");
+        assert!(red(&accel[1]) < red(&linear[1]), "and moves the colour towards blue sooner");
     }
 
     #[test]
