@@ -67,8 +67,9 @@ struct Entry {
     retry: (&'static str, Value),
 }
 
-/// The session's cloud state: settings, where they're saved, the transport and secret store
-/// (tests give their own), and the jobs.
+/// The session's cloud state: settings, where they're saved, the transport and secret store, and
+/// the jobs. Secrets are kept for the session only unless the app asks for the system keychain
+/// ([`Cloud::system`]): tests, agents and other embedders never read or write the user's keychain.
 #[derive(Default)]
 pub struct Cloud {
     pub settings: CloudSettings,
@@ -89,9 +90,9 @@ impl Cloud {
         Self { transport: Some(transport), secrets: Some(secrets), ..Self::default() }
     }
 
-    /// Over the network, with secrets kept for this session only (runs without preferences).
-    pub fn session_only() -> Self {
-        Self { secrets: Some(Arc::new(vectorcraft_cloud::secrets::MemoryStore::default())), ..Self::default() }
+    /// Over the network, with secrets in the system keychain: the desktop app with its preferences.
+    pub fn system() -> Self {
+        Self { secrets: Some(vectorcraft_cloud::secrets::default_store()), ..Self::default() }
     }
 
     fn transport(&mut self) -> Arc<dyn Transport> {
@@ -99,7 +100,7 @@ impl Cloud {
     }
 
     fn secrets(&mut self) -> Arc<dyn SecretStore> {
-        self.secrets.get_or_insert_with(vectorcraft_cloud::secrets::default_store).clone()
+        self.secrets.get_or_insert_with(|| Arc::new(vectorcraft_cloud::secrets::MemoryStore::default())).clone()
     }
 
     fn secret(&mut self, name: &str) -> Result<Option<String>> {
@@ -641,6 +642,16 @@ mod tests {
         );
         again.execute("cloud.setAiProvider", &json!({"apiKey": ""})).unwrap();
         assert_eq!(store.get(AI_KEY).unwrap(), None);
+    }
+
+    #[test]
+    fn a_plain_session_never_uses_the_system_keychain() {
+        // Tests, agents and embedders get session-only secrets; only the app opts into the keychain.
+        let mut s = Session::new();
+        let memory = MemoryStore::default().describe();
+        assert_eq!(s.execute("cloud.status", &json!({})).unwrap()["keyStore"], memory);
+        s.execute("cloud.setAiProvider", &json!({"apiKey": "sk-session"})).unwrap();
+        assert_eq!(Session::new().execute("cloud.status", &json!({})).unwrap()["ai"]["keyStored"], false, "another session doesn't see it");
     }
 
     #[test]

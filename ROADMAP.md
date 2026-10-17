@@ -128,6 +128,8 @@ Ranked; detail in [docs/roadmap.md](docs/roadmap.md) and [docs/gaps.md](docs/gap
 
 ## Progress log
 
+- 2026-10-17 (DLightroom): advanced-tools milestone. Start Global Edit; blend Ease In / Ease Out / Color Acceleration; Curvature's Re-curve Neighbours; symbol instance overrides with reset; Inspiration Boards; optional AI Variations through a user-configured provider; optional Google Drive upload from Export for Screens. Audit in `docs/advanced-tools-audit.md`. Headline numbers unchanged.
+
 - 2026-10-14: Document fonts register every explicitly supplied craft-fonts family after the existing Japanese, Arabic and Thai prefix; optional empty input remains supported. Headline scores and estimates are unchanged.
 
 - 2026-10-13: PngSuite downloads use pinned HTTPS files and a SHA-256 manifest; no archive extraction (#1729).
@@ -177,6 +179,7 @@ The full pre-standard record of what landed is kept in [docs/roadmap.md](docs/ro
 
 | Date | Change | Summary |
 |---|---|---|
+| 2026-10-17 | minor | Progress log row for the DLightroom advanced-tools milestone; headline numbers unchanged. |
 | 2026-10-14 | minor | G11: open-path anchor Delete removes adjoining segments without bridging the gap; explicit Remove Anchors keeps its reconnect/refit behavior. Scores and hours unchanged. |
 | 2026-10-14 | minor | Document fonts register every explicitly supplied craft-fonts family after the existing Japanese, Arabic and Thai prefix; optional empty input remains supported. Headline scores and estimates are unchanged. |
 | 2026-10-14 | minor | Progress log rows for the later merges of 2026-10-14 (#1630–#1875 as listed there); headline numbers unchanged. |
