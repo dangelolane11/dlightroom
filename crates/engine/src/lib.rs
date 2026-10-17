@@ -1218,6 +1218,8 @@ pub struct Session {
     pub link_scan: Option<link_watch::LinkScan>,
     /// Inspiration Boards (DLightroom): set once the app gives their folder (`boards.setFolder`).
     pub boards: Option<vectorcraft_boards::Boards>,
+    /// Cloud and AI settings, credentials and background jobs (DLightroom, [`cmd::cloud`]).
+    pub cloud: cmd::cloud::Cloud,
 }
 
 impl Default for Session {
@@ -1278,6 +1280,7 @@ impl Session {
             link_stamps: Default::default(),
             link_scan: None,
             boards: None,
+            cloud: cmd::cloud::Cloud::default(),
         }
     }
 

@@ -14,6 +14,7 @@ macro_rules! tl {
 }
 
 pub mod background;
+pub mod boards_view;
 mod brand;
 pub mod canvas;
 pub mod chrome;
@@ -1207,6 +1208,20 @@ impl VectorcraftApp {
         if dropped.is_empty() {
             return;
         }
+        // On an Inspiration Board, pictures go on the board.
+        if self.ui.boards.open {
+            let files = dropped
+                .into_iter()
+                .map(|f| {
+                    let path = Some(f.path().to_string_lossy().to_string()).filter(|s| !s.is_empty());
+                    let name = path.as_deref().map_or_else(|| "dropped".into(), vectorcraft_engine::cmd::fileio::file_name);
+                    let bytes = if path.is_some() { vec![] } else { f.bytes().unwrap_or_default() };
+                    (name, path, bytes)
+                })
+                .collect();
+            boards_view::drop_files(self, files);
+            return;
+        }
         let pos = place::drag_pos(ctx);
         let mut files = vec![];
         for f in dropped {
@@ -1371,6 +1386,10 @@ impl VectorcraftApp {
             dock::show(self, ui);
         }
         egui::CentralPanel::default().frame(egui::Frame::NONE.fill(t.pasteboard)).show(ui, |ui| {
+            if self.ui.boards.open {
+                boards_view::show(self, ui);
+                return;
+            }
             if self.ui.screen_mode < 3 {
                 chrome::doc_tabs(self, ui);
             }
@@ -1380,6 +1399,7 @@ impl VectorcraftApp {
         floating::show(self, &ctx);
         panels::library_panel::show_window(self, &ctx);
         dialogs::show(self, &ctx);
+        boards_view::jobs_window(self, &ctx);
         palette::show(self, &ctx);
         if self.custom_titlebar {
             titlebar::resize_zones(ui);

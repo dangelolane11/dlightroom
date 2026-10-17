@@ -4959,3 +4959,135 @@ imageTrace	Outline	Körvonal
 	Movie Clip	Mozgóklip
 @msg	name is empty	a név üres
 @msg	no symbol named `{n}`	nincs `{n}` nevű szimbólum
+
+# Advanced tools milestone (DLightroom): Global Edit, symbol instance overrides, Curvature's
+# Re-curve Neighbours, Inspiration Boards, AI Variations and Cloud and AI Settings.
+	AI Provider Settings	MI-szolgáltató beállításai
+	AI Variations	MI-változatok
+	AI Variations need the desktop app.	Az MI-változatokhoz az asztali alkalmazás kell.
+	API Key:	API-kulcs:
+	API key removed	API-kulcs eltávolítva
+	API key stored in	API-kulcs tárolva itt:
+	Active Artboard	Aktív rajztábla
+	Add Color	Szín hozzáadása
+	Add Color to Board	Szín hozzáadása a táblához
+	Add Image to Board	Kép hozzáadása a táblához
+	Add Images…	Képek hozzáadása…
+	Add Link	Hivatkozás hozzáadása
+	Add Link to Board	Hivatkozás hozzáadása a táblához
+	Add Note	Jegyzet hozzáadása
+	Add Note to Board	Jegyzet hozzáadása a táblához
+	Add Selection to Board	Kijelölés hozzáadása a táblához
+	Add the Document's Selection	A dokumentum kijelölésének hozzáadása
+	Add to Board	Hozzáadás a táblához
+	Address:	Cím:
+	All Artboards	Összes rajztábla
+	Also Upload to Google Drive	Feltöltés a Google Drive-ra is
+	An OpenAI-compatible images endpoint (/images/variations) and your API key. DLightroom includes no AI service: images are sent only when you click Generate Variations on a board.	Egy OpenAI-kompatibilis képvégpont (/images/variations) és az Ön API-kulcsa. A DLightroom nem tartalmaz MI-szolgáltatást: képeket csak akkor küld, ha egy táblán a Változatok készítése gombra kattint.
+	Apply Global Edit	Globális szerkesztés alkalmazása
+	Arrange Board Items	Táblaelemek elrendezése
+	Back to Document	Vissza a dokumentumhoz
+	Background Jobs	Háttérfeladatok
+	Background Tasks	Háttérfeladatok
+	Board	Tábla
+	Board View	Tábla nézete
+	Cancel Job	Feladat megszakítása
+	Caption:	Képaláírás:
+	Change on every match	Módosítás minden találatnál
+	Choose or create a board first	Előbb válasszon vagy hozzon létre egy táblát
+	Click an item to change it. Shift-click picks several; drag the corner handle to resize.	Kattintson egy elemre a módosításához. Shift+kattintással többet választ; a sarokfogantyú húzásával átméretez.
+	Client ID:	Ügyfél-azonosító:
+	Client Secret:	Ügyféltitok:
+	Cloud Settings File	Felhőbeállítások fájlja
+	Cloud and AI Settings	Felhő- és MI-beállítások
+	Cloud and AI Settings…	Felhő- és MI-beállítások…
+	Cloud and AI Status	Felhő és MI állapota
+	Cloud and AI features need the desktop app.	A felhő- és MI-funkciókhoz az asztali alkalmazás kell.
+	Cloud and AI settings saved	Felhő- és MI-beállítások mentve
+	Connect Google Drive	Google Drive csatlakoztatása
+	Connected	Csatlakoztatva
+	Connect…	Csatlakozás…
+	Count:	Darabszám:
+	Delete Board	Tábla törlése
+	Delete Board…	Tábla törlése…
+	Delete this board and its images? This can't be undone.	Törli ezt a táblát és a képeit? Ez nem vonható vissza.
+	Disconnect	Leválasztás
+	Disconnect Google Drive	Google Drive leválasztása
+	Disconnected	Nincs csatlakoztatva
+	Dismiss	Elvetés
+	Dismiss Job	Feladat elvetése
+	Drive Folder:	Drive-mappa:
+	Drop images here, or add notes, colours and links on the right.	Húzzon ide képeket, vagy adjon hozzá jegyzeteket, színeket és hivatkozásokat jobb oldalt.
+	Duplicate Board	Tábla kettőzése
+	Duplicate Board Items	Táblaelemek kettőzése
+	Edit Board Item	Táblaelem szerkesztése
+	Endpoint:	Végpont:
+	Enter your OAuth client ID first	Előbb adja meg az OAuth ügyfél-azonosítóját
+	Export for Screens can upload what it exports to a Drive folder. Use your own OAuth client (Google Cloud console › Credentials › OAuth client ID › Desktop app); DLightroom can only see the files it creates.	Az Exportálás képernyőkre feltöltheti az exportált fájlokat egy Drive-mappába. Használja saját OAuth-ügyfelét (Google Cloud konzol › Hitelesítési adatok › OAuth-ügyfélazonosító › Asztali alkalmazás); a DLightroom csak az általa létrehozott fájlokat látja.
+	Find Matches	Találatok keresése
+	Find the matches to preview them	Keresse meg a találatokat az előnézethez
+	Fit Board in Window	Tábla igazítása az ablakhoz
+	From:	Forrás:
+	Generate Variations	Változatok készítése
+	Generate sends this image to	A Készítés ide küldi ezt a képet:
+	Global Edit	Globális szerkesztés
+	Google Drive	Google Drive
+	Google Drive Settings	Google Drive beállításai
+	Google Drive disconnected	Google Drive leválasztva
+	Google Drive: Disconnected	Google Drive: nincs csatlakoztatva
+	Include Hidden Objects	Rejtett objektumokkal együtt
+	Include Locked Objects	Zárolt objektumokkal együtt
+	Inspiration Boards	Inspirációs táblák
+	Inspiration Boards Folder	Inspirációs táblák mappája
+	Inspiration Boards keep their files in the app's settings folder, which this build doesn't have.	Az inspirációs táblák az alkalmazás beállításmappájában tárolják fájljaikat, amely ebben a változatban nincs.
+	Instance Overrides	Példány felülírásai
+	Instance:	Példány:
+	Instance: as the symbol	Példány: mint a szimbólum
+	Match objects with the same	Azonos tulajdonságú objektumok keresése:
+	Missing image	Hiányzó kép
+	Model:	Modell:
+	Move Board Items	Táblaelemek mozgatása
+	New Board	Új tábla
+	No API key stored	Nincs tárolt API-kulcs
+	No boards yet. Create one to collect images, notes, colours and links.	Még nincsenek táblák. Hozzon létre egyet képek, jegyzetek, színek és hivatkozások gyűjtéséhez.
+	Not set up: AI Variations use an image service you choose, with your own API key. Boards work fully without one.	Nincs beállítva: az MI-változatok az Ön által választott képszolgáltatást használják, saját API-kulccsal. A táblák nélküle is teljesen működnek.
+	Note	Jegyzet
+	Note text	Jegyzet szövege
+	Open in Browser	Megnyitás böngészőben
+	Re-curve Neighbours	Szomszédok újragörbítése
+	Redo Board Change	Táblamódosítás ismétlése
+	Reference:	Hivatkozás:
+	Remove Board Items	Táblaelemek eltávolítása
+	Remove Key	Kulcs eltávolítása
+	Remove the Chosen Items	A kiválasztott elemek eltávolítása
+	Rename Board	Tábla átnevezése
+	Rename…	Átnevezés…
+	Reset Instance Overrides	Példány felülírásainak visszaállítása
+	Retry	Újra
+	Retry Job	Feladat újrafuttatása
+	Search:	Keresés:
+	Send the Board to the Document	A tábla küldése a dokumentumba
+	Send the Chosen Items to the Document	A kiválasztott elemek küldése a dokumentumba
+	Send to Document	Küldés a dokumentumba
+	Set Up…	Beállítás…
+	Title:	Cím:
+	Undo Board Change	Táblamódosítás visszavonása
+	Untitled Board	Névtelen tábla
+	Upload to Google Drive	Feltöltés a Google Drive-ra
+	stored; type to replace	tárolva; írjon be újat a cseréhez
+	tint {color}	színezés {color}
+	{count} matching objects ({hidden} hidden, {locked} locked)	{count} egyező objektum ({hidden} rejtett, {locked} zárolt)
+	‹ Back to Document	‹ Vissza a dokumentumhoz
+@msg	AI variations need a provider: {e} (Cloud and AI Settings)	Az MI-változatokhoz szolgáltató kell: {e} (Felhő- és MI-beállítások)
+@msg	Added {added} image(s) to the board	{added} kép hozzáadva a táblához
+@msg	Asking {_1} for variations…	Változatok kérése innen: {_1}…
+@msg	Exported {_1} file(s), but the upload didn't start: {e}	{_1} fájl exportálva, de a feltöltés nem indult el: {e}
+@msg	Exported {_1} file(s); uploading them to Google Drive…	{_1} fájl exportálva; feltöltés a Google Drive-ra…
+@msg	Find the matches and choose what to change first	Előbb keresse meg a találatokat, és válassza ki, mit módosít
+@msg	Google Drive isn't connected: connect it in Cloud and AI Settings first	A Google Drive nincs csatlakoztatva: előbb csatlakoztassa a Felhő- és MI-beállításokban
+@msg	Google didn't grant lasting access; remove DLightroom from your Google Account's third-party access and connect again	A Google nem adott tartós hozzáférést; távolítsa el a DLightroomot Google-fiókja harmadik féltől származó hozzáférései közül, és csatlakozzon újra
+@msg	Inspiration Boards aren't set up here	Az inspirációs táblák itt nincsenek beállítva
+@msg	No document open	Nincs megnyitott dokumentum
+@msg	Open this address to sign in: {url}	A bejelentkezéshez nyissa meg ezt a címet: {url}
+@msg	Select the object whose matches you want to edit	Jelölje ki az objektumot, amelynek találatait szerkeszteni szeretné
+@msg	Sent {n} item(s) to the document	{n} elem elküldve a dokumentumba

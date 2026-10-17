@@ -661,6 +661,18 @@ impl Store {
     }
 }
 
+/// An image for [`Boards::add_images`]: its bytes, where it goes, its size on the board (0: from
+/// its pixels) and its caption.
+#[derive(Clone, Debug, Default, PartialEq)]
+pub struct NewImage {
+    pub bytes: Vec<u8>,
+    pub x: f64,
+    pub y: f64,
+    pub w: f64,
+    pub h: f64,
+    pub caption: String,
+}
+
 /// An open board with its undo history.
 #[derive(Clone, Debug)]
 struct Open {
@@ -802,6 +814,27 @@ impl Boards {
         self.edit(id, Edit::Add(Item { id: 0, x, y, w: 0.0, h: 0.0, content }))?.ok_or_else(|| "the image wasn't added".into())
     }
 
+    /// Put several embedded images on board `id` as one undo step, all from `origin`: the new
+    /// items' ids.
+    pub fn add_images(&mut self, id: &str, images: &[NewImage], origin: &str) -> Result<Vec<u64>> {
+        let mut adds = vec![];
+        for img in images {
+            let (asset, w, h) = self.store.import_image(id, &img.bytes)?;
+            let content = Content::Image {
+                asset: Some(asset),
+                link: None,
+                pixel_width: w,
+                pixel_height: h,
+                origin: origin.into(),
+                caption: img.caption.clone(),
+            };
+            adds.push(Edit::Add(Item { id: 0, x: img.x, y: img.y, w: img.w, h: img.h, content }));
+        }
+        let before: Vec<u64> = self.board(id)?.items.iter().map(|i| i.id).collect();
+        self.edit(id, Edit::Batch(adds))?;
+        Ok(self.board(id)?.items.iter().map(|i| i.id).filter(|i| !before.contains(i)).collect())
+    }
+
     /// Put a link to the image file `path` on board `id` at (x, y): the new item's id. The file is
     /// read to check it is an image and to learn its size; the board keeps only its path.
     pub fn add_linked_image(&mut self, id: &str, path: &Path, x: f64, y: f64) -> Result<u64> {
@@ -870,6 +903,26 @@ mod tests {
         let list = boards.list().unwrap();
         assert_eq!(list.len(), 1);
         assert_eq!((list[0].name.as_str(), list[0].items), ("Spring campaign", 2));
+    }
+
+    #[test]
+    fn several_images_are_one_undo_step() {
+        let mut boards = Boards::new(Store::new(scratch()));
+        let id = boards.create("AI").unwrap().id;
+        let imgs = vec![
+            NewImage { bytes: png(4, 4, [255, 0, 0]), caption: "Variation 1".into(), ..Default::default() },
+            NewImage { bytes: png(4, 4, [0, 0, 255]), x: 300.0, w: 50.0, h: 50.0, caption: "Variation 2".into(), ..Default::default() },
+        ];
+        let ids = boards.add_images(&id, &imgs, "ai:api.example.com (m)").unwrap();
+        assert_eq!(ids.len(), 2);
+        let b = boards.board(&id).unwrap().clone();
+        assert!(
+            matches!(&b.items[1].content, Content::Image { origin, caption, .. } if origin == "ai:api.example.com (m)" && caption == "Variation 2")
+        );
+        assert_eq!((b.items[1].x, b.items[1].w), (300.0, 50.0));
+        assert!(boards.undo(&id).unwrap());
+        assert!(boards.board(&id).unwrap().items.is_empty());
+        assert!(boards.add_images(&id, &[NewImage { bytes: b"nope".to_vec(), ..Default::default() }], "x").is_err());
     }
 
     #[test]

@@ -383,6 +383,13 @@ pub const UI_COMMANDS: &[(&str, &str, &str, &str)] = &[
     ("window.workspace.rename", "Rename Workspace", "", "{name, to}"),
     ("window.workspace.list", "List Workspaces", "", "{}"),
     ("window.newWindow", "New Window", "", "{}"),
+    ("window.inspirationBoards", "Inspiration Boards", "", "{} show or hide the Inspiration Boards workspace (in place of the canvas) → {open}"),
+    (
+        "edit.cloudSettings",
+        "Cloud and AI Settings…",
+        "",
+        "{} open Cloud and AI Settings: the AI Variations provider and Google Drive (engine: cloud.status / cloud.setAiProvider / cloud.setGoogleClient)",
+    ),
     ("tool.select", "Select Tool", "", "{tool: id} (see tools)"),
     (
         "tool.setOption",
@@ -1001,6 +1008,9 @@ pub fn check_params(session: &vectorcraft_engine::Session, id: &str, params: &Va
 }
 
 pub fn run_ui_command(app: &mut VectorcraftApp, id: &str, p: &Value) -> Option<Result<Value, String>> {
+    if let Some(r) = crate::boards_view::edit_step(app, id) {
+        return Some(r);
+    }
     // The Window menu's panel items toggle like its other checked items (#2361); the panel's
     // other ways in (shortcuts, Show Properties Panel, a tool's double-click) only show it.
     if id == "window.panel" && p.get("toggle").and_then(Value::as_bool) == Some(true) && checked(app, id, p) == Some(true) {
@@ -1405,6 +1415,11 @@ pub fn run_ui_command(app: &mut VectorcraftApp, id: &str, p: &Value) -> Option<R
             None => Err("brightness must be dark|mediumDark|mediumLight|light".into()),
         },
         "window.newWindow" => Err("multiple windows land with M11.5".into()),
+        "window.inspirationBoards" => crate::boards_view::toggle(app),
+        "edit.cloudSettings" => {
+            crate::dialogs::cloud_settings::open(app);
+            Ok(Value::Null)
+        }
         "tool.select" => match s("tool") {
             Some(t) if vectorcraft_tools::tool_info(&t).is_some() => {
                 app.select_tool(&t);
@@ -1706,6 +1721,7 @@ pub fn checked(app: &VectorcraftApp, id: &str, p: &Value) -> Option<bool> {
         // a document no item is checked.
         "view.rotate" => app.view().zip(p.get("angle").and_then(Value::as_f64)).is_some_and(|(view, a)| (view.rotation - a).abs() < 1e-9),
         "window.control" => app.ui.control_bar,
+        "window.inspirationBoards" => app.ui.boards.open,
         "window.toolbar" => app.ui.toolbar,
         "window.toolbarAdvanced" => app.ui.toolbar_advanced,
         "window.toolbarColumns" => app.ui.toolbar_double,
@@ -2375,6 +2391,7 @@ pub fn menu_tree_named(english_names: bool) -> Vec<(&'static str, Vec<Item>)> {
                 Sep,
                 c("Keyboard Shortcuts…", "edit.keyboardShortcuts"),
                 c("Preferences…", "edit.preferences"),
+                c("Cloud and AI Settings…", "edit.cloudSettings"),
             ],
         ),
         (
@@ -2828,6 +2845,7 @@ pub fn menu_tree_named(english_names: bool) -> Vec<(&'static str, Vec<Item>)> {
             "Window",
             vec![
                 c("New Window", "window.newWindow"),
+                c("Inspiration Boards", "window.inspirationBoards"),
                 sub("Arrange", vec![todo("Cascade"), todo("Tile"), todo("Float in Window"), todo("Consolidate All Windows")]),
                 sub("Workspace", crate::workspaces::menu_items()),
                 Sep,

@@ -3887,3 +3887,134 @@ lighting	Light	光源
 	Movie Clip	影片片段
 @msg	name is empty	名稱為空
 @msg	no symbol named `{n}`	沒有名為 `{n}` 的符號
+
+# Advanced tools milestone (DLightroom).
+	AI Provider Settings	AI 服務供應商設定
+	AI Variations	AI 變化版本
+	AI Variations need the desktop app.	AI 變化版本需要桌面版應用程式。
+	API Key:	API 金鑰：
+	API key removed	已移除 API 金鑰
+	API key stored in	API 金鑰儲存在：
+	Active Artboard	作用中的工作區域
+	Add Color	加入顏色
+	Add Color to Board	在看板加入顏色
+	Add Image to Board	在看板加入影像
+	Add Images…	加入影像…
+	Add Link	加入連結
+	Add Link to Board	在看板加入連結
+	Add Note	加入便條
+	Add Note to Board	在看板加入便條
+	Add Selection to Board	在看板加入所選內容
+	Add the Document's Selection	加入文件的所選內容
+	Add to Board	加入看板
+	Address:	位址：
+	All Artboards	所有工作區域
+	Also Upload to Google Drive	同時上傳到 Google 雲端硬碟
+	An OpenAI-compatible images endpoint (/images/variations) and your API key. DLightroom includes no AI service: images are sent only when you click Generate Variations on a board.	一個相容於 OpenAI 的影像端點（/images/variations）和你的 API 金鑰。DLightroom 不含任何 AI 服務：只有在看板上按下「產生變化版本」時才會傳送影像。
+	Apply Global Edit	套用全域編輯
+	Arrange Board Items	排列看板項目
+	Back to Document	返回文件
+	Background Jobs	背景工作
+	Background Tasks	背景作業
+	Board	看板
+	Board View	看板檢視
+	Cancel Job	取消工作
+	Caption:	說明文字：
+	Change on every match	在每個相符項目上變更
+	Choose or create a board first	請先選擇或建立看板
+	Click an item to change it. Shift-click picks several; drag the corner handle to resize.	按一下項目即可變更。按住 Shift 按一下可選擇多個；拖移角落的控點可調整大小。
+	Client ID:	用戶端 ID：
+	Client Secret:	用戶端密鑰：
+	Cloud Settings File	雲端設定檔
+	Cloud and AI Settings	雲端與 AI 設定
+	Cloud and AI Settings…	雲端與 AI 設定…
+	Cloud and AI Status	雲端與 AI 狀態
+	Cloud and AI features need the desktop app.	雲端與 AI 功能需要桌面版應用程式。
+	Cloud and AI settings saved	已儲存雲端與 AI 設定
+	Connect Google Drive	連接 Google 雲端硬碟
+	Connected	已連接
+	Connect…	連接…
+	Count:	數量：
+	Delete Board	刪除看板
+	Delete Board…	刪除看板…
+	Delete this board and its images? This can't be undone.	要刪除此看板及其影像嗎？此動作無法還原。
+	Disconnect	中斷連接
+	Disconnect Google Drive	中斷 Google 雲端硬碟
+	Disconnected	未連接
+	Dismiss	關閉
+	Dismiss Job	關閉工作
+	Drive Folder:	雲端硬碟資料夾：
+	Drop images here, or add notes, colours and links on the right.	將影像拖放到這裡，或在右側加入便條、顏色和連結。
+	Duplicate Board	製作看板複本
+	Duplicate Board Items	製作看板項目複本
+	Edit Board Item	編輯看板項目
+	Endpoint:	端點：
+	Enter your OAuth client ID first	請先輸入你的 OAuth 用戶端 ID
+	Export for Screens can upload what it exports to a Drive folder. Use your own OAuth client (Google Cloud console › Credentials › OAuth client ID › Desktop app); DLightroom can only see the files it creates.	「轉存為螢幕適用格式」可以把轉存的檔案上傳到雲端硬碟資料夾。請使用你自己的 OAuth 用戶端（Google Cloud 控制台 › 憑證 › OAuth 用戶端 ID › 電腦版應用程式）；DLightroom 只能看到它自己建立的檔案。
+	Find Matches	尋找相符項目
+	Find the matches to preview them	尋找相符項目以預覽
+	Fit Board in Window	讓看板符合視窗
+	From:	來源：
+	Generate Variations	產生變化版本
+	Generate sends this image to	「產生」會把此影像傳送到
+	Global Edit	全域編輯
+	Google Drive	Google 雲端硬碟
+	Google Drive Settings	Google 雲端硬碟設定
+	Google Drive disconnected	已中斷 Google 雲端硬碟
+	Google Drive: Disconnected	Google 雲端硬碟：未連接
+	Include Hidden Objects	包含隱藏的物件
+	Include Locked Objects	包含鎖定的物件
+	Inspiration Boards	靈感看板
+	Inspiration Boards Folder	靈感看板資料夾
+	Inspiration Boards keep their files in the app's settings folder, which this build doesn't have.	靈感看板將檔案存放在應用程式的設定資料夾中，而此版本沒有該資料夾。
+	Instance Overrides	實體覆寫
+	Instance:	實體：
+	Instance: as the symbol	實體：與符號相同
+	Match objects with the same	尋找具有相同屬性的物件：
+	Missing image	影像遺失
+	Model:	模型：
+	Move Board Items	移動看板項目
+	New Board	新增看板
+	No API key stored	未儲存 API 金鑰
+	No boards yet. Create one to collect images, notes, colours and links.	還沒有看板。建立一個看板來收集影像、便條、顏色和連結。
+	Not set up: AI Variations use an image service you choose, with your own API key. Boards work fully without one.	尚未設定：AI 變化版本使用你選擇的影像服務和你自己的 API 金鑰。沒有它，看板也能完整使用。
+	Note	便條
+	Note text	便條文字
+	Open in Browser	在瀏覽器中開啟
+	Re-curve Neighbours	重新彎曲相鄰點
+	Redo Board Change	重做看板變更
+	Reference:	參考：
+	Remove Board Items	移除看板項目
+	Remove Key	移除金鑰
+	Remove the Chosen Items	移除所選項目
+	Rename Board	重新命名看板
+	Rename…	重新命名…
+	Reset Instance Overrides	重設實體覆寫
+	Retry	重試
+	Retry Job	重試工作
+	Search:	搜尋：
+	Send the Board to the Document	將看板傳送到文件
+	Send the Chosen Items to the Document	將所選項目傳送到文件
+	Send to Document	傳送到文件
+	Set Up…	設定…
+	Title:	標題：
+	Undo Board Change	還原看板變更
+	Untitled Board	未命名看板
+	Upload to Google Drive	上傳到 Google 雲端硬碟
+	stored; type to replace	已儲存；輸入以取代
+	tint {color}	著色 {color}
+	{count} matching objects ({hidden} hidden, {locked} locked)	{count} 個相符物件（{hidden} 個隱藏，{locked} 個鎖定）
+	‹ Back to Document	‹ 返回文件
+@msg	AI variations need a provider: {e} (Cloud and AI Settings)	AI 變化版本需要服務供應商：{e}（雲端與 AI 設定）
+@msg	Added {added} image(s) to the board	已在看板加入 {added} 個影像
+@msg	Asking {_1} for variations…	正在向 {_1} 要求變化版本…
+@msg	Exported {_1} file(s), but the upload didn't start: {e}	已轉存 {_1} 個檔案，但上傳未開始：{e}
+@msg	Exported {_1} file(s); uploading them to Google Drive…	已轉存 {_1} 個檔案；正在上傳到 Google 雲端硬碟…
+@msg	Find the matches and choose what to change first	請先尋找相符項目並選擇要變更的內容
+@msg	Google Drive isn't connected: connect it in Cloud and AI Settings first	Google 雲端硬碟未連接：請先在「雲端與 AI 設定」中連接
+@msg	Google didn't grant lasting access; remove DLightroom from your Google Account's third-party access and connect again	Google 未授予持續存取權；請從你 Google 帳戶的第三方存取權中移除 DLightroom，然後重新連接
+@msg	Inspiration Boards aren't set up here	此處未設定靈感看板
+@msg	No document open	沒有開啟的文件
+@msg	Open this address to sign in: {url}	開啟此位址以登入：{url}
+@msg	Select the object whose matches you want to edit	請選取要編輯其相符項目的物件
+@msg	Sent {n} item(s) to the document	已將 {n} 個項目傳送到文件

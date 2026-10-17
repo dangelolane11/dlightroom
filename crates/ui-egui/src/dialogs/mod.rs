@@ -12,6 +12,7 @@ pub mod artboard_options;
 pub mod blend_options;
 mod brush_art_options;
 pub mod brush_options;
+pub mod cloud_settings;
 pub mod color_balance;
 pub mod color_guide_options;
 mod color_picker;
@@ -315,6 +316,7 @@ registry! {
     BrushOptions: [brush_options::KIND] => brush_options::SPEC,
     EditSelection: [edit_selection::KIND] => edit_selection::SPEC,
     GlobalEdit: [global_edit::KIND] => global_edit::SPEC,
+    CloudSettings: [cloud_settings::KIND] => cloud_settings::SPEC,
     PerspectivePlane: [perspective_plane::KIND] => perspective_plane::SPEC,
     LayerOptions: [layer_options::KIND] => layer_options::SPEC,
     LayersPanelOptions: [layers_panel_options::KIND] => layers_panel_options::SPEC,

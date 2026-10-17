@@ -4909,3 +4909,135 @@ mark-style	Japanese	Japonesas
 # Symbol Options › Export Type
 @msg	name is empty	o nome está vazio
 @msg	no symbol named `{n}`	nenhum símbolo chamado `{n}`
+
+# Advanced tools milestone (DLightroom): Global Edit, symbol instance overrides, Curvature's
+# Re-curve Neighbours, Inspiration Boards, AI Variations and Cloud and AI Settings.
+	AI Provider Settings	Configurações do provedor de IA
+	AI Variations	Variações com IA
+	AI Variations need the desktop app.	As variações com IA precisam do aplicativo para desktop.
+	API Key:	Chave de API:
+	API key removed	Chave de API removida
+	API key stored in	Chave de API salva em
+	Active Artboard	Prancheta ativa
+	Add Color	Adicionar cor
+	Add Color to Board	Adicionar cor ao quadro
+	Add Image to Board	Adicionar imagem ao quadro
+	Add Images…	Adicionar imagens…
+	Add Link	Adicionar link
+	Add Link to Board	Adicionar link ao quadro
+	Add Note	Adicionar nota
+	Add Note to Board	Adicionar nota ao quadro
+	Add Selection to Board	Adicionar seleção ao quadro
+	Add the Document's Selection	Adicionar a seleção do documento
+	Add to Board	Adicionar ao quadro
+	Address:	Endereço:
+	All Artboards	Todas as pranchetas
+	Also Upload to Google Drive	Enviar também para o Google Drive
+	An OpenAI-compatible images endpoint (/images/variations) and your API key. DLightroom includes no AI service: images are sent only when you click Generate Variations on a board.	Um endpoint de imagens compatível com a OpenAI (/images/variations) e sua chave de API. O DLightroom não inclui nenhum serviço de IA: as imagens só são enviadas quando você clica em Gerar variações em um quadro.
+	Apply Global Edit	Aplicar edição global
+	Arrange Board Items	Organizar itens do quadro
+	Back to Document	Voltar ao documento
+	Background Jobs	Trabalhos em segundo plano
+	Background Tasks	Tarefas em segundo plano
+	Board	Quadro
+	Board View	Exibição do quadro
+	Cancel Job	Cancelar trabalho
+	Caption:	Legenda:
+	Change on every match	Alterar em cada correspondência
+	Choose or create a board first	Escolha ou crie um quadro primeiro
+	Click an item to change it. Shift-click picks several; drag the corner handle to resize.	Clique em um item para alterá-lo. Shift+clique escolhe vários; arraste a alça do canto para redimensionar.
+	Client ID:	ID do cliente:
+	Client Secret:	Segredo do cliente:
+	Cloud Settings File	Arquivo de configurações da nuvem
+	Cloud and AI Settings	Configurações de nuvem e IA
+	Cloud and AI Settings…	Configurações de nuvem e IA…
+	Cloud and AI Status	Status de nuvem e IA
+	Cloud and AI features need the desktop app.	Os recursos de nuvem e IA precisam do aplicativo para desktop.
+	Cloud and AI settings saved	Configurações de nuvem e IA salvas
+	Connect Google Drive	Conectar o Google Drive
+	Connected	Conectado
+	Connect…	Conectar…
+	Count:	Quantidade:
+	Delete Board	Excluir quadro
+	Delete Board…	Excluir quadro…
+	Delete this board and its images? This can't be undone.	Excluir este quadro e suas imagens? Isso não pode ser desfeito.
+	Disconnect	Desconectar
+	Disconnect Google Drive	Desconectar o Google Drive
+	Disconnected	Desconectado
+	Dismiss	Dispensar
+	Dismiss Job	Dispensar trabalho
+	Drive Folder:	Pasta do Drive:
+	Drop images here, or add notes, colours and links on the right.	Solte imagens aqui ou adicione notas, cores e links à direita.
+	Duplicate Board	Duplicar quadro
+	Duplicate Board Items	Duplicar itens do quadro
+	Edit Board Item	Editar item do quadro
+	Endpoint:	Endpoint:
+	Enter your OAuth client ID first	Digite primeiro o ID do cliente OAuth
+	Export for Screens can upload what it exports to a Drive folder. Use your own OAuth client (Google Cloud console › Credentials › OAuth client ID › Desktop app); DLightroom can only see the files it creates.	Exportar para telas pode enviar o que exporta para uma pasta do Drive. Use seu próprio cliente OAuth (console do Google Cloud › Credenciais › ID do cliente OAuth › App para computador); o DLightroom só vê os arquivos que cria.
+	Find Matches	Encontrar correspondências
+	Find the matches to preview them	Encontre as correspondências para visualizá-las
+	Fit Board in Window	Ajustar quadro à janela
+	From:	Origem:
+	Generate Variations	Gerar variações
+	Generate sends this image to	Gerar envia esta imagem para
+	Global Edit	Edição global
+	Google Drive	Google Drive
+	Google Drive Settings	Configurações do Google Drive
+	Google Drive disconnected	Google Drive desconectado
+	Google Drive: Disconnected	Google Drive: desconectado
+	Include Hidden Objects	Incluir objetos ocultos
+	Include Locked Objects	Incluir objetos bloqueados
+	Inspiration Boards	Quadros de inspiração
+	Inspiration Boards Folder	Pasta dos quadros de inspiração
+	Inspiration Boards keep their files in the app's settings folder, which this build doesn't have.	Os quadros de inspiração guardam seus arquivos na pasta de configurações do aplicativo, que esta versão não tem.
+	Instance Overrides	Substituições da instância
+	Instance:	Instância:
+	Instance: as the symbol	Instância: igual ao símbolo
+	Match objects with the same	Encontrar objetos com o mesmo
+	Missing image	Imagem ausente
+	Model:	Modelo:
+	Move Board Items	Mover itens do quadro
+	New Board	Novo quadro
+	No API key stored	Nenhuma chave de API salva
+	No boards yet. Create one to collect images, notes, colours and links.	Ainda não há quadros. Crie um para reunir imagens, notas, cores e links.
+	Not set up: AI Variations use an image service you choose, with your own API key. Boards work fully without one.	Não configurado: as variações com IA usam um serviço de imagens escolhido por você, com sua própria chave de API. Os quadros funcionam totalmente sem ele.
+	Note	Nota
+	Note text	Texto da nota
+	Open in Browser	Abrir no navegador
+	Re-curve Neighbours	Recurvar vizinhos
+	Redo Board Change	Refazer alteração do quadro
+	Reference:	Referência:
+	Remove Board Items	Remover itens do quadro
+	Remove Key	Remover chave
+	Remove the Chosen Items	Remover os itens escolhidos
+	Rename Board	Renomear quadro
+	Rename…	Renomear…
+	Reset Instance Overrides	Redefinir substituições da instância
+	Retry	Tentar novamente
+	Retry Job	Tentar trabalho novamente
+	Search:	Pesquisar em:
+	Send the Board to the Document	Enviar o quadro para o documento
+	Send the Chosen Items to the Document	Enviar os itens escolhidos para o documento
+	Send to Document	Enviar para o documento
+	Set Up…	Configurar…
+	Title:	Título:
+	Undo Board Change	Desfazer alteração do quadro
+	Untitled Board	Quadro sem título
+	Upload to Google Drive	Enviar para o Google Drive
+	stored; type to replace	salva; digite para substituir
+	tint {color}	tingimento {color}
+	{count} matching objects ({hidden} hidden, {locked} locked)	{count} objetos correspondentes ({hidden} ocultos, {locked} bloqueados)
+	‹ Back to Document	‹ Voltar ao documento
+@msg	AI variations need a provider: {e} (Cloud and AI Settings)	As variações com IA precisam de um provedor: {e} (Configurações de nuvem e IA)
+@msg	Added {added} image(s) to the board	{added} imagem(ns) adicionada(s) ao quadro
+@msg	Asking {_1} for variations…	Pedindo variações a {_1}…
+@msg	Exported {_1} file(s), but the upload didn't start: {e}	{_1} arquivo(s) exportado(s), mas o envio não começou: {e}
+@msg	Exported {_1} file(s); uploading them to Google Drive…	{_1} arquivo(s) exportado(s); enviando para o Google Drive…
+@msg	Find the matches and choose what to change first	Encontre primeiro as correspondências e escolha o que alterar
+@msg	Google Drive isn't connected: connect it in Cloud and AI Settings first	O Google Drive não está conectado: conecte-o primeiro em Configurações de nuvem e IA
+@msg	Google didn't grant lasting access; remove DLightroom from your Google Account's third-party access and connect again	O Google não concedeu acesso duradouro; remova o DLightroom do acesso de terceiros da sua Conta do Google e conecte novamente
+@msg	Inspiration Boards aren't set up here	Os quadros de inspiração não estão configurados aqui
+@msg	No document open	Nenhum documento aberto
+@msg	Open this address to sign in: {url}	Abra este endereço para entrar: {url}
+@msg	Select the object whose matches you want to edit	Selecione o objeto cujas correspondências você quer editar
+@msg	Sent {n} item(s) to the document	{n} item(ns) enviado(s) para o documento

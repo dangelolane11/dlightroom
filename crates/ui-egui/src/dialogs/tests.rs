@@ -653,9 +653,9 @@ fn a_dialog_opened_by_a_click_focuses_its_first_field_each_time_it_opens() {
 }
 
 /// A greyed-out field can't hold the keyboard focus, so it doesn't take a just-opened dialog's
-/// either: the focus waits for the first enabled field. Blend Options on Smooth Color shows its
-/// steps greyed out; choosing Specified Steps enables the field and it takes the focus (type a
-/// count, press Enter).
+/// either: the focus goes to the first enabled field. Blend Options on Smooth Color shows its
+/// steps greyed out, so the focus skips them for Ease In (type a value, press Enter); on Specified
+/// Steps the steps field is enabled and takes it.
 #[test]
 fn a_dialogs_focus_skips_a_greyed_out_first_field() {
     let mut app = app();
@@ -672,10 +672,22 @@ fn a_dialogs_focus_skips_a_greyed_out_first_field() {
     for _ in 0..3 {
         frame(&mut app, vec![]);
     }
-    assert!(ctx.memory(|m| m.focused()).is_none(), "nothing to type in yet");
-    app.ui.dialog.as_mut().unwrap().fields.insert("spacing".into(), json!("steps"));
+    let focused = ctx.memory(|m| m.focused());
+    assert!(focused.is_some(), "the first enabled field, Ease In, has the focus");
+    frame(&mut app, vec![egui::Event::Text("7".into())]);
+    frame(&mut app, vec![enter.clone()]);
+    assert!(app.ui.dialog.is_none());
+    let info = app.run("object.blend.info", json!({})).unwrap();
+    assert_eq!((info["spacing"].clone(), info["easeIn"].clone()), (json!("smooth"), json!(7.0)), "{info}");
+    // On Specified Steps the steps field is enabled: it is the first, and takes the focus. (A frame
+    // without the dialog first, as between two uses of it.)
     frame(&mut app, vec![]);
-    assert!(ctx.memory(|m| m.focused()).is_some(), "the steps field takes the focus once it is enabled");
+    app.run("ui.blendOptions", json!({})).unwrap();
+    app.ui.dialog.as_mut().unwrap().fields.insert("spacing".into(), json!("steps"));
+    for _ in 0..3 {
+        frame(&mut app, vec![]);
+    }
+    assert!(ctx.memory(|m| m.focused()).is_some_and(|f| Some(f) != focused), "the steps field takes the focus");
     frame(&mut app, vec![egui::Event::Text("7".into())]);
     frame(&mut app, vec![enter]);
     assert!(app.ui.dialog.is_none());

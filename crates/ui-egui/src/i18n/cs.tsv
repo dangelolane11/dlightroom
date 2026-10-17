@@ -4992,3 +4992,135 @@ mark-style	Japanese	Japonské
 	Movie Clip	Filmový klip
 @msg	name is empty	název je prázdný
 @msg	no symbol named `{n}`	žádný symbol s názvem `{n}`
+
+# Advanced tools milestone (DLightroom): Global Edit, symbol instance overrides, Curvature's
+# Re-curve Neighbours, Inspiration Boards, AI Variations and Cloud and AI Settings.
+	AI Provider Settings	Nastavení poskytovatele AI
+	AI Variations	Varianty AI
+	AI Variations need the desktop app.	Varianty AI vyžadují desktopovou aplikaci.
+	API Key:	Klíč API:
+	API key removed	Klíč API odstraněn
+	API key stored in	Klíč API uložen v:
+	Active Artboard	Aktivní pracovní plocha
+	Add Color	Přidat barvu
+	Add Color to Board	Přidat barvu na nástěnku
+	Add Image to Board	Přidat obraz na nástěnku
+	Add Images…	Přidat obrazy…
+	Add Link	Přidat odkaz
+	Add Link to Board	Přidat odkaz na nástěnku
+	Add Note	Přidat poznámku
+	Add Note to Board	Přidat poznámku na nástěnku
+	Add Selection to Board	Přidat výběr na nástěnku
+	Add the Document's Selection	Přidat výběr z dokumentu
+	Add to Board	Přidat na nástěnku
+	Address:	Adresa:
+	All Artboards	Všechny pracovní plochy
+	Also Upload to Google Drive	Nahrát také na Disk Google
+	An OpenAI-compatible images endpoint (/images/variations) and your API key. DLightroom includes no AI service: images are sent only when you click Generate Variations on a board.	Koncový bod obrázků kompatibilní s OpenAI (/images/variations) a váš klíč API. DLightroom neobsahuje žádnou službu AI: obrázky se odesílají jen tehdy, když na nástěnce kliknete na Vytvořit varianty.
+	Apply Global Edit	Použít globální úpravu
+	Arrange Board Items	Uspořádat položky nástěnky
+	Back to Document	Zpět do dokumentu
+	Background Jobs	Úlohy na pozadí
+	Background Tasks	Úlohy na pozadí
+	Board	Nástěnka
+	Board View	Zobrazení nástěnky
+	Cancel Job	Zrušit úlohu
+	Caption:	Popisek:
+	Change on every match	Změnit u každé shody
+	Choose or create a board first	Nejprve vyberte nebo vytvořte nástěnku
+	Click an item to change it. Shift-click picks several; drag the corner handle to resize.	Klepnutím na položku ji změníte. Shift+klepnutí vybere více položek; tažením rohového úchytu změníte velikost.
+	Client ID:	ID klienta:
+	Client Secret:	Tajný klíč klienta:
+	Cloud Settings File	Soubor nastavení cloudu
+	Cloud and AI Settings	Nastavení cloudu a AI
+	Cloud and AI Settings…	Nastavení cloudu a AI…
+	Cloud and AI Status	Stav cloudu a AI
+	Cloud and AI features need the desktop app.	Funkce cloudu a AI vyžadují desktopovou aplikaci.
+	Cloud and AI settings saved	Nastavení cloudu a AI uloženo
+	Connect Google Drive	Připojit Disk Google
+	Connected	Připojeno
+	Connect…	Připojit…
+	Count:	Počet:
+	Delete Board	Odstranit nástěnku
+	Delete Board…	Odstranit nástěnku…
+	Delete this board and its images? This can't be undone.	Odstranit tuto nástěnku a její obrázky? Tuto akci nelze vrátit.
+	Disconnect	Odpojit
+	Disconnect Google Drive	Odpojit Disk Google
+	Disconnected	Nepřipojeno
+	Dismiss	Zavřít
+	Dismiss Job	Odebrat úlohu
+	Drive Folder:	Složka na Disku:
+	Drop images here, or add notes, colours and links on the right.	Přetáhněte sem obrázky nebo vpravo přidejte poznámky, barvy a odkazy.
+	Duplicate Board	Duplikovat nástěnku
+	Duplicate Board Items	Duplikovat položky nástěnky
+	Edit Board Item	Upravit položku nástěnky
+	Endpoint:	Koncový bod:
+	Enter your OAuth client ID first	Nejprve zadejte ID klienta OAuth
+	Export for Screens can upload what it exports to a Drive folder. Use your own OAuth client (Google Cloud console › Credentials › OAuth client ID › Desktop app); DLightroom can only see the files it creates.	Export pro obrazovky může exportované soubory nahrát do složky na Disku. Použijte vlastního klienta OAuth (konzole Google Cloud › Přihlašovací údaje › ID klienta OAuth › Desktopová aplikace); DLightroom vidí jen soubory, které sám vytvoří.
+	Find Matches	Najít shody
+	Find the matches to preview them	Najděte shody a zobrazte jejich náhled
+	Fit Board in Window	Přizpůsobit nástěnku oknu
+	From:	Zdroj:
+	Generate Variations	Vytvořit varianty
+	Generate sends this image to	Vytvoření odešle tento obrázek do:
+	Global Edit	Globální úprava
+	Google Drive	Disk Google
+	Google Drive Settings	Nastavení Disku Google
+	Google Drive disconnected	Disk Google odpojen
+	Google Drive: Disconnected	Disk Google: nepřipojeno
+	Include Hidden Objects	Zahrnout skryté objekty
+	Include Locked Objects	Zahrnout zamčené objekty
+	Inspiration Boards	Inspirační nástěnky
+	Inspiration Boards Folder	Složka inspiračních nástěnek
+	Inspiration Boards keep their files in the app's settings folder, which this build doesn't have.	Inspirační nástěnky ukládají soubory do složky nastavení aplikace, kterou toto sestavení nemá.
+	Instance Overrides	Změny instance
+	Instance:	Instance:
+	Instance: as the symbol	Instance: jako symbol
+	Match objects with the same	Najít objekty se stejnými vlastnostmi:
+	Missing image	Chybí obrázek
+	Model:	Model:
+	Move Board Items	Přesunout položky nástěnky
+	New Board	Nová nástěnka
+	No API key stored	Není uložen žádný klíč API
+	No boards yet. Create one to collect images, notes, colours and links.	Zatím žádné nástěnky. Vytvořte si jednu a sbírejte obrázky, poznámky, barvy a odkazy.
+	Not set up: AI Variations use an image service you choose, with your own API key. Boards work fully without one.	Nenastaveno: varianty AI používají obrazovou službu podle vašeho výběru s vaším vlastním klíčem API. Nástěnky plně fungují i bez ní.
+	Note	Poznámka
+	Note text	Text poznámky
+	Open in Browser	Otevřít v prohlížeči
+	Re-curve Neighbours	Znovu zakřivit sousední body
+	Redo Board Change	Opakovat změnu nástěnky
+	Reference:	Odkaz:
+	Remove Board Items	Odebrat položky nástěnky
+	Remove Key	Odebrat klíč
+	Remove the Chosen Items	Odebrat vybrané položky
+	Rename Board	Přejmenovat nástěnku
+	Rename…	Přejmenovat…
+	Reset Instance Overrides	Obnovit změny instance
+	Retry	Zkusit znovu
+	Retry Job	Zopakovat úlohu
+	Search:	Hledat v:
+	Send the Board to the Document	Odeslat nástěnku do dokumentu
+	Send the Chosen Items to the Document	Odeslat vybrané položky do dokumentu
+	Send to Document	Odeslat do dokumentu
+	Set Up…	Nastavit…
+	Title:	Název:
+	Undo Board Change	Vrátit změnu nástěnky
+	Untitled Board	Nástěnka bez názvu
+	Upload to Google Drive	Nahrát na Disk Google
+	stored; type to replace	uloženo; zadáním nahradíte
+	tint {color}	tónování {color}
+	{count} matching objects ({hidden} hidden, {locked} locked)	Odpovídající objekty: {count} (skryté: {hidden}, zamčené: {locked})
+	‹ Back to Document	‹ Zpět do dokumentu
+@msg	AI variations need a provider: {e} (Cloud and AI Settings)	Varianty AI vyžadují poskytovatele: {e} (Nastavení cloudu a AI)
+@msg	Added {added} image(s) to the board	Na nástěnku přidány obrázky: {added}
+@msg	Asking {_1} for variations…	Žádost o varianty u {_1}…
+@msg	Exported {_1} file(s), but the upload didn't start: {e}	Exportováno souborů: {_1}, ale nahrávání se nespustilo: {e}
+@msg	Exported {_1} file(s); uploading them to Google Drive…	Exportováno souborů: {_1}; nahrávají se na Disk Google…
+@msg	Find the matches and choose what to change first	Nejprve najděte shody a vyberte, co změnit
+@msg	Google Drive isn't connected: connect it in Cloud and AI Settings first	Disk Google není připojen: nejprve ho připojte v Nastavení cloudu a AI
+@msg	Google didn't grant lasting access; remove DLightroom from your Google Account's third-party access and connect again	Google neudělil trvalý přístup; odeberte DLightroom z přístupu třetích stran ve svém účtu Google a připojte se znovu
+@msg	Inspiration Boards aren't set up here	Inspirační nástěnky tu nejsou nastaveny
+@msg	No document open	Žádný dokument není otevřen
+@msg	Open this address to sign in: {url}	Pro přihlášení otevřete tuto adresu: {url}
+@msg	Select the object whose matches you want to edit	Vyberte objekt, jehož shody chcete upravit
+@msg	Sent {n} item(s) to the document	Do dokumentu odeslány položky: {n}

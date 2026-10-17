@@ -479,3 +479,116 @@ fn symbol_instance_overrides_reset_keeps_the_link_and_persists() {
     run(&mut t, "symbol.instance.reset", json!({}));
     assert_eq!(run(&mut t, "symbol.instance.overrides", json!({}))["instances"][0]["overridden"], false);
 }
+
+/// One sample document per advanced-tools area, saved natively. Each is opened again and checked;
+/// with `DLIGHTROOM_WRITE_SAMPLES=1` they are written to `examples/advanced/` (how the committed
+/// samples were made).
+#[test]
+fn advanced_tool_samples_build_save_and_open() {
+    let mut samples: Vec<(&str, Session)> = vec![];
+
+    let mut s = session();
+    run(
+        &mut s,
+        "path.curvature",
+        json!({"points": [{"x": 80, "y": 420}, {"x": 220, "y": 160}, {"x": 400, "y": 380}, {"x": 560, "y": 140}, {"x": 720, "y": 400}]}),
+    );
+    run(
+        &mut s,
+        "path.curvature",
+        json!({"points": [{"x": 120, "y": 520}, {"x": 300, "y": 470, "corner": true}, {"x": 480, "y": 540}, {"x": 680, "y": 470}]}),
+    );
+    samples.push(("curvature", s));
+
+    let mut s = session();
+    for (y, pts) in [
+        (150, json!([[0.0, 0.1, 0.1], [0.5, 2.5, 2.5], [1.0, 0.1, 0.1]])),
+        (300, json!([[0.0, 2.0, 0.2], [1.0, 0.2, 2.0]])),
+        (450, json!([[0.0, 0.5, 0.5], [0.25, 2.0, 2.0], [0.5, 0.5, 0.5], [0.75, 2.0, 2.0], [1.0, 0.5, 0.5]])),
+    ] {
+        let id = id_of(&run(&mut s, "shape.line", json!({"x1": 100, "y1": y, "x2": 700, "y2": y})));
+        run(&mut s, "select.set", json!({"ids": [id]}));
+        run(&mut s, "stroke.set", json!({"weight": 14}));
+        run(&mut s, "stroke.widthProfile.set", json!({"id": id, "points": pts}));
+    }
+    samples.push(("variable-width", s));
+
+    let mut s = session();
+    run(&mut s, "perspective.grid.preset", json!({"kind": 2}));
+    for (plane, x) in [("left", 200), ("right", 520)] {
+        let r = id_of(&run(&mut s, "shape.rectangle", json!({"x": x, "y": 260, "width": 90, "height": 120})));
+        run(&mut s, "select.set", json!({"ids": [r]}));
+        run(&mut s, "paint.setFill", json!({"color": if plane == "left" { "#d9774a" } else { "#4a8bd9" }}));
+        run(&mut s, "perspective.attach", json!({"id": r, "plane": plane}));
+    }
+    samples.push(("perspective-grid", s));
+
+    let mut s = session();
+    let rect = id_of(&run(&mut s, "shape.rectangle", json!({"x": 150, "y": 100, "width": 500, "height": 400})));
+    run(&mut s, "select.set", json!({"ids": [rect]}));
+    run(&mut s, "paint.setFill", json!({"color": "#1d3b8f"}));
+    let mesh = run(&mut s, "object.mesh.create", json!({"rows": 3, "cols": 3}))["ids"][0].as_u64().unwrap();
+    run(&mut s, "object.mesh.setPointColor", json!({"id": mesh, "index": 5, "color": "#ffb347"}));
+    run(&mut s, "object.mesh.setPointColor", json!({"id": mesh, "index": 10, "color": "#ff5e7a"}));
+    samples.push(("gradient-mesh", s));
+
+    let mut s = session();
+    let a = id_of(&run(&mut s, "shape.ellipse", json!({"x": 80, "y": 250, "width": 60, "height": 60})));
+    run(&mut s, "select.set", json!({"ids": [a]}));
+    run(&mut s, "paint.setFill", json!({"color": "#ff3b30"}));
+    let b = id_of(&run(&mut s, "shape.star", json!({"cx": 680, "cy": 280, "radius1": 80, "radius2": 35, "points": 6})));
+    run(&mut s, "select.set", json!({"ids": [b]}));
+    run(&mut s, "paint.setFill", json!({"color": "#0a84ff"}));
+    run(&mut s, "select.set", json!({"ids": [a, b]}));
+    run(&mut s, "object.blend.make", json!({"steps": 8, "easeIn": 0.6, "easeOut": 0.2}));
+    samples.push(("blend-easing", s));
+
+    let mut s = session();
+    run(&mut s, "artboard.new", json!({"name": "Second"}));
+    let star = id_of(&run(&mut s, "shape.star", json!({"cx": 120, "cy": 120, "radius1": 50, "radius2": 22, "points": 5})));
+    run(&mut s, "select.set", json!({"ids": [star]}));
+    run(&mut s, "paint.setFill", json!({"color": "#ffaa00"}));
+    run(&mut s, "symbol.new", json!({"name": "Spark"}));
+    for (x, y) in [(320, 160), (520, 360)] {
+        run(&mut s, "symbol.place", json!({"name": "Spark", "x": x, "y": y}));
+    }
+    let ab2 = s.active().unwrap().doc.artboards[1].rect;
+    run(&mut s, "symbol.place", json!({"name": "Spark", "x": ab2.center().x, "y": ab2.center().y}));
+    samples.push(("symbols-two-artboards", s));
+
+    let mut s = session();
+    for name in ["Icon", "Banner", "Card"] {
+        run(&mut s, "artboard.new", json!({"name": name}));
+    }
+    let n = s.active().unwrap().doc.artboards.len();
+    for i in 0..n {
+        let r = s.active().unwrap().doc.artboards[i].rect;
+        let id = id_of(&run(&mut s, "shape.ellipse", json!({"x": r.center().x - 40.0, "y": r.center().y - 40.0, "width": 80, "height": 80})));
+        run(&mut s, "select.set", json!({"ids": [id]}));
+        let color = ["#30d158", "#ff9f0a", "#bf5af2", "#64d2ff"][i % 4];
+        run(&mut s, "paint.setFill", json!({ "color": color }));
+    }
+    samples.push(("artboards-batch-export", s));
+
+    let mut s = session();
+    for (i, c) in ["#ff2d55", "#ff2d55", "#5856d6", "#ff2d55", "#5856d6", "#ff2d55"].iter().enumerate() {
+        let id = id_of(&run(
+            &mut s,
+            "shape.rectangle",
+            json!({"x": 80 + (i as i64 % 3) * 230, "y": 120 + (i as i64 / 3) * 230, "width": 160, "height": 160}),
+        ));
+        run(&mut s, "select.set", json!({"ids": [id]}));
+        run(&mut s, "paint.setFill", json!({"color": c}));
+    }
+    samples.push(("global-edit", s));
+
+    let out = std::env::var_os("DLIGHTROOM_WRITE_SAMPLES").map(|_| PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../../examples/advanced"));
+    for (name, mut s) in samples {
+        let again = reopen(&mut s, name);
+        assert!(!again.active().unwrap().doc.layers.is_empty(), "{name}");
+        if let Some(dir) = &out {
+            std::fs::create_dir_all(dir).unwrap();
+            run(&mut s, "document.save", json!({"path": dir.join(format!("{name}.vectorcraft")).to_string_lossy()}));
+        }
+    }
+}

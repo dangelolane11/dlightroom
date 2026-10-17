@@ -4565,3 +4565,135 @@ lighting	Light	Свет
 	Movie Clip	Видеоклип
 @msg	name is empty	имя пустое
 @msg	no symbol named `{n}`	нет символа с именем `{n}`
+
+# Advanced tools milestone (DLightroom): Global Edit, symbol instance overrides, Curvature's
+# Re-curve Neighbours, Inspiration Boards, AI Variations and Cloud and AI Settings.
+	AI Provider Settings	Настройки поставщика ИИ
+	AI Variations	Варианты ИИ
+	AI Variations need the desktop app.	Для вариантов ИИ нужно настольное приложение.
+	API Key:	Ключ API:
+	API key removed	Ключ API удален
+	API key stored in	Ключ API сохранен в:
+	Active Artboard	Активная монтажная область
+	Add Color	Добавить цвет
+	Add Color to Board	Добавить цвет на доску
+	Add Image to Board	Добавить изображение на доску
+	Add Images…	Добавить изображения…
+	Add Link	Добавить ссылку
+	Add Link to Board	Добавить ссылку на доску
+	Add Note	Добавить заметку
+	Add Note to Board	Добавить заметку на доску
+	Add Selection to Board	Добавить выделение на доску
+	Add the Document's Selection	Добавить выделение документа
+	Add to Board	Добавить на доску
+	Address:	Адрес:
+	All Artboards	Все монтажные области
+	Also Upload to Google Drive	Также отправить на Google Диск
+	An OpenAI-compatible images endpoint (/images/variations) and your API key. DLightroom includes no AI service: images are sent only when you click Generate Variations on a board.	Совместимая с OpenAI точка доступа изображений (/images/variations) и ваш ключ API. В DLightroom нет встроенного сервиса ИИ: изображения отправляются, только когда вы нажимаете «Создать варианты» на доске.
+	Apply Global Edit	Применить глобальное редактирование
+	Arrange Board Items	Упорядочить элементы доски
+	Back to Document	Назад к документу
+	Background Jobs	Фоновые задания
+	Background Tasks	Фоновые задачи
+	Board	Доска
+	Board View	Вид доски
+	Cancel Job	Отменить задание
+	Caption:	Подпись:
+	Change on every match	Изменить у всех совпадений
+	Choose or create a board first	Сначала выберите или создайте доску
+	Click an item to change it. Shift-click picks several; drag the corner handle to resize.	Щелкните элемент, чтобы изменить его. Shift+щелчок выбирает несколько; перетащите угловой маркер, чтобы изменить размер.
+	Client ID:	Идентификатор клиента:
+	Client Secret:	Секрет клиента:
+	Cloud Settings File	Файл настроек облака
+	Cloud and AI Settings	Настройки облака и ИИ
+	Cloud and AI Settings…	Настройки облака и ИИ…
+	Cloud and AI Status	Состояние облака и ИИ
+	Cloud and AI features need the desktop app.	Для функций облака и ИИ нужно настольное приложение.
+	Cloud and AI settings saved	Настройки облака и ИИ сохранены
+	Connect Google Drive	Подключить Google Диск
+	Connected	Подключено
+	Connect…	Подключить…
+	Count:	Количество:
+	Delete Board	Удалить доску
+	Delete Board…	Удалить доску…
+	Delete this board and its images? This can't be undone.	Удалить эту доску и ее изображения? Это действие нельзя отменить.
+	Disconnect	Отключить
+	Disconnect Google Drive	Отключить Google Диск
+	Disconnected	Не подключено
+	Dismiss	Скрыть
+	Dismiss Job	Скрыть задание
+	Drive Folder:	Папка на Диске:
+	Drop images here, or add notes, colours and links on the right.	Перетащите сюда изображения или добавьте справа заметки, цвета и ссылки.
+	Duplicate Board	Дублировать доску
+	Duplicate Board Items	Дублировать элементы доски
+	Edit Board Item	Изменить элемент доски
+	Endpoint:	Точка доступа:
+	Enter your OAuth client ID first	Сначала введите идентификатор клиента OAuth
+	Export for Screens can upload what it exports to a Drive folder. Use your own OAuth client (Google Cloud console › Credentials › OAuth client ID › Desktop app); DLightroom can only see the files it creates.	«Экспорт для экранов» может отправлять экспортированные файлы в папку на Диске. Используйте собственный клиент OAuth (консоль Google Cloud › Учетные данные › Идентификатор клиента OAuth › Приложение для ПК); DLightroom видит только созданные им файлы.
+	Find Matches	Найти совпадения
+	Find the matches to preview them	Найдите совпадения для предпросмотра
+	Fit Board in Window	Вписать доску в окно
+	From:	Источник:
+	Generate Variations	Создать варианты
+	Generate sends this image to	«Создать» отправляет это изображение в:
+	Global Edit	Глобальное редактирование
+	Google Drive	Google Диск
+	Google Drive Settings	Настройки Google Диска
+	Google Drive disconnected	Google Диск отключен
+	Google Drive: Disconnected	Google Диск: не подключено
+	Include Hidden Objects	Включая скрытые объекты
+	Include Locked Objects	Включая закрепленные объекты
+	Inspiration Boards	Доски вдохновения
+	Inspiration Boards Folder	Папка досок вдохновения
+	Inspiration Boards keep their files in the app's settings folder, which this build doesn't have.	Доски вдохновения хранят файлы в папке настроек приложения, которой нет в этой сборке.
+	Instance Overrides	Переопределения экземпляра
+	Instance:	Экземпляр:
+	Instance: as the symbol	Экземпляр: как символ
+	Match objects with the same	Найти объекты с одинаковыми свойствами:
+	Missing image	Изображение отсутствует
+	Model:	Модель:
+	Move Board Items	Переместить элементы доски
+	New Board	Новая доска
+	No API key stored	Ключ API не сохранен
+	No boards yet. Create one to collect images, notes, colours and links.	Досок пока нет. Создайте доску, чтобы собирать изображения, заметки, цвета и ссылки.
+	Not set up: AI Variations use an image service you choose, with your own API key. Boards work fully without one.	Не настроено: варианты ИИ используют выбранный вами сервис изображений с вашим собственным ключом API. Доски полностью работают и без него.
+	Note	Заметка
+	Note text	Текст заметки
+	Open in Browser	Открыть в браузере
+	Re-curve Neighbours	Перегибать соседние точки
+	Redo Board Change	Повторить изменение доски
+	Reference:	Ссылка:
+	Remove Board Items	Удалить элементы доски
+	Remove Key	Удалить ключ
+	Remove the Chosen Items	Удалить выбранные элементы
+	Rename Board	Переименовать доску
+	Rename…	Переименовать…
+	Reset Instance Overrides	Сбросить переопределения экземпляра
+	Retry	Повторить
+	Retry Job	Повторить задание
+	Search:	Искать:
+	Send the Board to the Document	Отправить доску в документ
+	Send the Chosen Items to the Document	Отправить выбранные элементы в документ
+	Send to Document	Отправить в документ
+	Set Up…	Настроить…
+	Title:	Заголовок:
+	Undo Board Change	Отменить изменение доски
+	Untitled Board	Доска без названия
+	Upload to Google Drive	Отправить на Google Диск
+	stored; type to replace	сохранено; введите, чтобы заменить
+	tint {color}	тонирование {color}
+	{count} matching objects ({hidden} hidden, {locked} locked)	Подходящих объектов: {count} (скрытых: {hidden}, закрепленных: {locked})
+	‹ Back to Document	‹ Назад к документу
+@msg	AI variations need a provider: {e} (Cloud and AI Settings)	Для вариантов ИИ нужен поставщик: {e} (Настройки облака и ИИ)
+@msg	Added {added} image(s) to the board	На доску добавлено изображений: {added}
+@msg	Asking {_1} for variations…	Запрос вариантов у {_1}…
+@msg	Exported {_1} file(s), but the upload didn't start: {e}	Экспортировано файлов: {_1}, но отправка не началась: {e}
+@msg	Exported {_1} file(s); uploading them to Google Drive…	Экспортировано файлов: {_1}; отправка на Google Диск…
+@msg	Find the matches and choose what to change first	Сначала найдите совпадения и выберите, что изменить
+@msg	Google Drive isn't connected: connect it in Cloud and AI Settings first	Google Диск не подключен: сначала подключите его в настройках облака и ИИ
+@msg	Google didn't grant lasting access; remove DLightroom from your Google Account's third-party access and connect again	Google не предоставил постоянный доступ; удалите DLightroom из сторонних приложений с доступом к вашему аккаунту Google и подключитесь снова
+@msg	Inspiration Boards aren't set up here	Доски вдохновения здесь не настроены
+@msg	No document open	Нет открытого документа
+@msg	Open this address to sign in: {url}	Чтобы войти, откройте этот адрес: {url}
+@msg	Select the object whose matches you want to edit	Выделите объект, совпадения которого хотите изменить
+@msg	Sent {n} item(s) to the document	В документ отправлено элементов: {n}

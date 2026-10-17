@@ -122,12 +122,16 @@ no result is ever fabricated.
 | Batch export per artboard to SVG, PNG, PDF (and more), chosen artboards, name pattern, scales | Works | `document.exportForScreens`, Export for Screens dialog |
 | Cloud destination (authenticated, resumable, cancellable) | **Gap** | nothing existed |
 
-**This milestone:** a cloud-export adapter interface and a Google Drive destination: OAuth 2.0 for
-installed apps (system browser, PKCE, loopback redirect), tokens in the macOS Keychain (or the
-platform's secret store), uploads with retries, backoff and cancellation, and the connection
-status shown in Export for Screens. Uploads happen only when the user picks the Google Drive
-destination and presses Export. It needs a Google Cloud OAuth client of the user's own (see
-[Cloud export](cloud-export.md)); without one the destination says so and stays disabled.
+**This milestone:** a Google Drive destination for Export for Screens, built on a small cloud
+layer (`crates/cloud`: an HTTP `Transport` that tests replace with a scripted mock, background jobs
+with progress and cancelling, keychain secret storage). It signs in with OAuth 2.0 for installed
+apps (system browser, PKCE S256, loopback redirect on 127.0.0.1, `drive.file` scope), keeps the
+refresh token in the system keychain, and uploads with resumable sessions, retries with backoff
+on network errors, 429 and 5xx, a token refresh on 401, cancellation and per-file failures
+reported. The local export always happens first; the upload happens only when **Also Upload to
+Google Drive** is ticked (or `cloud.drive.upload` is run). It needs a Google OAuth client of the
+user's own (see [Cloud export](cloud-export.md)); without one Cloud and AI Settings shows
+"Disconnected" and Connect stays disabled.
 
 ## 9. Global editing
 
@@ -144,5 +148,72 @@ them in one undo step. Hidden and locked objects are skipped unless asked for. C
 
 ## Results
 
-The test results and the manual acceptance checklist are recorded at the end of the milestone
-below.
+### Automated tests
+
+The tests that back this audit; the results from the milestone's run are in the PR description.
+
+- `crates/engine/tests/advanced_tools.rs`: one end-to-end test per area. Each builds art, edits it,
+  undoes and redoes, saves, reopens and exports (SVG, PDF, PNG pixels). The file also builds the
+  sample documents in `examples/advanced/`.
+- `crates/engine/src/cmd/globaledit.rs`, `boards.rs`, `cloud.rs` and `tests_brushsym.rs`: command
+  tests for Global Edit, boards, cloud and AI jobs (against a scripted transport and an in-memory
+  keychain), and symbol overrides.
+- `crates/boards`: storage, undo, limits and refusals of bad input. `crates/cloud`: HTTP, PKCE, the
+  loopback sign-in listener, token exchange and refresh, Drive folders and resumable uploads with
+  retries, AI variations, jobs and cancelling. All offline.
+- `crates/ui-egui`: headless frame tests of the Global Edit, Blend Options, Cloud and AI Settings
+  and Inspiration Boards UI.
+
+### Manual acceptance checklist
+
+Run these on the macOS Intel build (the `DLightroom.app` artifact of the `macos-intel` workflow).
+Items marked **(account)** need your own provider key or Google OAuth client.
+
+1. **Curvature (Shift+~):** click four points, one with Alt for a corner, then press Esc. Drag a
+   point: only its neighbours re-curve. Turn on Re-curve Neighbours in the Control bar and drag
+   again. Double-click a point to toggle smooth/corner. Undo, redo, save, reopen.
+2. **Width (Shift+W):** drag a stroke's edge to add a width point, Alt-drag one side,
+   double-click to edit the point numerically. Save the profile from the Control bar and apply it
+   to another path. Object › Expand Appearance.
+3. **Perspective Grid (Shift+P):** switch the 1-, 2- and 3-point grids, move the vanishing points,
+   draw a rectangle on a plane, move it with Perspective Selection (Shift+V), release it from
+   perspective.
+4. **Gradient Mesh (U):** click a filled shape to add mesh lines, colour a point, move a point
+   and a handle. Object › Create Gradient Mesh with 3 × 3, then export to PNG.
+5. **Blend (W):** click two shapes and get a blend. Object › Blend › Blend Options: Specified Steps
+   and Distance, Ease In / Ease Out / Color Acceleration with Preview. Replace Spine, Reverse,
+   Expand, Release.
+6. **Symbols:** make a symbol from art and place instances on two artboards. Double-click an
+   instance to edit the master: every instance updates. Scale and tint one instance, then Reset
+   Instance Overrides. Break Link, Replace, Rename and Delete Symbol.
+   Undo each step.
+7. **Inspiration Boards:** open Window › Inspiration Boards and create a board. Drop images from
+   the Finder, add a note, a colour and a link. Move, resize, zoom (Cmd+scroll), pan, undo and
+   redo (Cmd+Z, Shift+Cmd+Z). Quit and relaunch: the board and its images are back. Send to
+   Document puts images, type and swatches in the document. Add the Document's Selection works.
+   **(account)** AI Variations:
+   - With no key, the inspector says it isn't set up, and boards still work fully.
+   - With your key in Edit › Cloud and AI Settings, Generate shows progress and the results land
+     beside the image, marked AI. Cancel stops it. A wrong key shows the provider's error.
+   - The key is in Keychain Access (service "DLightroom"), not in `cloud.json`.
+8. **Artboards and batch export:** add, duplicate, rename, reorder and delete artboards. In File ›
+   Export › Export for Screens, pick two artboards, add SVG, PNG 2x and PDF rows, set a naming
+   template, and export: the files appear in the folder.
+   **(account)** Google Drive:
+   - Edit › Cloud and AI Settings shows Disconnected.
+   - Enter your Desktop OAuth client and click Connect…. Allow access in the browser: the status
+     reads Connected.
+   - Export with Also Upload to Google Drive ticked: Background Tasks shows progress, and the files
+     appear in the Drive folder.
+   - Cancel works mid-upload. Disconnect works.
+9. **Global Edit:** select a shape that has look-alikes, then Select › Start Global Edit. Choose
+   the attributes, then Find Matches (count and selection preview). Set fill and stroke weight,
+   then Apply. Edit › Undo undoes it all in one step. Hidden and locked matches are left alone
+   unless their checkboxes are on.
+
+### Blocked without an account
+
+- **AI Variations against a real service:** needs a provider API key. Verified only against a
+  scripted transport in tests.
+- **Google Drive sign-in and upload:** needs a Google OAuth client and a Google account. Verified
+  only against a scripted transport and a local loopback listener in tests.
