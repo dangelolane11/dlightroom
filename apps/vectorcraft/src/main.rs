@@ -858,6 +858,17 @@ fn main() -> std::process::ExitCode {
                     let libraries = prefs_path().and_then(|p| Some(p.parent()?.join("Libraries").to_string_lossy().to_string()));
                     app.session.libraries.set_dir(libraries);
                 }
+                // Inspiration Boards live next to the preferences too; runs without preferences
+                // keep theirs in a temporary folder, never touching the user's.
+                let boards = if prefs_enabled() {
+                    prefs_path().and_then(|p| Some(p.parent()?.join("Inspiration Boards")))
+                } else {
+                    Some(std::env::temp_dir().join(format!("dlightroom-boards-{}", std::process::id())))
+                };
+                if let Some(dir) = boards {
+                    // Only an empty path is refused, and this one never is.
+                    let _ = app.session.execute("boards.setFolder", &serde_json::json!({ "path": dir.to_string_lossy() }));
+                }
                 // Data Recovery copies live next to the preferences too (none for runs without
                 // preferences, such as agents' test runs, unless the recoveryFolder preference is set).
                 if std::env::var_os("VECTORCRAFT_NO_PREFS").is_none() {

@@ -3,6 +3,7 @@
 pub(crate) mod appearance;
 mod assets;
 mod attributes;
+pub mod boards;
 mod brushsym;
 mod buildcmds;
 pub mod clipboard;
@@ -293,6 +294,7 @@ pub fn command_specs() -> &'static [CommandSpec] {
         v.extend(perspgrid::specs());
         v.extend(shortcutset::specs());
         v.extend(importmatches::specs());
+        v.extend(boards::specs());
         v
     })
 }
