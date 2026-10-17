@@ -4610,3 +4610,135 @@ lighting	Light	ライト
 	Movie Clip	ムービークリップ
 @msg	name is empty	名前が空です
 @msg	no symbol named `{n}`	`{n}` という名前のシンボルはありません
+
+# Advanced tools milestone (DLightroom): Global Edit, symbol instance overrides, Curvature's
+# Re-curve Neighbours, Inspiration Boards, AI Variations and Cloud and AI Settings.
+	AI Provider Settings	AI プロバイダーの設定
+	AI Variations	AI バリエーション
+	AI Variations need the desktop app.	AI バリエーションにはデスクトップアプリが必要です。
+	API Key:	API キー:
+	API key removed	API キーを削除しました
+	API key stored in	API キーの保存先:
+	Active Artboard	アクティブなアートボード
+	Add Color	カラーを追加
+	Add Color to Board	ボードにカラーを追加
+	Add Image to Board	ボードに画像を追加
+	Add Images…	画像を追加…
+	Add Link	リンクを追加
+	Add Link to Board	ボードにリンクを追加
+	Add Note	メモを追加
+	Add Note to Board	ボードにメモを追加
+	Add Selection to Board	ボードに選択範囲を追加
+	Add the Document's Selection	ドキュメントの選択範囲を追加
+	Add to Board	ボードに追加
+	Address:	アドレス:
+	All Artboards	すべてのアートボード
+	Also Upload to Google Drive	Google ドライブにもアップロード
+	An OpenAI-compatible images endpoint (/images/variations) and your API key. DLightroom includes no AI service: images are sent only when you click Generate Variations on a board.	OpenAI 互換の画像エンドポイント（/images/variations）とお使いの API キー。DLightroom に AI サービスは含まれていません。画像が送信されるのは、ボードで「バリエーションを生成」をクリックしたときだけです。
+	Apply Global Edit	グローバル編集を適用
+	Arrange Board Items	ボード項目を整列
+	Back to Document	ドキュメントに戻る
+	Background Jobs	バックグラウンドジョブ
+	Background Tasks	バックグラウンドタスク
+	Board	ボード
+	Board View	ボードの表示
+	Cancel Job	ジョブをキャンセル
+	Caption:	キャプション:
+	Change on every match	一致するすべてで変更
+	Choose or create a board first	最初にボードを選択または作成してください
+	Click an item to change it. Shift-click picks several; drag the corner handle to resize.	項目をクリックすると変更できます。Shift+クリックで複数選択、角のハンドルをドラッグでサイズ変更します。
+	Client ID:	クライアント ID:
+	Client Secret:	クライアントシークレット:
+	Cloud Settings File	クラウド設定ファイル
+	Cloud and AI Settings	クラウドと AI の設定
+	Cloud and AI Settings…	クラウドと AI の設定…
+	Cloud and AI Status	クラウドと AI の状態
+	Cloud and AI features need the desktop app.	クラウドと AI の機能にはデスクトップアプリが必要です。
+	Cloud and AI settings saved	クラウドと AI の設定を保存しました
+	Connect Google Drive	Google ドライブに接続
+	Connected	接続済み
+	Connect…	接続…
+	Count:	数:
+	Delete Board	ボードを削除
+	Delete Board…	ボードを削除…
+	Delete this board and its images? This can't be undone.	このボードとその画像を削除しますか？この操作は取り消せません。
+	Disconnect	接続解除
+	Disconnect Google Drive	Google ドライブの接続を解除
+	Disconnected	未接続
+	Dismiss	閉じる
+	Dismiss Job	ジョブを閉じる
+	Drive Folder:	ドライブのフォルダー:
+	Drop images here, or add notes, colours and links on the right.	ここに画像をドロップするか、右側でメモ、カラー、リンクを追加します。
+	Duplicate Board	ボードを複製
+	Duplicate Board Items	ボード項目を複製
+	Edit Board Item	ボード項目を編集
+	Endpoint:	エンドポイント:
+	Enter your OAuth client ID first	最初に OAuth クライアント ID を入力してください
+	Export for Screens can upload what it exports to a Drive folder. Use your own OAuth client (Google Cloud console › Credentials › OAuth client ID › Desktop app); DLightroom can only see the files it creates.	「スクリーン用に書き出し」では、書き出したファイルをドライブのフォルダーにアップロードできます。ご自身の OAuth クライアント（Google Cloud コンソール › 認証情報 › OAuth クライアント ID › デスクトップアプリ）を使います。DLightroom が見られるのは自分で作成したファイルだけです。
+	Find Matches	一致を検索
+	Find the matches to preview them	一致を検索してプレビューします
+	Fit Board in Window	ボードをウィンドウに合わせる
+	From:	取得元:
+	Generate Variations	バリエーションを生成
+	Generate sends this image to	「生成」でこの画像を送信する先:
+	Global Edit	グローバル編集
+	Google Drive	Google ドライブ
+	Google Drive Settings	Google ドライブの設定
+	Google Drive disconnected	Google ドライブの接続を解除しました
+	Google Drive: Disconnected	Google ドライブ: 未接続
+	Include Hidden Objects	非表示のオブジェクトを含める
+	Include Locked Objects	ロックされたオブジェクトを含める
+	Inspiration Boards	インスピレーションボード
+	Inspiration Boards Folder	インスピレーションボードのフォルダー
+	Inspiration Boards keep their files in the app's settings folder, which this build doesn't have.	インスピレーションボードはアプリの設定フォルダーにファイルを保存しますが、このビルドにはそのフォルダーがありません。
+	Instance Overrides	インスタンスの上書き
+	Instance:	インスタンス:
+	Instance: as the symbol	インスタンス: シンボルのまま
+	Match objects with the same	同じ属性のオブジェクトを検索:
+	Missing image	画像がありません
+	Model:	モデル:
+	Move Board Items	ボード項目を移動
+	New Board	新規ボード
+	No API key stored	保存された API キーはありません
+	No boards yet. Create one to collect images, notes, colours and links.	まだボードはありません。作成すると画像、メモ、カラー、リンクを集められます。
+	Not set up: AI Variations use an image service you choose, with your own API key. Boards work fully without one.	未設定: AI バリエーションは、ご自身で選んだ画像サービスとご自身の API キーを使います。ボードはそれがなくてもすべて使えます。
+	Note	メモ
+	Note text	メモのテキスト
+	Open in Browser	ブラウザーで開く
+	Re-curve Neighbours	隣接ポイントも再カーブ
+	Redo Board Change	ボードの変更をやり直し
+	Reference:	参照:
+	Remove Board Items	ボード項目を削除
+	Remove Key	キーを削除
+	Remove the Chosen Items	選んだ項目を削除
+	Rename Board	ボード名を変更
+	Rename…	名前を変更…
+	Reset Instance Overrides	インスタンスの上書きをリセット
+	Retry	再試行
+	Retry Job	ジョブを再試行
+	Search:	検索:
+	Send the Board to the Document	ボードをドキュメントに送る
+	Send the Chosen Items to the Document	選んだ項目をドキュメントに送る
+	Send to Document	ドキュメントに送る
+	Set Up…	設定…
+	Title:	タイトル:
+	Undo Board Change	ボードの変更を取り消し
+	Untitled Board	名称未設定のボード
+	Upload to Google Drive	Google ドライブにアップロード
+	stored; type to replace	保存済み。入力すると置き換えます
+	tint {color}	色合い {color}
+	{count} matching objects ({hidden} hidden, {locked} locked)	一致するオブジェクト {count} 個（非表示 {hidden} 個、ロック {locked} 個）
+	‹ Back to Document	‹ ドキュメントに戻る
+@msg	AI variations need a provider: {e} (Cloud and AI Settings)	AI バリエーションにはプロバイダーが必要です: {e}（クラウドと AI の設定）
+@msg	Added {added} image(s) to the board	ボードに画像を {added} 枚追加しました
+@msg	Asking {_1} for variations…	{_1} にバリエーションを依頼しています…
+@msg	Exported {_1} file(s), but the upload didn't start: {e}	{_1} 個のファイルを書き出しましたが、アップロードを開始できませんでした: {e}
+@msg	Exported {_1} file(s); uploading them to Google Drive…	{_1} 個のファイルを書き出しました。Google ドライブにアップロードしています…
+@msg	Find the matches and choose what to change first	最初に一致を検索し、変更する内容を選んでください
+@msg	Google Drive isn't connected: connect it in Cloud and AI Settings first	Google ドライブに接続されていません。先にクラウドと AI の設定で接続してください
+@msg	Google didn't grant lasting access; remove DLightroom from your Google Account's third-party access and connect again	Google から継続的なアクセスが許可されませんでした。Google アカウントのサードパーティアクセスから DLightroom を削除して、もう一度接続してください
+@msg	Inspiration Boards aren't set up here	ここではインスピレーションボードが設定されていません
+@msg	No document open	ドキュメントが開かれていません
+@msg	Open this address to sign in: {url}	このアドレスを開いてサインインしてください: {url}
+@msg	Select the object whose matches you want to edit	一致を編集したいオブジェクトを選択してください
+@msg	Sent {n} item(s) to the document	{n} 個の項目をドキュメントに送りました

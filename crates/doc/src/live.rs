@@ -78,6 +78,67 @@ pub struct BlendSpec {
     /// on anchor points); `None`: chosen so closed shapes don't twist.
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub starts: Vec<Option<u32>>,
+    /// Ease In / Ease Out of the steps along the blend and its Color Acceleration (DLightroom).
+    /// Written only when set, so files without it, and older versions, read the blend as before.
+    #[serde(default, skip_serializing_if = "crate::skip::is_default")]
+    pub easing: BlendEasing,
+}
+
+/// How a blend's steps are spaced between two key objects and how their colours change: linear
+/// (the default) or eased.
+#[derive(Clone, Copy, Debug, Default, PartialEq, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct BlendEasing {
+    /// 0–1: how slowly the steps leave the first key (0 = evenly spaced).
+    #[serde(default)]
+    pub ease_in: f64,
+    /// 0–1: how slowly the steps reach the second key.
+    #[serde(default)]
+    pub ease_out: f64,
+    /// −1–1: positive values change the colour sooner than the shape (towards the second key's
+    /// colour), negative ones later; 0 keeps colour and shape together.
+    #[serde(default)]
+    pub color_acceleration: f64,
+}
+
+impl BlendEasing {
+    /// Clamped to the ranges above; anything not finite reads as 0.
+    pub fn clamped(self) -> Self {
+        let c = |v: f64, lo: f64| if v.is_finite() { v.clamp(lo, 1.0) } else { 0.0 };
+        Self { ease_in: c(self.ease_in, 0.0), ease_out: c(self.ease_out, 0.0), color_acceleration: c(self.color_acceleration, -1.0) }
+    }
+
+    /// Whether the steps are spaced or coloured other than linearly.
+    pub fn is_linear(&self) -> bool {
+        *self == Self::default()
+    }
+
+    /// Where step `t` (0..1, evenly spaced) sits between the keys: a cubic timing curve through
+    /// (ease_in, 0) and (1 − ease_out, 1), monotone, identity when both are 0.
+    pub fn position(&self, t: f64) -> f64 {
+        let e = self.clamped();
+        if e.ease_in == 0.0 && e.ease_out == 0.0 {
+            return t;
+        }
+        let (x1, x2) = (e.ease_in, 1.0 - e.ease_out);
+        let bez = |u: f64, p1: f64, p2: f64| {
+            let v = 1.0 - u;
+            3.0 * v * v * u * p1 + 3.0 * v * u * u * p2 + u * u * u
+        };
+        // x(u) is monotone for control points in 0..1: bisect for the u where x(u) = t.
+        let (mut lo, mut hi) = (0.0, 1.0);
+        for _ in 0..48 {
+            let mid = (lo + hi) / 2.0;
+            if bez(mid, x1, x2) < t { lo = mid } else { hi = mid }
+        }
+        bez((lo + hi) / 2.0, 0.0, 1.0).clamp(0.0, 1.0)
+    }
+
+    /// The colour fraction of a step at position `t` (0..1).
+    pub fn color(&self, t: f64) -> f64 {
+        let a = self.clamped().color_acceleration;
+        if a == 0.0 { t } else { t.clamp(0.0, 1.0).powf(4f64.powf(-a)) }
+    }
 }
 
 impl BlendSpec {
@@ -94,6 +155,8 @@ pub struct BlendDefaults {
     pub spacing: BlendSpacing,
     #[serde(default)]
     pub orientation: BlendOrientation,
+    #[serde(default, skip_serializing_if = "crate::skip::is_default")]
+    pub easing: BlendEasing,
 }
 
 /// How an envelope distorts its content.

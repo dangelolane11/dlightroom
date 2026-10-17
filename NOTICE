@@ -43,6 +43,12 @@ Rust dependencies (vello_cpu, kurbo, peniko, skrifa, harfrust, usvg, linesweeper
 fetched through crates.io under their own permissive licenses (mostly MIT and/or Apache-2.0; also
 BSD, ISC, Zlib, BSL-1.0 and Unicode-3.0).
 
+DLightroom's network features (crates/cloud: AI Variations and Google Drive uploads, desktop
+builds only) use ureq (MIT OR Apache-2.0), rustls and ring (Apache-2.0, ISC and MIT; ring also
+includes code under the OpenSSL and SSLeay terms as listed in its LICENSE), webpki-roots (Mozilla's
+root certificates as data, CDLA-Permissive-2.0), keyring (MIT OR Apache-2.0) and getrandom (MIT OR
+Apache-2.0). DLightroom bundles no API keys or OAuth client credentials.
+
 JPEG export uses the jpeg-encoder crate (MIT OR Apache-2.0, and the IJG License): this software is
 based in part on the work of the Independent JPEG Group.
 

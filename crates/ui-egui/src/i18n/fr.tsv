@@ -4991,3 +4991,135 @@ theme	Appearance	Apparence
 	Movie Clip	Clip
 @msg	name is empty	le nom est vide
 @msg	no symbol named `{n}`	aucun symbole nommé `{n}`
+
+# Advanced tools milestone (DLightroom): Global Edit, symbol instance overrides, Curvature's
+# Re-curve Neighbours, Inspiration Boards, AI Variations and Cloud and AI Settings.
+	AI Provider Settings	Paramètres du fournisseur d’IA
+	AI Variations	Variantes IA
+	AI Variations need the desktop app.	Les variantes IA nécessitent l’application de bureau.
+	API Key:	Clé API :
+	API key removed	Clé API supprimée
+	API key stored in	Clé API enregistrée dans
+	Active Artboard	Plan de travail actif
+	Add Color	Ajouter la couleur
+	Add Color to Board	Ajouter une couleur au tableau
+	Add Image to Board	Ajouter une image au tableau
+	Add Images…	Ajouter des images…
+	Add Link	Ajouter le lien
+	Add Link to Board	Ajouter un lien au tableau
+	Add Note	Ajouter la note
+	Add Note to Board	Ajouter une note au tableau
+	Add Selection to Board	Ajouter la sélection au tableau
+	Add the Document's Selection	Ajouter la sélection du document
+	Add to Board	Ajouter au tableau
+	Address:	Adresse :
+	All Artboards	Tous les plans de travail
+	Also Upload to Google Drive	Envoyer aussi vers Google Drive
+	An OpenAI-compatible images endpoint (/images/variations) and your API key. DLightroom includes no AI service: images are sent only when you click Generate Variations on a board.	Un point de terminaison d’images compatible OpenAI (/images/variations) et votre clé API. DLightroom n’inclut aucun service d’IA : les images ne sont envoyées que lorsque vous cliquez sur Générer des variantes dans un tableau.
+	Apply Global Edit	Appliquer la modification globale
+	Arrange Board Items	Disposer les éléments du tableau
+	Back to Document	Retour au document
+	Background Jobs	Tâches en arrière-plan
+	Background Tasks	Tâches en arrière-plan
+	Board	Tableau
+	Board View	Vue du tableau
+	Cancel Job	Annuler la tâche
+	Caption:	Légende :
+	Change on every match	Modifier sur chaque correspondance
+	Choose or create a board first	Choisissez ou créez d’abord un tableau
+	Click an item to change it. Shift-click picks several; drag the corner handle to resize.	Cliquez sur un élément pour le modifier. Maj+clic en choisit plusieurs ; faites glisser la poignée d’angle pour redimensionner.
+	Client ID:	ID client :
+	Client Secret:	Secret client :
+	Cloud Settings File	Fichier des paramètres cloud
+	Cloud and AI Settings	Paramètres cloud et IA
+	Cloud and AI Settings…	Paramètres cloud et IA…
+	Cloud and AI Status	État du cloud et de l’IA
+	Cloud and AI features need the desktop app.	Les fonctions cloud et IA nécessitent l’application de bureau.
+	Cloud and AI settings saved	Paramètres cloud et IA enregistrés
+	Connect Google Drive	Connecter Google Drive
+	Connected	Connecté
+	Connect…	Connecter…
+	Count:	Nombre :
+	Delete Board	Supprimer le tableau
+	Delete Board…	Supprimer le tableau…
+	Delete this board and its images? This can't be undone.	Supprimer ce tableau et ses images ? Cette action est irréversible.
+	Disconnect	Déconnecter
+	Disconnect Google Drive	Déconnecter Google Drive
+	Disconnected	Déconnecté
+	Dismiss	Fermer
+	Dismiss Job	Retirer la tâche
+	Drive Folder:	Dossier Drive :
+	Drop images here, or add notes, colours and links on the right.	Déposez des images ici, ou ajoutez des notes, des couleurs et des liens à droite.
+	Duplicate Board	Dupliquer le tableau
+	Duplicate Board Items	Dupliquer les éléments du tableau
+	Edit Board Item	Modifier un élément du tableau
+	Endpoint:	Point de terminaison :
+	Enter your OAuth client ID first	Saisissez d’abord votre ID client OAuth
+	Export for Screens can upload what it exports to a Drive folder. Use your own OAuth client (Google Cloud console › Credentials › OAuth client ID › Desktop app); DLightroom can only see the files it creates.	Exporter pour les écrans peut envoyer ce qu’il exporte vers un dossier Drive. Utilisez votre propre client OAuth (console Google Cloud › Identifiants › ID client OAuth › Application de bureau) ; DLightroom ne voit que les fichiers qu’il crée.
+	Find Matches	Rechercher les correspondances
+	Find the matches to preview them	Recherchez les correspondances pour les prévisualiser
+	Fit Board in Window	Ajuster le tableau à la fenêtre
+	From:	Source :
+	Generate Variations	Générer des variantes
+	Generate sends this image to	Générer envoie cette image à
+	Global Edit	Modification globale
+	Google Drive	Google Drive
+	Google Drive Settings	Paramètres Google Drive
+	Google Drive disconnected	Google Drive déconnecté
+	Google Drive: Disconnected	Google Drive : déconnecté
+	Include Hidden Objects	Inclure les objets masqués
+	Include Locked Objects	Inclure les objets verrouillés
+	Inspiration Boards	Tableaux d’inspiration
+	Inspiration Boards Folder	Dossier des tableaux d’inspiration
+	Inspiration Boards keep their files in the app's settings folder, which this build doesn't have.	Les tableaux d’inspiration conservent leurs fichiers dans le dossier des paramètres de l’application, que cette version n’a pas.
+	Instance Overrides	Remplacements de l’occurrence
+	Instance:	Occurrence :
+	Instance: as the symbol	Occurrence : comme le symbole
+	Match objects with the same	Rechercher les objets ayant les mêmes
+	Missing image	Image manquante
+	Model:	Modèle :
+	Move Board Items	Déplacer les éléments du tableau
+	New Board	Nouveau tableau
+	No API key stored	Aucune clé API enregistrée
+	No boards yet. Create one to collect images, notes, colours and links.	Aucun tableau pour l’instant. Créez-en un pour rassembler images, notes, couleurs et liens.
+	Not set up: AI Variations use an image service you choose, with your own API key. Boards work fully without one.	Non configuré : les variantes IA utilisent un service d’images de votre choix, avec votre propre clé API. Les tableaux fonctionnent entièrement sans.
+	Note	Note
+	Note text	Texte de la note
+	Open in Browser	Ouvrir dans le navigateur
+	Re-curve Neighbours	Recourber les voisins
+	Redo Board Change	Rétablir la modification du tableau
+	Reference:	Référence :
+	Remove Board Items	Retirer des éléments du tableau
+	Remove Key	Supprimer la clé
+	Remove the Chosen Items	Retirer les éléments choisis
+	Rename Board	Renommer le tableau
+	Rename…	Renommer…
+	Reset Instance Overrides	Réinitialiser les remplacements de l’occurrence
+	Retry	Réessayer
+	Retry Job	Relancer la tâche
+	Search:	Rechercher :
+	Send the Board to the Document	Envoyer le tableau vers le document
+	Send the Chosen Items to the Document	Envoyer les éléments choisis vers le document
+	Send to Document	Envoyer vers le document
+	Set Up…	Configurer…
+	Title:	Titre :
+	Undo Board Change	Annuler la modification du tableau
+	Untitled Board	Tableau sans titre
+	Upload to Google Drive	Envoyer vers Google Drive
+	stored; type to replace	enregistré ; saisissez pour remplacer
+	tint {color}	teinte {color}
+	{count} matching objects ({hidden} hidden, {locked} locked)	{count} objets correspondants ({hidden} masqués, {locked} verrouillés)
+	‹ Back to Document	‹ Retour au document
+@msg	AI variations need a provider: {e} (Cloud and AI Settings)	Les variantes IA nécessitent un fournisseur : {e} (Paramètres cloud et IA)
+@msg	Added {added} image(s) to the board	{added} image(s) ajoutée(s) au tableau
+@msg	Asking {_1} for variations…	Demande de variantes à {_1}…
+@msg	Exported {_1} file(s), but the upload didn't start: {e}	{_1} fichier(s) exporté(s), mais l’envoi n’a pas démarré : {e}
+@msg	Exported {_1} file(s); uploading them to Google Drive…	{_1} fichier(s) exporté(s) ; envoi vers Google Drive…
+@msg	Find the matches and choose what to change first	Recherchez d’abord les correspondances et choisissez ce qu’il faut modifier
+@msg	Google Drive isn't connected: connect it in Cloud and AI Settings first	Google Drive n’est pas connecté : connectez-le d’abord dans Paramètres cloud et IA
+@msg	Google didn't grant lasting access; remove DLightroom from your Google Account's third-party access and connect again	Google n’a pas accordé d’accès durable ; retirez DLightroom des accès tiers de votre compte Google et reconnectez-vous
+@msg	Inspiration Boards aren't set up here	Les tableaux d’inspiration ne sont pas configurés ici
+@msg	No document open	Aucun document ouvert
+@msg	Open this address to sign in: {url}	Ouvrez cette adresse pour vous connecter : {url}
+@msg	Select the object whose matches you want to edit	Sélectionnez l’objet dont vous voulez modifier les correspondances
+@msg	Sent {n} item(s) to the document	{n} élément(s) envoyé(s) vers le document

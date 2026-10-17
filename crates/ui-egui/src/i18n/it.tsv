@@ -4569,3 +4569,135 @@ lighting	Light	Luce
 	Movie Clip	Clip filmato
 @msg	name is empty	il nome è vuoto
 @msg	no symbol named `{n}`	nessun simbolo denominato `{n}`
+
+# Advanced tools milestone (DLightroom): Global Edit, symbol instance overrides, Curvature's
+# Re-curve Neighbours, Inspiration Boards, AI Variations and Cloud and AI Settings.
+	AI Provider Settings	Impostazioni del fornitore IA
+	AI Variations	Varianti IA
+	AI Variations need the desktop app.	Le varianti IA richiedono l’app desktop.
+	API Key:	Chiave API:
+	API key removed	Chiave API rimossa
+	API key stored in	Chiave API salvata in
+	Active Artboard	Tavola da disegno attiva
+	Add Color	Aggiungi colore
+	Add Color to Board	Aggiungi colore alla bacheca
+	Add Image to Board	Aggiungi immagine alla bacheca
+	Add Images…	Aggiungi immagini…
+	Add Link	Aggiungi link
+	Add Link to Board	Aggiungi link alla bacheca
+	Add Note	Aggiungi nota
+	Add Note to Board	Aggiungi nota alla bacheca
+	Add Selection to Board	Aggiungi selezione alla bacheca
+	Add the Document's Selection	Aggiungi la selezione del documento
+	Add to Board	Aggiungi alla bacheca
+	Address:	Indirizzo:
+	All Artboards	Tutte le tavole da disegno
+	Also Upload to Google Drive	Carica anche su Google Drive
+	An OpenAI-compatible images endpoint (/images/variations) and your API key. DLightroom includes no AI service: images are sent only when you click Generate Variations on a board.	Un endpoint di immagini compatibile con OpenAI (/images/variations) e la tua chiave API. DLightroom non include alcun servizio IA: le immagini vengono inviate solo quando fai clic su Genera varianti in una bacheca.
+	Apply Global Edit	Applica modifica globale
+	Arrange Board Items	Disponi elementi della bacheca
+	Back to Document	Torna al documento
+	Background Jobs	Processi in background
+	Background Tasks	Attività in background
+	Board	Bacheca
+	Board View	Vista bacheca
+	Cancel Job	Annulla processo
+	Caption:	Didascalia:
+	Change on every match	Cambia in ogni corrispondenza
+	Choose or create a board first	Scegli o crea prima una bacheca
+	Click an item to change it. Shift-click picks several; drag the corner handle to resize.	Fai clic su un elemento per modificarlo. Maiusc+clic ne sceglie più di uno; trascina la maniglia d’angolo per ridimensionare.
+	Client ID:	ID client:
+	Client Secret:	Segreto client:
+	Cloud Settings File	File delle impostazioni cloud
+	Cloud and AI Settings	Impostazioni cloud e IA
+	Cloud and AI Settings…	Impostazioni cloud e IA…
+	Cloud and AI Status	Stato cloud e IA
+	Cloud and AI features need the desktop app.	Le funzioni cloud e IA richiedono l’app desktop.
+	Cloud and AI settings saved	Impostazioni cloud e IA salvate
+	Connect Google Drive	Connetti Google Drive
+	Connected	Connesso
+	Connect…	Connetti…
+	Count:	Numero:
+	Delete Board	Elimina bacheca
+	Delete Board…	Elimina bacheca…
+	Delete this board and its images? This can't be undone.	Eliminare questa bacheca e le sue immagini? L’operazione non può essere annullata.
+	Disconnect	Disconnetti
+	Disconnect Google Drive	Disconnetti Google Drive
+	Disconnected	Non connesso
+	Dismiss	Ignora
+	Dismiss Job	Ignora processo
+	Drive Folder:	Cartella di Drive:
+	Drop images here, or add notes, colours and links on the right.	Trascina qui le immagini, oppure aggiungi note, colori e link a destra.
+	Duplicate Board	Duplica bacheca
+	Duplicate Board Items	Duplica elementi della bacheca
+	Edit Board Item	Modifica elemento della bacheca
+	Endpoint:	Endpoint:
+	Enter your OAuth client ID first	Inserisci prima l’ID client OAuth
+	Export for Screens can upload what it exports to a Drive folder. Use your own OAuth client (Google Cloud console › Credentials › OAuth client ID › Desktop app); DLightroom can only see the files it creates.	Esporta per schermi può caricare ciò che esporta in una cartella di Drive. Usa il tuo client OAuth (console Google Cloud › Credenziali › ID client OAuth › App desktop); DLightroom vede solo i file che crea.
+	Find Matches	Trova corrispondenze
+	Find the matches to preview them	Trova le corrispondenze per vederne l’anteprima
+	Fit Board in Window	Adatta bacheca alla finestra
+	From:	Origine:
+	Generate Variations	Genera varianti
+	Generate sends this image to	Genera invia questa immagine a
+	Global Edit	Modifica globale
+	Google Drive	Google Drive
+	Google Drive Settings	Impostazioni di Google Drive
+	Google Drive disconnected	Google Drive disconnesso
+	Google Drive: Disconnected	Google Drive: non connesso
+	Include Hidden Objects	Includi oggetti nascosti
+	Include Locked Objects	Includi oggetti bloccati
+	Inspiration Boards	Bacheche di ispirazione
+	Inspiration Boards Folder	Cartella delle bacheche di ispirazione
+	Inspiration Boards keep their files in the app's settings folder, which this build doesn't have.	Le bacheche di ispirazione salvano i file nella cartella delle impostazioni dell’app, che questa build non ha.
+	Instance Overrides	Modifiche dell’istanza
+	Instance:	Istanza:
+	Instance: as the symbol	Istanza: come il simbolo
+	Match objects with the same	Trova oggetti con lo stesso
+	Missing image	Immagine mancante
+	Model:	Modello:
+	Move Board Items	Sposta elementi della bacheca
+	New Board	Nuova bacheca
+	No API key stored	Nessuna chiave API salvata
+	No boards yet. Create one to collect images, notes, colours and links.	Ancora nessuna bacheca. Creane una per raccogliere immagini, note, colori e link.
+	Not set up: AI Variations use an image service you choose, with your own API key. Boards work fully without one.	Non configurato: le varianti IA usano un servizio di immagini scelto da te, con la tua chiave API. Le bacheche funzionano completamente anche senza.
+	Note	Nota
+	Note text	Testo della nota
+	Open in Browser	Apri nel browser
+	Re-curve Neighbours	Ricurva punti vicini
+	Redo Board Change	Ripeti modifica della bacheca
+	Reference:	Riferimento:
+	Remove Board Items	Rimuovi elementi della bacheca
+	Remove Key	Rimuovi chiave
+	Remove the Chosen Items	Rimuovi gli elementi scelti
+	Rename Board	Rinomina bacheca
+	Rename…	Rinomina…
+	Reset Instance Overrides	Ripristina modifiche dell’istanza
+	Retry	Riprova
+	Retry Job	Riprova processo
+	Search:	Cerca in:
+	Send the Board to the Document	Invia la bacheca al documento
+	Send the Chosen Items to the Document	Invia gli elementi scelti al documento
+	Send to Document	Invia al documento
+	Set Up…	Configura…
+	Title:	Titolo:
+	Undo Board Change	Annulla modifica della bacheca
+	Untitled Board	Bacheca senza titolo
+	Upload to Google Drive	Carica su Google Drive
+	stored; type to replace	salvato; digita per sostituire
+	tint {color}	tinta {color}
+	{count} matching objects ({hidden} hidden, {locked} locked)	{count} oggetti corrispondenti ({hidden} nascosti, {locked} bloccati)
+	‹ Back to Document	‹ Torna al documento
+@msg	AI variations need a provider: {e} (Cloud and AI Settings)	Le varianti IA richiedono un fornitore: {e} (Impostazioni cloud e IA)
+@msg	Added {added} image(s) to the board	{added} immagine/i aggiunta/e alla bacheca
+@msg	Asking {_1} for variations…	Richiesta di varianti a {_1}…
+@msg	Exported {_1} file(s), but the upload didn't start: {e}	{_1} file esportato/i, ma il caricamento non è partito: {e}
+@msg	Exported {_1} file(s); uploading them to Google Drive…	{_1} file esportato/i; caricamento su Google Drive…
+@msg	Find the matches and choose what to change first	Trova prima le corrispondenze e scegli cosa cambiare
+@msg	Google Drive isn't connected: connect it in Cloud and AI Settings first	Google Drive non è connesso: connettilo prima in Impostazioni cloud e IA
+@msg	Google didn't grant lasting access; remove DLightroom from your Google Account's third-party access and connect again	Google non ha concesso un accesso duraturo; rimuovi DLightroom dagli accessi di terze parti del tuo account Google e riconnettiti
+@msg	Inspiration Boards aren't set up here	Le bacheche di ispirazione non sono configurate qui
+@msg	No document open	Nessun documento aperto
+@msg	Open this address to sign in: {url}	Apri questo indirizzo per accedere: {url}
+@msg	Select the object whose matches you want to edit	Seleziona l’oggetto di cui vuoi modificare le corrispondenze
+@msg	Sent {n} item(s) to the document	{n} elemento/i inviato/i al documento

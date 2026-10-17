@@ -39,6 +39,7 @@ log = { workspace = true }
 web-time = "1"
 
 [dev-dependencies]
+vectorcraft-cloud = { workspace = true }
 egui_kittest = { workspace = true, features = ["wgpu", "snapshot"] }
 vectorcraft-testkit = { workspace = true }
 wat = { workspace = true }

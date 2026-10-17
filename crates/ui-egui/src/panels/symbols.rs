@@ -145,6 +145,9 @@ pub fn show(app: &mut VectorcraftApp, ui: &mut Ui) {
     }
     let has_sel = app.session.active().is_some_and(|d| !d.selection.is_empty());
     let inst = has_instances_selected(app);
+    if inst {
+        instance_overrides(app, ui);
+    }
     widgets::bottom_bar(ui, |ui| {
         widgets::icon_button_enabled(ui, "library", tl!("Symbol Libraries (on the roadmap)"), false, false, 24.0);
         if widgets::icon_button_enabled(ui, "dc-place-symbol", tl!("Place Symbol Instance"), false, sel.is_some(), 24.0).clicked() {
@@ -167,12 +170,47 @@ pub fn show(app: &mut VectorcraftApp, ui: &mut Ui) {
     });
 }
 
+/// The selected instance's overrides of its symbol (its own scale and rotation, tint, opacity and
+/// blend mode), with a button that resets them (`symbol.instance.reset`).
+fn instance_overrides(app: &mut VectorcraftApp, ui: &mut Ui) {
+    let Ok(r) = app.session.execute("symbol.instance.overrides", &json!({})) else { return };
+    let Some(first) = r["instances"].get(0) else { return };
+    let mut parts: Vec<String> = vec![];
+    if first["transformed"].as_bool() == Some(true) {
+        let (sx, sy, rot) =
+            (first["scaleX"].as_f64().unwrap_or(100.0), first["scaleY"].as_f64().unwrap_or(100.0), first["rotation"].as_f64().unwrap_or(0.0));
+        parts.push(if (sx - sy).abs() < 0.01 { format!("{sx:.0}%") } else { format!("{sx:.0}% × {sy:.0}%") });
+        if rot.abs() >= 0.01 {
+            parts.push(format!("{rot:.1}°"));
+        }
+    }
+    if let Some(t) = first["tint"].as_str() {
+        parts.push(crate::i18n::fmt(tl!("tint {color}"), &[("color", t)]));
+    }
+    if first["opacity"].as_f64().is_some_and(|o| o < 100.0) {
+        parts.push(format!("{:.0}%", first["opacity"].as_f64().unwrap_or(100.0)));
+    }
+    if let Some(b) = first["blendMode"].as_str().filter(|b| *b != "Normal") {
+        parts.push(tl!(b).to_string());
+    }
+    ui.horizontal(|ui| {
+        let text = if parts.is_empty() { tl!("Instance: as the symbol").to_string() } else { format!("{} {}", tl!("Instance:"), parts.join(" · ")) };
+        widgets::dim_name(ui, &text);
+        if !parts.is_empty()
+            && widgets::flat_button(ui, tl!("Reset"), 56.0).on_hover_text(tl!("Reset Instance Overrides")).clicked()
+            && let Err(e) = app.run("symbol.instance.reset", json!({}))
+        {
+            app.status(e);
+        }
+    });
+}
+
 pub fn menu(app: &mut VectorcraftApp, ui: &mut Ui) {
     let sel = current(app);
     let has_sel = app.session.active().is_some_and(|d| !d.selection.is_empty());
     let inst = has_instances_selected(app);
     let name = json!({"name": sel});
-    let items: [(&str, bool, &str, Value); 10] = [
+    let items: [(&str, bool, &str, Value); 11] = [
         (tl!("New Symbol…"), has_sel, "ui.symbolOptions", json!({})),
         (tl!("Redefine Symbol"), has_sel && sel.is_some(), "symbol.update", name.clone()),
         (tl!("Duplicate Symbol"), sel.is_some(), "symbol.duplicate", name.clone()),
@@ -182,6 +220,7 @@ pub fn menu(app: &mut VectorcraftApp, ui: &mut Ui) {
         (tl!("Place Symbol Instance"), sel.is_some(), "symbol.place", name.clone()),
         (tl!("Replace Symbol"), inst && sel.is_some(), "symbol.replace", name.clone()),
         (tl!("Break Link to Symbol"), inst, "symbol.breakLink", json!({})),
+        (tl!("Reset Instance Overrides"), inst, "symbol.instance.reset", json!({})),
         (tl!("Select All Instances"), sel.is_some(), "symbol.selectInstances", name),
     ];
     for (label, enabled, cmd, params) in items {

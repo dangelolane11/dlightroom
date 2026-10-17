@@ -4549,3 +4549,135 @@ theme	Appearance	Giao diện
 	Movie Clip	Clip phim
 @msg	name is empty	tên trống
 @msg	no symbol named `{n}`	không có biểu tượng nào tên `{n}`
+
+# Advanced tools milestone (DLightroom): Global Edit, symbol instance overrides, Curvature's
+# Re-curve Neighbours, Inspiration Boards, AI Variations and Cloud and AI Settings.
+	AI Provider Settings	Cài đặt nhà cung cấp AI
+	AI Variations	Biến thể AI
+	AI Variations need the desktop app.	Biến thể AI cần ứng dụng máy tính.
+	API Key:	Khóa API:
+	API key removed	Đã xóa khóa API
+	API key stored in	Khóa API được lưu trong
+	Active Artboard	Bảng vẽ hiện hoạt
+	Add Color	Thêm màu
+	Add Color to Board	Thêm màu vào bảng
+	Add Image to Board	Thêm ảnh vào bảng
+	Add Images…	Thêm ảnh…
+	Add Link	Thêm liên kết
+	Add Link to Board	Thêm liên kết vào bảng
+	Add Note	Thêm ghi chú
+	Add Note to Board	Thêm ghi chú vào bảng
+	Add Selection to Board	Thêm vùng chọn vào bảng
+	Add the Document's Selection	Thêm vùng chọn của tài liệu
+	Add to Board	Thêm vào bảng
+	Address:	Địa chỉ:
+	All Artboards	Tất cả bảng vẽ
+	Also Upload to Google Drive	Đồng thời tải lên Google Drive
+	An OpenAI-compatible images endpoint (/images/variations) and your API key. DLightroom includes no AI service: images are sent only when you click Generate Variations on a board.	Một điểm cuối hình ảnh tương thích OpenAI (/images/variations) và khóa API của bạn. DLightroom không kèm dịch vụ AI nào: ảnh chỉ được gửi khi bạn bấm Tạo biến thể trên một bảng.
+	Apply Global Edit	Áp dụng chỉnh sửa toàn cục
+	Arrange Board Items	Sắp xếp mục trên bảng
+	Back to Document	Quay lại tài liệu
+	Background Jobs	Công việc nền
+	Background Tasks	Tác vụ nền
+	Board	Bảng
+	Board View	Chế độ xem bảng
+	Cancel Job	Hủy công việc
+	Caption:	Chú thích:
+	Change on every match	Thay đổi trên mọi kết quả khớp
+	Choose or create a board first	Hãy chọn hoặc tạo một bảng trước
+	Click an item to change it. Shift-click picks several; drag the corner handle to resize.	Bấm vào một mục để thay đổi. Shift+bấm để chọn nhiều mục; kéo tay nắm ở góc để đổi kích thước.
+	Client ID:	ID ứng dụng khách:
+	Client Secret:	Mã bí mật ứng dụng khách:
+	Cloud Settings File	Tệp cài đặt đám mây
+	Cloud and AI Settings	Cài đặt đám mây và AI
+	Cloud and AI Settings…	Cài đặt đám mây và AI…
+	Cloud and AI Status	Trạng thái đám mây và AI
+	Cloud and AI features need the desktop app.	Tính năng đám mây và AI cần ứng dụng máy tính.
+	Cloud and AI settings saved	Đã lưu cài đặt đám mây và AI
+	Connect Google Drive	Kết nối Google Drive
+	Connected	Đã kết nối
+	Connect…	Kết nối…
+	Count:	Số lượng:
+	Delete Board	Xóa bảng
+	Delete Board…	Xóa bảng…
+	Delete this board and its images? This can't be undone.	Xóa bảng này và các ảnh của nó? Không thể hoàn tác.
+	Disconnect	Ngắt kết nối
+	Disconnect Google Drive	Ngắt kết nối Google Drive
+	Disconnected	Chưa kết nối
+	Dismiss	Bỏ qua
+	Dismiss Job	Bỏ qua công việc
+	Drive Folder:	Thư mục Drive:
+	Drop images here, or add notes, colours and links on the right.	Thả ảnh vào đây, hoặc thêm ghi chú, màu và liên kết ở bên phải.
+	Duplicate Board	Nhân bản bảng
+	Duplicate Board Items	Nhân bản mục trên bảng
+	Edit Board Item	Sửa mục trên bảng
+	Endpoint:	Điểm cuối:
+	Enter your OAuth client ID first	Hãy nhập ID ứng dụng khách OAuth trước
+	Export for Screens can upload what it exports to a Drive folder. Use your own OAuth client (Google Cloud console › Credentials › OAuth client ID › Desktop app); DLightroom can only see the files it creates.	Xuất cho màn hình có thể tải những gì nó xuất lên một thư mục Drive. Hãy dùng ứng dụng khách OAuth của riêng bạn (bảng điều khiển Google Cloud › Thông tin xác thực › ID ứng dụng khách OAuth › Ứng dụng máy tính); DLightroom chỉ thấy các tệp do nó tạo.
+	Find Matches	Tìm kết quả khớp
+	Find the matches to preview them	Tìm kết quả khớp để xem trước
+	Fit Board in Window	Vừa bảng với cửa sổ
+	From:	Nguồn:
+	Generate Variations	Tạo biến thể
+	Generate sends this image to	Tạo sẽ gửi ảnh này tới
+	Global Edit	Chỉnh sửa toàn cục
+	Google Drive	Google Drive
+	Google Drive Settings	Cài đặt Google Drive
+	Google Drive disconnected	Đã ngắt kết nối Google Drive
+	Google Drive: Disconnected	Google Drive: chưa kết nối
+	Include Hidden Objects	Gồm cả đối tượng ẩn
+	Include Locked Objects	Gồm cả đối tượng bị khóa
+	Inspiration Boards	Bảng cảm hứng
+	Inspiration Boards Folder	Thư mục bảng cảm hứng
+	Inspiration Boards keep their files in the app's settings folder, which this build doesn't have.	Bảng cảm hứng giữ tệp trong thư mục cài đặt của ứng dụng, mà bản dựng này không có.
+	Instance Overrides	Ghi đè của phiên bản
+	Instance:	Phiên bản:
+	Instance: as the symbol	Phiên bản: như biểu tượng
+	Match objects with the same	Tìm đối tượng có cùng
+	Missing image	Thiếu ảnh
+	Model:	Mô hình:
+	Move Board Items	Di chuyển mục trên bảng
+	New Board	Bảng mới
+	No API key stored	Chưa lưu khóa API
+	No boards yet. Create one to collect images, notes, colours and links.	Chưa có bảng nào. Hãy tạo một bảng để thu thập ảnh, ghi chú, màu và liên kết.
+	Not set up: AI Variations use an image service you choose, with your own API key. Boards work fully without one.	Chưa thiết lập: Biến thể AI dùng một dịch vụ hình ảnh do bạn chọn, với khóa API của riêng bạn. Bảng vẫn hoạt động đầy đủ khi không có nó.
+	Note	Ghi chú
+	Note text	Nội dung ghi chú
+	Open in Browser	Mở trong trình duyệt
+	Re-curve Neighbours	Uốn lại điểm lân cận
+	Redo Board Change	Làm lại thay đổi bảng
+	Reference:	Tham chiếu:
+	Remove Board Items	Xóa mục khỏi bảng
+	Remove Key	Xóa khóa
+	Remove the Chosen Items	Xóa các mục đã chọn
+	Rename Board	Đổi tên bảng
+	Rename…	Đổi tên…
+	Reset Instance Overrides	Đặt lại ghi đè của phiên bản
+	Retry	Thử lại
+	Retry Job	Chạy lại công việc
+	Search:	Tìm trong:
+	Send the Board to the Document	Gửi bảng vào tài liệu
+	Send the Chosen Items to the Document	Gửi các mục đã chọn vào tài liệu
+	Send to Document	Gửi vào tài liệu
+	Set Up…	Thiết lập…
+	Title:	Tiêu đề:
+	Undo Board Change	Hoàn tác thay đổi bảng
+	Untitled Board	Bảng chưa đặt tên
+	Upload to Google Drive	Tải lên Google Drive
+	stored; type to replace	đã lưu; nhập để thay thế
+	tint {color}	nhuộm {color}
+	{count} matching objects ({hidden} hidden, {locked} locked)	{count} đối tượng khớp ({hidden} ẩn, {locked} bị khóa)
+	‹ Back to Document	‹ Quay lại tài liệu
+@msg	AI variations need a provider: {e} (Cloud and AI Settings)	Biến thể AI cần một nhà cung cấp: {e} (Cài đặt đám mây và AI)
+@msg	Added {added} image(s) to the board	Đã thêm {added} ảnh vào bảng
+@msg	Asking {_1} for variations…	Đang yêu cầu {_1} tạo biến thể…
+@msg	Exported {_1} file(s), but the upload didn't start: {e}	Đã xuất {_1} tệp, nhưng việc tải lên chưa bắt đầu: {e}
+@msg	Exported {_1} file(s); uploading them to Google Drive…	Đã xuất {_1} tệp; đang tải lên Google Drive…
+@msg	Find the matches and choose what to change first	Hãy tìm kết quả khớp trước rồi chọn nội dung cần thay đổi
+@msg	Google Drive isn't connected: connect it in Cloud and AI Settings first	Google Drive chưa được kết nối: hãy kết nối trong Cài đặt đám mây và AI trước
+@msg	Google didn't grant lasting access; remove DLightroom from your Google Account's third-party access and connect again	Google không cấp quyền truy cập lâu dài; hãy xóa DLightroom khỏi quyền truy cập của bên thứ ba trong Tài khoản Google rồi kết nối lại
+@msg	Inspiration Boards aren't set up here	Bảng cảm hứng chưa được thiết lập ở đây
+@msg	No document open	Không có tài liệu nào đang mở
+@msg	Open this address to sign in: {url}	Mở địa chỉ này để đăng nhập: {url}
+@msg	Select the object whose matches you want to edit	Hãy chọn đối tượng có các kết quả khớp bạn muốn sửa
+@msg	Sent {n} item(s) to the document	Đã gửi {n} mục vào tài liệu

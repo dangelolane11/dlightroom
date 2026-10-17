@@ -380,14 +380,46 @@ fn params(app: &VectorcraftApp, d: &Dialog) -> Result<Value, String> {
     Ok(Value::Object(p))
 }
 
-/// Export; the dialog stays open when the export fails.
+/// Export; the dialog stays open when the export fails. With Upload to Google Drive on, the files
+/// written go on to Drive as a background job once they're all in the folder.
 fn confirm(app: &mut VectorcraftApp, d: &Dialog) -> Result<Value, String> {
     let p = params(app, d)?;
-    let r = io::export_for_screens(app, p);
-    if r.is_ok() {
-        app.ui.dialog = None;
+    let r = io::export_for_screens(app, p)?;
+    app.ui.dialog = None;
+    if d.bool("cloudDrive") && !io::is_web(app) {
+        let paths: Vec<Value> = r["files"].as_array().into_iter().flatten().filter(|f| f.is_string()).cloned().collect();
+        match app.run("cloud.drive.upload", json!({ "paths": paths })) {
+            Ok(_) => app.status(format!("Exported {} file(s); uploading them to Google Drive…", paths.len())),
+            // The files are exported either way: say why the upload didn't start.
+            Err(e) => app.status(format!("Exported {} file(s), but the upload didn't start: {e}", paths.len())),
+        }
     }
-    r
+    Ok(r)
+}
+
+/// Upload to Google Drive: on once Drive is connected, else what to set up.
+fn cloud_destination(app: &mut VectorcraftApp, ui: &mut egui::Ui, d: &mut Dialog) {
+    let st = app.run("cloud.status", json!({})).unwrap_or_default();
+    let connected = st["drive"]["connected"] == true;
+    if !connected && d.bool("cloudDrive") {
+        d.fields.insert("cloudDrive".into(), json!(false));
+    }
+    ui.horizontal(|ui| {
+        if widgets::check(ui, tl!("Also Upload to Google Drive"), d.bool("cloudDrive"), connected) {
+            d.fields.insert("cloudDrive".into(), json!(!d.bool("cloudDrive")));
+        }
+        if connected {
+            widgets::dim_label(ui, &format!("› {}", st["drive"]["folder"].as_str().unwrap_or_default()));
+        }
+    });
+    if !connected {
+        ui.horizontal(|ui| {
+            widgets::dim_label(ui, tl!("Google Drive: Disconnected"));
+            if ui.small_button(tl!("Set Up…")).clicked() {
+                crate::dialogs::cloud_settings::open(app);
+            }
+        });
+    }
 }
 
 fn body(app: &mut VectorcraftApp, ui: &mut egui::Ui, d: &mut Dialog) -> bool {
@@ -568,6 +600,7 @@ fn destination(app: &mut VectorcraftApp, ui: &mut egui::Ui, d: &mut Dialog) {
             }
         });
         form::check(ui, d, "openLocation", tl!("Open Location after Export"));
+        cloud_destination(app, ui, d);
     }
     ui.horizontal(|ui| {
         widgets::dim_label(ui, tl!("Folders:"));

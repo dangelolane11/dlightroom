@@ -4529,3 +4529,135 @@ theme	Appearance	Erscheinungsbild
 	Movie Clip	Movieclip
 @msg	name is empty	Name ist leer
 @msg	no symbol named `{n}`	kein Symbol namens `{n}`
+
+# Advanced tools milestone (DLightroom): Global Edit, symbol instance overrides, Curvature's
+# Re-curve Neighbours, Inspiration Boards, AI Variations and Cloud and AI Settings.
+	AI Provider Settings	KI-Anbietereinstellungen
+	AI Variations	KI-Varianten
+	AI Variations need the desktop app.	KI-Varianten benötigen die Desktop-App.
+	API Key:	API-Schlüssel:
+	API key removed	API-Schlüssel entfernt
+	API key stored in	API-Schlüssel gespeichert in
+	Active Artboard	Aktive Zeichenfläche
+	Add Color	Farbe hinzufügen
+	Add Color to Board	Farbe zum Board hinzufügen
+	Add Image to Board	Bild zum Board hinzufügen
+	Add Images…	Bilder hinzufügen…
+	Add Link	Link hinzufügen
+	Add Link to Board	Link zum Board hinzufügen
+	Add Note	Notiz hinzufügen
+	Add Note to Board	Notiz zum Board hinzufügen
+	Add Selection to Board	Auswahl zum Board hinzufügen
+	Add the Document's Selection	Auswahl des Dokuments hinzufügen
+	Add to Board	Zum Board hinzufügen
+	Address:	Adresse:
+	All Artboards	Alle Zeichenflächen
+	Also Upload to Google Drive	Auch zu Google Drive hochladen
+	An OpenAI-compatible images endpoint (/images/variations) and your API key. DLightroom includes no AI service: images are sent only when you click Generate Variations on a board.	Ein OpenAI-kompatibler Bild-Endpunkt (/images/variations) und Ihr API-Schlüssel. DLightroom enthält keinen KI-Dienst: Bilder werden nur gesendet, wenn Sie auf einem Board auf „Varianten erzeugen“ klicken.
+	Apply Global Edit	Globale Bearbeitung anwenden
+	Arrange Board Items	Board-Elemente anordnen
+	Back to Document	Zurück zum Dokument
+	Background Jobs	Hintergrundaufträge
+	Background Tasks	Hintergrundaufgaben
+	Board	Board
+	Board View	Board-Ansicht
+	Cancel Job	Auftrag abbrechen
+	Caption:	Bildunterschrift:
+	Change on every match	Bei jedem Treffer ändern
+	Choose or create a board first	Wählen oder erstellen Sie zuerst ein Board
+	Click an item to change it. Shift-click picks several; drag the corner handle to resize.	Klicken Sie auf ein Element, um es zu ändern. Mit Shift+Klick wählen Sie mehrere; ziehen Sie den Eckgriff, um die Größe zu ändern.
+	Client ID:	Client-ID:
+	Client Secret:	Client-Geheimnis:
+	Cloud Settings File	Datei der Cloud-Einstellungen
+	Cloud and AI Settings	Cloud- und KI-Einstellungen
+	Cloud and AI Settings…	Cloud- und KI-Einstellungen…
+	Cloud and AI Status	Cloud- und KI-Status
+	Cloud and AI features need the desktop app.	Cloud- und KI-Funktionen benötigen die Desktop-App.
+	Cloud and AI settings saved	Cloud- und KI-Einstellungen gespeichert
+	Connect Google Drive	Google Drive verbinden
+	Connected	Verbunden
+	Connect…	Verbinden…
+	Count:	Anzahl:
+	Delete Board	Board löschen
+	Delete Board…	Board löschen…
+	Delete this board and its images? This can't be undone.	Dieses Board und seine Bilder löschen? Das kann nicht rückgängig gemacht werden.
+	Disconnect	Trennen
+	Disconnect Google Drive	Google Drive trennen
+	Disconnected	Nicht verbunden
+	Dismiss	Schließen
+	Dismiss Job	Auftrag entfernen
+	Drive Folder:	Drive-Ordner:
+	Drop images here, or add notes, colours and links on the right.	Legen Sie hier Bilder ab oder fügen Sie rechts Notizen, Farben und Links hinzu.
+	Duplicate Board	Board duplizieren
+	Duplicate Board Items	Board-Elemente duplizieren
+	Edit Board Item	Board-Element bearbeiten
+	Endpoint:	Endpunkt:
+	Enter your OAuth client ID first	Geben Sie zuerst Ihre OAuth-Client-ID ein
+	Export for Screens can upload what it exports to a Drive folder. Use your own OAuth client (Google Cloud console › Credentials › OAuth client ID › Desktop app); DLightroom can only see the files it creates.	„Für Bildschirme exportieren“ kann das Exportierte in einen Drive-Ordner hochladen. Verwenden Sie Ihren eigenen OAuth-Client (Google Cloud Console › Anmeldedaten › OAuth-Client-ID › Desktop-App); DLightroom sieht nur die Dateien, die es selbst erstellt.
+	Find Matches	Treffer suchen
+	Find the matches to preview them	Suchen Sie die Treffer, um sie in der Vorschau zu sehen
+	Fit Board in Window	Board in Fenster einpassen
+	From:	Von:
+	Generate Variations	Varianten erzeugen
+	Generate sends this image to	„Erzeugen“ sendet dieses Bild an
+	Global Edit	Globale Bearbeitung
+	Google Drive	Google Drive
+	Google Drive Settings	Google-Drive-Einstellungen
+	Google Drive disconnected	Google Drive getrennt
+	Google Drive: Disconnected	Google Drive: nicht verbunden
+	Include Hidden Objects	Ausgeblendete Objekte einbeziehen
+	Include Locked Objects	Gesperrte Objekte einbeziehen
+	Inspiration Boards	Inspirationsboards
+	Inspiration Boards Folder	Ordner der Inspirationsboards
+	Inspiration Boards keep their files in the app's settings folder, which this build doesn't have.	Inspirationsboards speichern ihre Dateien im Einstellungsordner der App, den dieser Build nicht hat.
+	Instance Overrides	Instanzüberschreibungen
+	Instance:	Instanz:
+	Instance: as the symbol	Instanz: wie das Symbol
+	Match objects with the same	Objekte mit gleichen Eigenschaften finden
+	Missing image	Bild fehlt
+	Model:	Modell:
+	Move Board Items	Board-Elemente verschieben
+	New Board	Neues Board
+	No API key stored	Kein API-Schlüssel gespeichert
+	No boards yet. Create one to collect images, notes, colours and links.	Noch keine Boards. Erstellen Sie eines, um Bilder, Notizen, Farben und Links zu sammeln.
+	Not set up: AI Variations use an image service you choose, with your own API key. Boards work fully without one.	Nicht eingerichtet: KI-Varianten verwenden einen Bilddienst Ihrer Wahl mit Ihrem eigenen API-Schlüssel. Boards funktionieren auch ohne vollständig.
+	Note	Notiz
+	Note text	Notiztext
+	Open in Browser	Im Browser öffnen
+	Re-curve Neighbours	Nachbarn neu krümmen
+	Redo Board Change	Board-Änderung wiederholen
+	Reference:	Referenz:
+	Remove Board Items	Board-Elemente entfernen
+	Remove Key	Schlüssel entfernen
+	Remove the Chosen Items	Gewählte Elemente entfernen
+	Rename Board	Board umbenennen
+	Rename…	Umbenennen…
+	Reset Instance Overrides	Instanzüberschreibungen zurücksetzen
+	Retry	Erneut versuchen
+	Retry Job	Auftrag wiederholen
+	Search:	Suchen:
+	Send the Board to the Document	Board an das Dokument senden
+	Send the Chosen Items to the Document	Gewählte Elemente an das Dokument senden
+	Send to Document	An Dokument senden
+	Set Up…	Einrichten…
+	Title:	Titel:
+	Undo Board Change	Board-Änderung rückgängig machen
+	Untitled Board	Unbenanntes Board
+	Upload to Google Drive	Zu Google Drive hochladen
+	stored; type to replace	gespeichert; zum Ersetzen eingeben
+	tint {color}	Färbung {color}
+	{count} matching objects ({hidden} hidden, {locked} locked)	{count} passende Objekte ({hidden} ausgeblendet, {locked} gesperrt)
+	‹ Back to Document	‹ Zurück zum Dokument
+@msg	AI variations need a provider: {e} (Cloud and AI Settings)	KI-Varianten benötigen einen Anbieter: {e} (Cloud- und KI-Einstellungen)
+@msg	Added {added} image(s) to the board	{added} Bild(er) zum Board hinzugefügt
+@msg	Asking {_1} for variations…	{_1} wird um Varianten gebeten…
+@msg	Exported {_1} file(s), but the upload didn't start: {e}	{_1} Datei(en) exportiert, aber der Upload wurde nicht gestartet: {e}
+@msg	Exported {_1} file(s); uploading them to Google Drive…	{_1} Datei(en) exportiert; sie werden zu Google Drive hochgeladen…
+@msg	Find the matches and choose what to change first	Suchen Sie zuerst die Treffer und wählen Sie, was geändert werden soll
+@msg	Google Drive isn't connected: connect it in Cloud and AI Settings first	Google Drive ist nicht verbunden: Verbinden Sie es zuerst in den Cloud- und KI-Einstellungen
+@msg	Google didn't grant lasting access; remove DLightroom from your Google Account's third-party access and connect again	Google hat keinen dauerhaften Zugriff gewährt; entfernen Sie DLightroom aus dem Drittanbieterzugriff Ihres Google-Kontos und verbinden Sie erneut
+@msg	Inspiration Boards aren't set up here	Inspirationsboards sind hier nicht eingerichtet
+@msg	No document open	Kein Dokument geöffnet
+@msg	Open this address to sign in: {url}	Öffnen Sie diese Adresse, um sich anzumelden: {url}
+@msg	Select the object whose matches you want to edit	Wählen Sie das Objekt aus, dessen Treffer Sie bearbeiten möchten
+@msg	Sent {n} item(s) to the document	{n} Element(e) an das Dokument gesendet

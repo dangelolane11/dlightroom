@@ -15,7 +15,9 @@ use vectorcraft_geom::{Anchor, AnchorKind, BezPath, Point, SubPath, Vec2};
 use crate::{Action, Tool, ToolContext};
 
 pub use anchor::AnchorTool;
-pub use curvature::{CurvatureTool, EndCurve, curvature_close, curvature_extend, curvature_insert, curvature_move, curvature_smooth};
+pub use curvature::{
+    CurvatureTool, EndCurve, curvature_close, curvature_extend, curvature_insert, curvature_move, curvature_recurve_neighbours, curvature_smooth,
+};
 pub use family::FamilyTool;
 pub use gesture::GestureTool;
 

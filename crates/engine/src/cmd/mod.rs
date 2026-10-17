@@ -3,9 +3,11 @@
 pub(crate) mod appearance;
 mod assets;
 mod attributes;
+pub mod boards;
 mod brushsym;
 mod buildcmds;
 pub mod clipboard;
+pub mod cloud;
 mod colorcmds;
 pub mod colormgmt;
 pub mod colortheme;
@@ -28,6 +30,7 @@ pub mod flatten;
 pub mod fontfiles;
 mod fonts;
 pub(crate) mod freeform;
+pub mod globaledit;
 pub(crate) mod gradient;
 pub(crate) mod graph;
 mod halftone;
@@ -208,6 +211,7 @@ pub fn command_specs() -> &'static [CommandSpec] {
         v.extend(object::specs());
         v.extend(path::specs());
         v.extend(select::specs());
+        v.extend(globaledit::specs());
         v.extend(wand::specs());
         v.extend(paint::specs());
         // Split out of `paint` (M3.8); kept next to it so lists in registry order (the command
@@ -291,6 +295,8 @@ pub fn command_specs() -> &'static [CommandSpec] {
         v.extend(perspgrid::specs());
         v.extend(shortcutset::specs());
         v.extend(importmatches::specs());
+        v.extend(boards::specs());
+        v.extend(cloud::specs());
         v
     })
 }

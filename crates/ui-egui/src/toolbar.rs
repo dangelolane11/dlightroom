@@ -396,6 +396,16 @@ pub fn control_bar_options(app: &mut VectorcraftApp, ui: &mut Ui) {
         ui.separator();
         return;
     }
+    // The Curvature tool: Re-curve Neighbours, for dragging points of a selected path.
+    if app.session.tool_id() == "curvature" {
+        let on = app.session.tool_options()["recurveNeighbours"].as_bool().unwrap_or(false);
+        let r = widgets::check(ui, tl!("Re-curve Neighbours"), on, true);
+        if r {
+            app.run("tool.setOption", json!({ "key": "recurveNeighbours", "value": !on })).ok();
+        }
+        ui.separator();
+        return;
+    }
     if app.session.tool_id() != "mirrorCut" {
         return;
     }

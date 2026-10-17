@@ -4956,3 +4956,135 @@ mark-style	Japanese	Japanilainen
 	Movie Clip	Elokuvaleike
 @msg	name is empty	nimi on tyhjä
 @msg	no symbol named `{n}`	symbolia nimeltä `{n}` ei ole
+
+# Advanced tools milestone (DLightroom): Global Edit, symbol instance overrides, Curvature's
+# Re-curve Neighbours, Inspiration Boards, AI Variations and Cloud and AI Settings.
+	AI Provider Settings	Tekoälypalvelun asetukset
+	AI Variations	Tekoälyversiot
+	AI Variations need the desktop app.	Tekoälyversiot vaativat työpöytäsovelluksen.
+	API Key:	API-avain:
+	API key removed	API-avain poistettu
+	API key stored in	API-avain tallennettu:
+	Active Artboard	Aktiivinen piirtoalusta
+	Add Color	Lisää väri
+	Add Color to Board	Lisää väri tauluun
+	Add Image to Board	Lisää kuva tauluun
+	Add Images…	Lisää kuvia…
+	Add Link	Lisää linkki
+	Add Link to Board	Lisää linkki tauluun
+	Add Note	Lisää muistiinpano
+	Add Note to Board	Lisää muistiinpano tauluun
+	Add Selection to Board	Lisää valinta tauluun
+	Add the Document's Selection	Lisää asiakirjan valinta
+	Add to Board	Lisää tauluun
+	Address:	Osoite:
+	All Artboards	Kaikki piirtoalustat
+	Also Upload to Google Drive	Lataa myös Google Driveen
+	An OpenAI-compatible images endpoint (/images/variations) and your API key. DLightroom includes no AI service: images are sent only when you click Generate Variations on a board.	OpenAI-yhteensopiva kuvapalvelun päätepiste (/images/variations) ja oma API-avaimesi. DLightroom ei sisällä tekoälypalvelua: kuvia lähetetään vain, kun napsautat taululla Luo versioita.
+	Apply Global Edit	Käytä yleistä muokkausta
+	Arrange Board Items	Järjestä taulun kohteet
+	Back to Document	Takaisin asiakirjaan
+	Background Jobs	Taustatyöt
+	Background Tasks	Taustatehtävät
+	Board	Taulu
+	Board View	Taulunäkymä
+	Cancel Job	Peruuta työ
+	Caption:	Kuvateksti:
+	Change on every match	Muuta jokaisessa osumassa
+	Choose or create a board first	Valitse tai luo ensin taulu
+	Click an item to change it. Shift-click picks several; drag the corner handle to resize.	Muuta kohdetta napsauttamalla sitä. Vaihto+napsautus valitsee useita; muuta kokoa vetämällä kulmakahvaa.
+	Client ID:	Asiakastunnus:
+	Client Secret:	Asiakassalaisuus:
+	Cloud Settings File	Pilviasetusten tiedosto
+	Cloud and AI Settings	Pilvi- ja tekoälyasetukset
+	Cloud and AI Settings…	Pilvi- ja tekoälyasetukset…
+	Cloud and AI Status	Pilven ja tekoälyn tila
+	Cloud and AI features need the desktop app.	Pilvi- ja tekoälytoiminnot vaativat työpöytäsovelluksen.
+	Cloud and AI settings saved	Pilvi- ja tekoälyasetukset tallennettu
+	Connect Google Drive	Yhdistä Google Drive
+	Connected	Yhdistetty
+	Connect…	Yhdistä…
+	Count:	Määrä:
+	Delete Board	Poista taulu
+	Delete Board…	Poista taulu…
+	Delete this board and its images? This can't be undone.	Poistetaanko tämä taulu ja sen kuvat? Toimintoa ei voi kumota.
+	Disconnect	Katkaise yhteys
+	Disconnect Google Drive	Katkaise Google Driven yhteys
+	Disconnected	Ei yhdistetty
+	Dismiss	Ohita
+	Dismiss Job	Ohita työ
+	Drive Folder:	Drive-kansio:
+	Drop images here, or add notes, colours and links on the right.	Pudota kuvia tähän tai lisää muistiinpanoja, värejä ja linkkejä oikealta.
+	Duplicate Board	Monista taulu
+	Duplicate Board Items	Monista taulun kohteet
+	Edit Board Item	Muokkaa taulun kohdetta
+	Endpoint:	Päätepiste:
+	Enter your OAuth client ID first	Anna ensin OAuth-asiakastunnuksesi
+	Export for Screens can upload what it exports to a Drive folder. Use your own OAuth client (Google Cloud console › Credentials › OAuth client ID › Desktop app); DLightroom can only see the files it creates.	Vienti näytöille voi ladata viedyt tiedostot Drive-kansioon. Käytä omaa OAuth-asiakastasi (Google Cloud -konsoli › Tunnistetiedot › OAuth-asiakastunnus › Työpöytäsovellus); DLightroom näkee vain itse luomansa tiedostot.
+	Find Matches	Etsi osumat
+	Find the matches to preview them	Etsi osumat esikatsellaksesi niitä
+	Fit Board in Window	Sovita taulu ikkunaan
+	From:	Lähde:
+	Generate Variations	Luo versioita
+	Generate sends this image to	Luonti lähettää tämän kuvan palveluun
+	Global Edit	Yleinen muokkaus
+	Google Drive	Google Drive
+	Google Drive Settings	Google Driven asetukset
+	Google Drive disconnected	Google Driven yhteys katkaistu
+	Google Drive: Disconnected	Google Drive: ei yhdistetty
+	Include Hidden Objects	Sisällytä piilotetut kohteet
+	Include Locked Objects	Sisällytä lukitut kohteet
+	Inspiration Boards	Inspiraatiotaulut
+	Inspiration Boards Folder	Inspiraatiotaulujen kansio
+	Inspiration Boards keep their files in the app's settings folder, which this build doesn't have.	Inspiraatiotaulut tallentavat tiedostonsa sovelluksen asetuskansioon, jota tässä versiossa ei ole.
+	Instance Overrides	Esiintymän ohitukset
+	Instance:	Esiintymä:
+	Instance: as the symbol	Esiintymä: kuten symboli
+	Match objects with the same	Etsi kohteet, joilla on sama
+	Missing image	Kuva puuttuu
+	Model:	Malli:
+	Move Board Items	Siirrä taulun kohteita
+	New Board	Uusi taulu
+	No API key stored	API-avainta ei ole tallennettu
+	No boards yet. Create one to collect images, notes, colours and links.	Ei vielä tauluja. Luo taulu kerätäksesi kuvia, muistiinpanoja, värejä ja linkkejä.
+	Not set up: AI Variations use an image service you choose, with your own API key. Boards work fully without one.	Ei määritetty: tekoälyversiot käyttävät valitsemaasi kuvapalvelua omalla API-avaimellasi. Taulut toimivat täysin ilman sitä.
+	Note	Muistiinpano
+	Note text	Muistiinpanon teksti
+	Open in Browser	Avaa selaimessa
+	Re-curve Neighbours	Kaarra naapurit uudelleen
+	Redo Board Change	Tee taulun muutos uudelleen
+	Reference:	Viite:
+	Remove Board Items	Poista taulun kohteita
+	Remove Key	Poista avain
+	Remove the Chosen Items	Poista valitut kohteet
+	Rename Board	Nimeä taulu uudelleen
+	Rename…	Nimeä uudelleen…
+	Reset Instance Overrides	Palauta esiintymän ohitukset
+	Retry	Yritä uudelleen
+	Retry Job	Suorita työ uudelleen
+	Search:	Haku:
+	Send the Board to the Document	Lähetä taulu asiakirjaan
+	Send the Chosen Items to the Document	Lähetä valitut kohteet asiakirjaan
+	Send to Document	Lähetä asiakirjaan
+	Set Up…	Määritä…
+	Title:	Otsikko:
+	Undo Board Change	Kumoa taulun muutos
+	Untitled Board	Nimetön taulu
+	Upload to Google Drive	Lataa Google Driveen
+	stored; type to replace	tallennettu; kirjoita korvataksesi
+	tint {color}	sävytys {color}
+	{count} matching objects ({hidden} hidden, {locked} locked)	{count} vastaavaa kohdetta ({hidden} piilotettua, {locked} lukittua)
+	‹ Back to Document	‹ Takaisin asiakirjaan
+@msg	AI variations need a provider: {e} (Cloud and AI Settings)	Tekoälyversiot vaativat palvelun: {e} (Pilvi- ja tekoälyasetukset)
+@msg	Added {added} image(s) to the board	Tauluun lisättiin kuvia: {added}
+@msg	Asking {_1} for variations…	Pyydetään versioita palvelusta {_1}…
+@msg	Exported {_1} file(s), but the upload didn't start: {e}	Vietiin tiedostoja: {_1}, mutta lataus ei alkanut: {e}
+@msg	Exported {_1} file(s); uploading them to Google Drive…	Vietiin tiedostoja: {_1}; ladataan Google Driveen…
+@msg	Find the matches and choose what to change first	Etsi ensin osumat ja valitse, mitä muutetaan
+@msg	Google Drive isn't connected: connect it in Cloud and AI Settings first	Google Drive ei ole yhdistettynä: yhdistä se ensin pilvi- ja tekoälyasetuksissa
+@msg	Google didn't grant lasting access; remove DLightroom from your Google Account's third-party access and connect again	Google ei myöntänyt pysyvää käyttöoikeutta; poista DLightroom Google-tilisi kolmannen osapuolen käyttöoikeuksista ja yhdistä uudelleen
+@msg	Inspiration Boards aren't set up here	Inspiraatiotauluja ei ole määritetty täällä
+@msg	No document open	Ei avointa asiakirjaa
+@msg	Open this address to sign in: {url}	Kirjaudu avaamalla tämä osoite: {url}
+@msg	Select the object whose matches you want to edit	Valitse kohde, jonka osumia haluat muokata
+@msg	Sent {n} item(s) to the document	Asiakirjaan lähetettiin kohteita: {n}

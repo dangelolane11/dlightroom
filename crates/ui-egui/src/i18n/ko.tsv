@@ -4533,3 +4533,135 @@ lighting	Light	광원
 	Movie Clip	무비 클립
 @msg	name is empty	이름이 비어 있습니다
 @msg	no symbol named `{n}`	이름이 `{n}`인 심볼이 없습니다
+
+# Advanced tools milestone (DLightroom): Global Edit, symbol instance overrides, Curvature's
+# Re-curve Neighbours, Inspiration Boards, AI Variations and Cloud and AI Settings.
+	AI Provider Settings	AI 공급자 설정
+	AI Variations	AI 변형
+	AI Variations need the desktop app.	AI 변형에는 데스크톱 앱이 필요합니다.
+	API Key:	API 키:
+	API key removed	API 키를 제거했습니다
+	API key stored in	API 키 저장 위치:
+	Active Artboard	활성 아트보드
+	Add Color	색상 추가
+	Add Color to Board	보드에 색상 추가
+	Add Image to Board	보드에 이미지 추가
+	Add Images…	이미지 추가…
+	Add Link	링크 추가
+	Add Link to Board	보드에 링크 추가
+	Add Note	메모 추가
+	Add Note to Board	보드에 메모 추가
+	Add Selection to Board	보드에 선택 영역 추가
+	Add the Document's Selection	문서의 선택 영역 추가
+	Add to Board	보드에 추가
+	Address:	주소:
+	All Artboards	모든 아트보드
+	Also Upload to Google Drive	Google 드라이브에도 업로드
+	An OpenAI-compatible images endpoint (/images/variations) and your API key. DLightroom includes no AI service: images are sent only when you click Generate Variations on a board.	OpenAI 호환 이미지 엔드포인트(/images/variations)와 사용자의 API 키입니다. DLightroom에는 AI 서비스가 포함되어 있지 않으며, 보드에서 변형 생성을 클릭할 때만 이미지를 보냅니다.
+	Apply Global Edit	전역 편집 적용
+	Arrange Board Items	보드 항목 정렬
+	Back to Document	문서로 돌아가기
+	Background Jobs	백그라운드 작업
+	Background Tasks	백그라운드 작업
+	Board	보드
+	Board View	보드 보기
+	Cancel Job	작업 취소
+	Caption:	캡션:
+	Change on every match	모든 일치 항목에서 변경
+	Choose or create a board first	먼저 보드를 선택하거나 만드세요
+	Click an item to change it. Shift-click picks several; drag the corner handle to resize.	항목을 클릭하면 변경할 수 있습니다. Shift+클릭으로 여러 개를 고르고, 모서리 핸들을 드래그해 크기를 바꿉니다.
+	Client ID:	클라이언트 ID:
+	Client Secret:	클라이언트 보안 비밀:
+	Cloud Settings File	클라우드 설정 파일
+	Cloud and AI Settings	클라우드 및 AI 설정
+	Cloud and AI Settings…	클라우드 및 AI 설정…
+	Cloud and AI Status	클라우드 및 AI 상태
+	Cloud and AI features need the desktop app.	클라우드 및 AI 기능에는 데스크톱 앱이 필요합니다.
+	Cloud and AI settings saved	클라우드 및 AI 설정을 저장했습니다
+	Connect Google Drive	Google 드라이브 연결
+	Connected	연결됨
+	Connect…	연결…
+	Count:	개수:
+	Delete Board	보드 삭제
+	Delete Board…	보드 삭제…
+	Delete this board and its images? This can't be undone.	이 보드와 이미지를 삭제할까요? 실행 취소할 수 없습니다.
+	Disconnect	연결 해제
+	Disconnect Google Drive	Google 드라이브 연결 해제
+	Disconnected	연결 안 됨
+	Dismiss	닫기
+	Dismiss Job	작업 닫기
+	Drive Folder:	드라이브 폴더:
+	Drop images here, or add notes, colours and links on the right.	여기에 이미지를 놓거나 오른쪽에서 메모, 색상, 링크를 추가하세요.
+	Duplicate Board	보드 복제
+	Duplicate Board Items	보드 항목 복제
+	Edit Board Item	보드 항목 편집
+	Endpoint:	엔드포인트:
+	Enter your OAuth client ID first	먼저 OAuth 클라이언트 ID를 입력하세요
+	Export for Screens can upload what it exports to a Drive folder. Use your own OAuth client (Google Cloud console › Credentials › OAuth client ID › Desktop app); DLightroom can only see the files it creates.	화면용으로 내보내기는 내보낸 파일을 드라이브 폴더에 업로드할 수 있습니다. 자신의 OAuth 클라이언트(Google Cloud 콘솔 › 사용자 인증 정보 › OAuth 클라이언트 ID › 데스크톱 앱)를 사용하세요. DLightroom은 자신이 만든 파일만 볼 수 있습니다.
+	Find Matches	일치 항목 찾기
+	Find the matches to preview them	일치 항목을 찾아 미리 보세요
+	Fit Board in Window	보드를 창에 맞추기
+	From:	출처:
+	Generate Variations	변형 생성
+	Generate sends this image to	생성 시 이 이미지를 보낼 곳:
+	Global Edit	전역 편집
+	Google Drive	Google 드라이브
+	Google Drive Settings	Google 드라이브 설정
+	Google Drive disconnected	Google 드라이브 연결을 해제했습니다
+	Google Drive: Disconnected	Google 드라이브: 연결 안 됨
+	Include Hidden Objects	숨겨진 오브젝트 포함
+	Include Locked Objects	잠긴 오브젝트 포함
+	Inspiration Boards	영감 보드
+	Inspiration Boards Folder	영감 보드 폴더
+	Inspiration Boards keep their files in the app's settings folder, which this build doesn't have.	영감 보드는 앱의 설정 폴더에 파일을 보관하는데, 이 빌드에는 그 폴더가 없습니다.
+	Instance Overrides	인스턴스 재정의
+	Instance:	인스턴스:
+	Instance: as the symbol	인스턴스: 심볼과 같음
+	Match objects with the same	같은 속성을 가진 오브젝트 찾기:
+	Missing image	이미지 없음
+	Model:	모델:
+	Move Board Items	보드 항목 이동
+	New Board	새 보드
+	No API key stored	저장된 API 키 없음
+	No boards yet. Create one to collect images, notes, colours and links.	아직 보드가 없습니다. 보드를 만들어 이미지, 메모, 색상, 링크를 모으세요.
+	Not set up: AI Variations use an image service you choose, with your own API key. Boards work fully without one.	설정 안 됨: AI 변형은 사용자가 고른 이미지 서비스와 자신의 API 키를 사용합니다. 보드는 그것 없이도 모두 작동합니다.
+	Note	메모
+	Note text	메모 텍스트
+	Open in Browser	브라우저에서 열기
+	Re-curve Neighbours	이웃 점도 다시 곡선화
+	Redo Board Change	보드 변경 다시 실행
+	Reference:	참조:
+	Remove Board Items	보드 항목 제거
+	Remove Key	키 제거
+	Remove the Chosen Items	선택한 항목 제거
+	Rename Board	보드 이름 바꾸기
+	Rename…	이름 바꾸기…
+	Reset Instance Overrides	인스턴스 재정의 재설정
+	Retry	다시 시도
+	Retry Job	작업 다시 시도
+	Search:	검색:
+	Send the Board to the Document	보드를 문서로 보내기
+	Send the Chosen Items to the Document	선택한 항목을 문서로 보내기
+	Send to Document	문서로 보내기
+	Set Up…	설정…
+	Title:	제목:
+	Undo Board Change	보드 변경 실행 취소
+	Untitled Board	제목 없는 보드
+	Upload to Google Drive	Google 드라이브에 업로드
+	stored; type to replace	저장됨, 입력하면 바뀝니다
+	tint {color}	색조 {color}
+	{count} matching objects ({hidden} hidden, {locked} locked)	일치하는 오브젝트 {count}개(숨김 {hidden}개, 잠김 {locked}개)
+	‹ Back to Document	‹ 문서로 돌아가기
+@msg	AI variations need a provider: {e} (Cloud and AI Settings)	AI 변형에는 공급자가 필요합니다: {e}(클라우드 및 AI 설정)
+@msg	Added {added} image(s) to the board	보드에 이미지 {added}개를 추가했습니다
+@msg	Asking {_1} for variations…	{_1}에 변형을 요청하는 중…
+@msg	Exported {_1} file(s), but the upload didn't start: {e}	파일 {_1}개를 내보냈지만 업로드를 시작하지 못했습니다: {e}
+@msg	Exported {_1} file(s); uploading them to Google Drive…	파일 {_1}개를 내보냈습니다. Google 드라이브에 업로드하는 중…
+@msg	Find the matches and choose what to change first	먼저 일치 항목을 찾고 무엇을 바꿀지 고르세요
+@msg	Google Drive isn't connected: connect it in Cloud and AI Settings first	Google 드라이브가 연결되어 있지 않습니다. 먼저 클라우드 및 AI 설정에서 연결하세요
+@msg	Google didn't grant lasting access; remove DLightroom from your Google Account's third-party access and connect again	Google이 지속적인 액세스를 허용하지 않았습니다. Google 계정의 서드 파티 액세스에서 DLightroom을 제거한 다음 다시 연결하세요
+@msg	Inspiration Boards aren't set up here	여기에는 영감 보드가 설정되어 있지 않습니다
+@msg	No document open	열린 문서가 없습니다
+@msg	Open this address to sign in: {url}	로그인하려면 이 주소를 여세요: {url}
+@msg	Select the object whose matches you want to edit	일치 항목을 편집할 오브젝트를 선택하세요
+@msg	Sent {n} item(s) to the document	항목 {n}개를 문서로 보냈습니다

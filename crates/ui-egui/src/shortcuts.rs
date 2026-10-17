@@ -249,6 +249,12 @@ pub fn handle(app: &mut VectorcraftApp, ctx: &egui::Context) {
     if crate::scrub::phase(ctx) != crate::scrub::Phase::Idle {
         return;
     }
+    // The Inspiration Boards workspace has its own keys (Undo, Redo, Delete) for the board: the
+    // document's shortcuts would act on art that isn't shown.
+    if app.ui.boards.open && app.ui.dialog.is_none() && !app.ui.palette_open {
+        crate::boards_view::keys(app, ctx);
+        return;
+    }
     if app.ui.dialog.is_some() || app.ui.palette_open {
         if app.ui.dialog.as_ref().is_some_and(crate::dialogs::revolve_gizmo::active) && crate::dialogs::revolve_gizmo::dragging(ctx) {
             // Escape first restores this rotation gesture. The settings stay open.

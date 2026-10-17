@@ -4974,3 +4974,134 @@ theme	Appearance	Външен вид
 	Movie Clip	Филмов клип
 @msg	name is empty	името е празно
 @msg	no symbol named `{n}`	няма символ с име `{n}`
+
+# Advanced tools milestone (DLightroom).
+	AI Provider Settings	Настройки на доставчика на ИИ
+	AI Variations	Варианти с ИИ
+	AI Variations need the desktop app.	Вариантите с ИИ изискват настолното приложение.
+	API Key:	API ключ:
+	API key removed	API ключът е премахнат
+	API key stored in	API ключът е запазен в:
+	Active Artboard	Активна работна област
+	Add Color	Добавяне на цвят
+	Add Color to Board	Добавяне на цвят към таблото
+	Add Image to Board	Добавяне на изображение към таблото
+	Add Images…	Добавяне на изображения…
+	Add Link	Добавяне на връзка
+	Add Link to Board	Добавяне на връзка към таблото
+	Add Note	Добавяне на бележка
+	Add Note to Board	Добавяне на бележка към таблото
+	Add Selection to Board	Добавяне на селекцията към таблото
+	Add the Document's Selection	Добавяне на селекцията от документа
+	Add to Board	Добавяне към таблото
+	Address:	Адрес:
+	All Artboards	Всички работни области
+	Also Upload to Google Drive	Качване и в Google Диск
+	An OpenAI-compatible images endpoint (/images/variations) and your API key. DLightroom includes no AI service: images are sent only when you click Generate Variations on a board.	Крайна точка за изображения, съвместима с OpenAI (/images/variations), и вашият API ключ. DLightroom не включва услуга с ИИ: изображенията се изпращат само когато щракнете „Създаване на варианти“ в табло.
+	Apply Global Edit	Прилагане на глобална редакция
+	Arrange Board Items	Подреждане на елементите на таблото
+	Back to Document	Обратно към документа
+	Background Jobs	Фонови задания
+	Background Tasks	Фонови задачи
+	Board	Табло
+	Board View	Изглед на таблото
+	Cancel Job	Отказ от заданието
+	Caption:	Надпис:
+	Change on every match	Промяна при всяко съвпадение
+	Choose or create a board first	Първо изберете или създайте табло
+	Click an item to change it. Shift-click picks several; drag the corner handle to resize.	Щракнете върху елемент, за да го промените. Shift+щракване избира няколко; плъзнете ъгловата дръжка, за да промените размера.
+	Client ID:	ИД на клиента:
+	Client Secret:	Тайна на клиента:
+	Cloud Settings File	Файл с облачни настройки
+	Cloud and AI Settings	Настройки за облак и ИИ
+	Cloud and AI Settings…	Настройки за облак и ИИ…
+	Cloud and AI Status	Състояние на облака и ИИ
+	Cloud and AI features need the desktop app.	Функциите за облак и ИИ изискват настолното приложение.
+	Cloud and AI settings saved	Настройките за облак и ИИ са запазени
+	Connect Google Drive	Свързване с Google Диск
+	Connected	Свързано
+	Connect…	Свързване…
+	Count:	Брой:
+	Delete Board	Изтриване на таблото
+	Delete Board…	Изтриване на таблото…
+	Delete this board and its images? This can't be undone.	Да се изтрие ли това табло и изображенията му? Това не може да се отмени.
+	Disconnect	Прекъсване на връзката
+	Disconnect Google Drive	Прекъсване на връзката с Google Диск
+	Disconnected	Няма връзка
+	Dismiss	Затваряне
+	Dismiss Job	Премахване на заданието
+	Drive Folder:	Папка в Диска:
+	Drop images here, or add notes, colours and links on the right.	Пуснете изображения тук или добавете отдясно бележки, цветове и връзки.
+	Duplicate Board	Дублиране на таблото
+	Duplicate Board Items	Дублиране на елементи от таблото
+	Edit Board Item	Редактиране на елемент от таблото
+	Endpoint:	Крайна точка:
+	Enter your OAuth client ID first	Първо въведете ИД на OAuth клиента
+	Export for Screens can upload what it exports to a Drive folder. Use your own OAuth client (Google Cloud console › Credentials › OAuth client ID › Desktop app); DLightroom can only see the files it creates.	„Експортиране за екрани“ може да качва експортираното в папка в Диска. Използвайте собствен OAuth клиент (конзола на Google Cloud › Идентификационни данни › ИД на OAuth клиент › Настолно приложение); DLightroom вижда само файловете, които създава.
+	Find Matches	Търсене на съвпадения
+	Find the matches to preview them	Намерете съвпаденията, за да ги прегледате
+	Fit Board in Window	Побиране на таблото в прозореца
+	From:	Източник:
+	Generate Variations	Създаване на варианти
+	Generate sends this image to	„Създаване“ изпраща изображението към:
+	Global Edit	Глобална редакция
+	Google Drive	Google Диск
+	Google Drive Settings	Настройки на Google Диск
+	Google Drive disconnected	Връзката с Google Диск е прекъсната
+	Google Drive: Disconnected	Google Диск: няма връзка
+	Include Hidden Objects	Включване на скритите обекти
+	Include Locked Objects	Включване на заключените обекти
+	Inspiration Boards	Табла за вдъхновение
+	Inspiration Boards Folder	Папка на таблата за вдъхновение
+	Inspiration Boards keep their files in the app's settings folder, which this build doesn't have.	Таблата за вдъхновение пазят файловете си в папката с настройки на приложението, която тази версия няма.
+	Instance Overrides	Промени на екземпляра
+	Instance:	Екземпляр:
+	Instance: as the symbol	Екземпляр: като символа
+	Match objects with the same	Търсене на обекти със същите свойства:
+	Missing image	Липсващо изображение
+	Model:	Модел:
+	Move Board Items	Преместване на елементи от таблото
+	New Board	Ново табло
+	No API key stored	Няма запазен API ключ
+	No boards yet. Create one to collect images, notes, colours and links.	Още няма табла. Създайте табло, за да събирате изображения, бележки, цветове и връзки.
+	Not set up: AI Variations use an image service you choose, with your own API key. Boards work fully without one.	Не е настроено: вариантите с ИИ използват избрана от вас услуга за изображения със собствен API ключ. Таблата работят напълно и без нея.
+	Note	Бележка
+	Note text	Текст на бележката
+	Open in Browser	Отваряне в браузъра
+	Re-curve Neighbours	Повторно извиване на съседните
+	Redo Board Change	Повторение на промяната в таблото
+	Reference:	Препратка:
+	Remove Board Items	Премахване на елементи от таблото
+	Remove Key	Премахване на ключа
+	Remove the Chosen Items	Премахване на избраните елементи
+	Rename Board	Преименуване на таблото
+	Rename…	Преименуване…
+	Reset Instance Overrides	Нулиране на промените на екземпляра
+	Retry	Повторен опит
+	Retry Job	Повторение на заданието
+	Search:	Търсене в:
+	Send the Board to the Document	Изпращане на таблото към документа
+	Send the Chosen Items to the Document	Изпращане на избраните елементи към документа
+	Send to Document	Изпращане към документа
+	Set Up…	Настройване…
+	Title:	Заглавие:
+	Undo Board Change	Отмяна на промяната в таблото
+	Untitled Board	Табло без име
+	Upload to Google Drive	Качване в Google Диск
+	stored; type to replace	запазено; въведете, за да замените
+	tint {color}	оцветяване {color}
+	{count} matching objects ({hidden} hidden, {locked} locked)	Съвпадащи обекти: {count} (скрити: {hidden}, заключени: {locked})
+	‹ Back to Document	‹ Обратно към документа
+@msg	AI variations need a provider: {e} (Cloud and AI Settings)	Вариантите с ИИ изискват доставчик: {e} (Настройки за облак и ИИ)
+@msg	Added {added} image(s) to the board	Към таблото са добавени изображения: {added}
+@msg	Asking {_1} for variations…	Заявка за варианти към {_1}…
+@msg	Exported {_1} file(s), but the upload didn't start: {e}	Експортирани файлове: {_1}, но качването не започна: {e}
+@msg	Exported {_1} file(s); uploading them to Google Drive…	Експортирани файлове: {_1}; качване в Google Диск…
+@msg	Find the matches and choose what to change first	Първо намерете съвпаденията и изберете какво да се промени
+@msg	Google Drive isn't connected: connect it in Cloud and AI Settings first	Google Диск не е свързан: първо го свържете в Настройки за облак и ИИ
+@msg	Google didn't grant lasting access; remove DLightroom from your Google Account's third-party access and connect again	Google не даде постоянен достъп; премахнете DLightroom от достъпа на трети страни в профила си в Google и се свържете отново
+@msg	Inspiration Boards aren't set up here	Таблата за вдъхновение не са настроени тук
+@msg	No document open	Няма отворен документ
+@msg	Open this address to sign in: {url}	Отворете този адрес, за да влезете: {url}
+@msg	Select the object whose matches you want to edit	Изберете обекта, чиито съвпадения искате да редактирате
+@msg	Sent {n} item(s) to the document	Към документа са изпратени елементи: {n}

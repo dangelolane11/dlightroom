@@ -41,6 +41,8 @@ vectorcraft-metafile = { path = "crates/metafile" }
 vectorcraft-plugins = { path = "crates/plugins" }
 vectorcraft-affinity = { path = "crates/affinity" }
 vectorcraft-scriptcheck = { path = "crates/scriptcheck" }
+vectorcraft-boards = { path = "crates/boards" }
+vectorcraft-cloud = { path = "crates/cloud" }
 
 # foundation
 kurbo = { version = "0.13", features = ["serde"] }
@@ -51,6 +53,8 @@ serde_json = { version = "1", features = ["float_roundtrip"] }
 log = "0.4"
 proptest = "1"
 crc32fast = "1.5"
+# Content hashes of Inspiration Board assets (already in the build through other crates).
+sha2 = "0.10"
 # tests: a TCP port bound without listening (connections to it are refused)
 socket2 = "0.6"
 # Sandboxed WebAssembly plug-ins: a pure-Rust interpreter (MIT OR Apache-2.0) that builds for wasm32

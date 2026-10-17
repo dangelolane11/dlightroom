@@ -4948,3 +4948,135 @@ theme	Appearance	Utseende
 	Movie Clip	Filmklipp
 @msg	name is empty	namnet är tomt
 @msg	no symbol named `{n}`	ingen symbol med namnet `{n}`
+
+# Advanced tools milestone (DLightroom): Global Edit, symbol instance overrides, Curvature's
+# Re-curve Neighbours, Inspiration Boards, AI Variations and Cloud and AI Settings.
+	AI Provider Settings	Inställningar för AI-leverantör
+	AI Variations	AI-varianter
+	AI Variations need the desktop app.	AI-varianter kräver skrivbordsappen.
+	API Key:	API-nyckel:
+	API key removed	API-nyckeln togs bort
+	API key stored in	API-nyckeln sparad i
+	Active Artboard	Aktiv rityta
+	Add Color	Lägg till färg
+	Add Color to Board	Lägg till färg på tavlan
+	Add Image to Board	Lägg till bild på tavlan
+	Add Images…	Lägg till bilder…
+	Add Link	Lägg till länk
+	Add Link to Board	Lägg till länk på tavlan
+	Add Note	Lägg till anteckning
+	Add Note to Board	Lägg till anteckning på tavlan
+	Add Selection to Board	Lägg till markering på tavlan
+	Add the Document's Selection	Lägg till dokumentets markering
+	Add to Board	Lägg till på tavlan
+	Address:	Adress:
+	All Artboards	Alla ritytor
+	Also Upload to Google Drive	Ladda även upp till Google Drive
+	An OpenAI-compatible images endpoint (/images/variations) and your API key. DLightroom includes no AI service: images are sent only when you click Generate Variations on a board.	En OpenAI-kompatibel bildslutpunkt (/images/variations) och din API-nyckel. DLightroom innehåller ingen AI-tjänst: bilder skickas bara när du klickar på Skapa varianter på en tavla.
+	Apply Global Edit	Tillämpa global redigering
+	Arrange Board Items	Ordna tavlans objekt
+	Back to Document	Tillbaka till dokumentet
+	Background Jobs	Bakgrundsjobb
+	Background Tasks	Bakgrundsuppgifter
+	Board	Tavla
+	Board View	Tavelvy
+	Cancel Job	Avbryt jobb
+	Caption:	Bildtext:
+	Change on every match	Ändra på varje träff
+	Choose or create a board first	Välj eller skapa en tavla först
+	Click an item to change it. Shift-click picks several; drag the corner handle to resize.	Klicka på ett objekt för att ändra det. Skift+klick väljer flera; dra hörnhandtaget för att ändra storlek.
+	Client ID:	Klient-ID:
+	Client Secret:	Klienthemlighet:
+	Cloud Settings File	Fil för molninställningar
+	Cloud and AI Settings	Moln- och AI-inställningar
+	Cloud and AI Settings…	Moln- och AI-inställningar…
+	Cloud and AI Status	Moln- och AI-status
+	Cloud and AI features need the desktop app.	Moln- och AI-funktioner kräver skrivbordsappen.
+	Cloud and AI settings saved	Moln- och AI-inställningarna sparades
+	Connect Google Drive	Anslut Google Drive
+	Connected	Ansluten
+	Connect…	Anslut…
+	Count:	Antal:
+	Delete Board	Radera tavla
+	Delete Board…	Radera tavla…
+	Delete this board and its images? This can't be undone.	Radera den här tavlan och dess bilder? Det går inte att ångra.
+	Disconnect	Koppla från
+	Disconnect Google Drive	Koppla från Google Drive
+	Disconnected	Inte ansluten
+	Dismiss	Stäng
+	Dismiss Job	Ta bort jobb
+	Drive Folder:	Drive-mapp:
+	Drop images here, or add notes, colours and links on the right.	Släpp bilder här, eller lägg till anteckningar, färger och länkar till höger.
+	Duplicate Board	Duplicera tavla
+	Duplicate Board Items	Duplicera tavlans objekt
+	Edit Board Item	Redigera tavelobjekt
+	Endpoint:	Slutpunkt:
+	Enter your OAuth client ID first	Ange ditt OAuth-klient-ID först
+	Export for Screens can upload what it exports to a Drive folder. Use your own OAuth client (Google Cloud console › Credentials › OAuth client ID › Desktop app); DLightroom can only see the files it creates.	Exportera för skärmar kan ladda upp det som exporteras till en Drive-mapp. Använd en egen OAuth-klient (Google Cloud-konsolen › Inloggningsuppgifter › OAuth-klient-ID › Datorapp); DLightroom ser bara filerna det själv skapar.
+	Find Matches	Hitta träffar
+	Find the matches to preview them	Hitta träffarna för att förhandsgranska dem
+	Fit Board in Window	Anpassa tavlan i fönstret
+	From:	Från:
+	Generate Variations	Skapa varianter
+	Generate sends this image to	Skapa skickar bilden till
+	Global Edit	Global redigering
+	Google Drive	Google Drive
+	Google Drive Settings	Inställningar för Google Drive
+	Google Drive disconnected	Google Drive frånkopplad
+	Google Drive: Disconnected	Google Drive: inte ansluten
+	Include Hidden Objects	Inkludera dolda objekt
+	Include Locked Objects	Inkludera låsta objekt
+	Inspiration Boards	Inspirationstavlor
+	Inspiration Boards Folder	Mapp för inspirationstavlor
+	Inspiration Boards keep their files in the app's settings folder, which this build doesn't have.	Inspirationstavlor sparar sina filer i appens inställningsmapp, som den här versionen saknar.
+	Instance Overrides	Instansens åsidosättningar
+	Instance:	Instans:
+	Instance: as the symbol	Instans: som symbolen
+	Match objects with the same	Hitta objekt med samma
+	Missing image	Bild saknas
+	Model:	Modell:
+	Move Board Items	Flytta tavlans objekt
+	New Board	Ny tavla
+	No API key stored	Ingen API-nyckel sparad
+	No boards yet. Create one to collect images, notes, colours and links.	Inga tavlor än. Skapa en för att samla bilder, anteckningar, färger och länkar.
+	Not set up: AI Variations use an image service you choose, with your own API key. Boards work fully without one.	Inte konfigurerat: AI-varianter använder en bildtjänst du väljer, med din egen API-nyckel. Tavlorna fungerar fullt ut utan den.
+	Note	Anteckning
+	Note text	Anteckningstext
+	Open in Browser	Öppna i webbläsaren
+	Re-curve Neighbours	Böj om grannar
+	Redo Board Change	Gör om taveländring
+	Reference:	Referens:
+	Remove Board Items	Ta bort tavlans objekt
+	Remove Key	Ta bort nyckel
+	Remove the Chosen Items	Ta bort de valda objekten
+	Rename Board	Byt namn på tavla
+	Rename…	Byt namn…
+	Reset Instance Overrides	Återställ instansens åsidosättningar
+	Retry	Försök igen
+	Retry Job	Kör jobbet igen
+	Search:	Sök i:
+	Send the Board to the Document	Skicka tavlan till dokumentet
+	Send the Chosen Items to the Document	Skicka de valda objekten till dokumentet
+	Send to Document	Skicka till dokumentet
+	Set Up…	Konfigurera…
+	Title:	Titel:
+	Undo Board Change	Ångra taveländring
+	Untitled Board	Namnlös tavla
+	Upload to Google Drive	Ladda upp till Google Drive
+	stored; type to replace	sparad; skriv för att ersätta
+	tint {color}	färgton {color}
+	{count} matching objects ({hidden} hidden, {locked} locked)	{count} matchande objekt ({hidden} dolda, {locked} låsta)
+	‹ Back to Document	‹ Tillbaka till dokumentet
+@msg	AI variations need a provider: {e} (Cloud and AI Settings)	AI-varianter kräver en leverantör: {e} (Moln- och AI-inställningar)
+@msg	Added {added} image(s) to the board	{added} bild(er) lades till på tavlan
+@msg	Asking {_1} for variations…	Ber {_1} om varianter…
+@msg	Exported {_1} file(s), but the upload didn't start: {e}	{_1} fil(er) exporterades, men uppladdningen startade inte: {e}
+@msg	Exported {_1} file(s); uploading them to Google Drive…	{_1} fil(er) exporterades; laddar upp dem till Google Drive…
+@msg	Find the matches and choose what to change first	Hitta träffarna först och välj vad som ska ändras
+@msg	Google Drive isn't connected: connect it in Cloud and AI Settings first	Google Drive är inte anslutet: anslut det först i Moln- och AI-inställningar
+@msg	Google didn't grant lasting access; remove DLightroom from your Google Account's third-party access and connect again	Google gav ingen varaktig åtkomst; ta bort DLightroom från tredjepartsåtkomsten i ditt Google-konto och anslut igen
+@msg	Inspiration Boards aren't set up here	Inspirationstavlor är inte konfigurerade här
+@msg	No document open	Inget dokument öppet
+@msg	Open this address to sign in: {url}	Öppna den här adressen för att logga in: {url}
+@msg	Select the object whose matches you want to edit	Markera objektet vars träffar du vill redigera
+@msg	Sent {n} item(s) to the document	{n} objekt skickades till dokumentet

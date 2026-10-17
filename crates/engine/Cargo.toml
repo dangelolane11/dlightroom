@@ -16,6 +16,8 @@ bundled-fonts = ["vectorcraft-text/bundled-fonts"]
 
 [dependencies]
 vectorcraft-geom = { workspace = true }
+vectorcraft-boards = { workspace = true }
+vectorcraft-cloud = { workspace = true }
 vectorcraft-color = { workspace = true }
 vectorcraft-doc = { workspace = true }
 vectorcraft-tools = { workspace = true }

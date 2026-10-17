@@ -1,0 +1,25 @@
+[package]
+name = "vectorcraft-cloud"
+description = "DLightroom's network clients: provider-based AI image variations, OAuth 2.0 for installed apps, Google Drive uploads, secret storage and background jobs"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+image = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+sha2 = { workspace = true }
+
+# The network, the system keychain and secure randomness: desktop builds only. The web build gets
+# stubs that say so (`http::Unavailable`, `secrets::MemoryStore`).
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+# HTTP/1.1 over rustls (ring) with Mozilla's root certificates (webpki-roots, CDLA-Permissive-2.0).
+ureq = { version = "~3.0", default-features = false, features = ["rustls"] }
+# The macOS Keychain, Windows Credential Manager and the Linux kernel keyring.
+keyring = { version = "~3.6", default-features = false, features = ["apple-native", "windows-native", "linux-native"] }
+getrandom = "0.3"

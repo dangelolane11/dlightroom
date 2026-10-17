@@ -29,7 +29,7 @@ and adds its own name, app icon, macOS bundle and build pipeline.
 
 ## What it does
 
-Everything below comes from the VectorCraft engine and works in DLightroom unchanged:
+Everything below comes from the VectorCraft engine and works in DLightroom unchanged; DLightroom's own additions follow.
 
 - **Canvas and navigation:** multiple artboards, zoom and pan (trackpad, scroll, Hand and Zoom
   tools, Fit Artboard / Fit All), rulers, guides, grids, Smart Guides, Outline and Preview modes,
@@ -61,10 +61,29 @@ Everything below comes from the VectorCraft engine and works in DLightroom uncha
   command-line tool for conversion and batch work (`vectorcraft-cli`).
 - **Languages:** the interface is translated into 19 languages besides English.
 
+### What DLightroom adds
+
+- **Inspiration Boards** (Window › Inspiration Boards): moodboards next to your documents. Drop in
+  images, add notes, colours and links, arrange them on a zoomable board, and send what you pick to
+  the document. Boards are saved locally and work without any account. See
+  [docs/inspiration-boards.md](docs/inspiration-boards.md).
+- **AI Variations (optional):** send a board image to an OpenAI-compatible image service you set
+  up with your own API key; the results it returns land beside the image. No AI service or key is
+  included.
+- **Google Drive export (optional):** Export for Screens can also upload what it exports to a Drive
+  folder through your own Google OAuth client. See [docs/cloud-export.md](docs/cloud-export.md).
+- **Global Edit** (Select › Start Global Edit): find objects that match the selected one on chosen
+  attributes, preview them, and change them all in one undo step.
+- **Blend easing** (Ease In, Ease Out, Color Acceleration), Curvature's **Re-curve Neighbours**
+  option, and **Reset Instance Overrides** for symbols.
+
+What was checked, area by area, is in [docs/advanced-tools-audit.md](docs/advanced-tools-audit.md),
+with sample documents in `examples/advanced/`.
+
 For details of what is and isn't implemented yet, read the upstream assessments kept in this
 repository: [`ROADMAP.md`](ROADMAP.md), [`docs/gaps.md`](docs/gaps.md) and
 [`docs/target-app-parity.md`](docs/target-app-parity.md). They describe the VectorCraft engine,
-which DLightroom inherits unchanged.
+which DLightroom inherits.
 
 ## Install on a Mac
 
@@ -153,6 +172,9 @@ script `packaging/macos/package.sh`, which needs your own Developer ID (see belo
 - **Temporary bundle identifier.** `com.dangelolane11.dlightroom.dev` is for local testing; choose
   a permanent one (in `packaging/macos/Info.plist.in` and `crates/engine/src/brand.rs`) before any
   public release.
+- **Cloud and AI need your own accounts.** AI Variations need an API key for an image service, and
+  Google Drive export needs a Google OAuth client and a Google account. Neither is included. They are
+  tested in CI only against scripted responses, never against the real services.
 - **Intel build only in CI.** The workflow builds x86_64. An Apple silicon or universal build works
   with `build-app.sh --arch aarch64|universal`, but CI doesn't run one.
 - **The name.** "Lightroom" is a trademark of Adobe Inc. DLightroom is a vector editor and has no

@@ -4944,3 +4944,135 @@ effect	Points	Σημεία
 	Movie Clip	Κλιπ ταινίας
 @msg	name is empty	το όνομα είναι κενό
 @msg	no symbol named `{n}`	κανένα σύμβολο με όνομα `{n}`
+
+# Advanced tools milestone (DLightroom): Global Edit, symbol instance overrides, Curvature's
+# Re-curve Neighbours, Inspiration Boards, AI Variations and Cloud and AI Settings.
+	AI Provider Settings	Ρυθμίσεις παρόχου ΤΝ
+	AI Variations	Παραλλαγές ΤΝ
+	AI Variations need the desktop app.	Οι παραλλαγές ΤΝ χρειάζονται την εφαρμογή υπολογιστή.
+	API Key:	Κλειδί API:
+	API key removed	Το κλειδί API αφαιρέθηκε
+	API key stored in	Το κλειδί API αποθηκεύτηκε σε:
+	Active Artboard	Ενεργός πίνακας σχεδίασης
+	Add Color	Προσθήκη χρώματος
+	Add Color to Board	Προσθήκη χρώματος στον πίνακα
+	Add Image to Board	Προσθήκη εικόνας στον πίνακα
+	Add Images…	Προσθήκη εικόνων…
+	Add Link	Προσθήκη συνδέσμου
+	Add Link to Board	Προσθήκη συνδέσμου στον πίνακα
+	Add Note	Προσθήκη σημείωσης
+	Add Note to Board	Προσθήκη σημείωσης στον πίνακα
+	Add Selection to Board	Προσθήκη επιλογής στον πίνακα
+	Add the Document's Selection	Προσθήκη της επιλογής του εγγράφου
+	Add to Board	Προσθήκη στον πίνακα
+	Address:	Διεύθυνση:
+	All Artboards	Όλοι οι πίνακες σχεδίασης
+	Also Upload to Google Drive	Αποστολή και στο Google Drive
+	An OpenAI-compatible images endpoint (/images/variations) and your API key. DLightroom includes no AI service: images are sent only when you click Generate Variations on a board.	Ένα τελικό σημείο εικόνων συμβατό με OpenAI (/images/variations) και το κλειδί API σας. Το DLightroom δεν περιλαμβάνει υπηρεσία ΤΝ: οι εικόνες αποστέλλονται μόνο όταν κάνετε κλικ στη Δημιουργία παραλλαγών σε έναν πίνακα.
+	Apply Global Edit	Εφαρμογή καθολικής επεξεργασίας
+	Arrange Board Items	Τακτοποίηση στοιχείων πίνακα
+	Back to Document	Επιστροφή στο έγγραφο
+	Background Jobs	Εργασίες παρασκηνίου
+	Background Tasks	Εργασίες παρασκηνίου
+	Board	Πίνακας
+	Board View	Προβολή πίνακα
+	Cancel Job	Ακύρωση εργασίας
+	Caption:	Λεζάντα:
+	Change on every match	Αλλαγή σε κάθε αντιστοιχία
+	Choose or create a board first	Επιλέξτε ή δημιουργήστε πρώτα έναν πίνακα
+	Click an item to change it. Shift-click picks several; drag the corner handle to resize.	Κάντε κλικ σε ένα στοιχείο για να το αλλάξετε. Με Shift+κλικ επιλέγετε πολλά· σύρετε τη λαβή της γωνίας για αλλαγή μεγέθους.
+	Client ID:	Αναγνωριστικό πελάτη:
+	Client Secret:	Μυστικό πελάτη:
+	Cloud Settings File	Αρχείο ρυθμίσεων cloud
+	Cloud and AI Settings	Ρυθμίσεις cloud και ΤΝ
+	Cloud and AI Settings…	Ρυθμίσεις cloud και ΤΝ…
+	Cloud and AI Status	Κατάσταση cloud και ΤΝ
+	Cloud and AI features need the desktop app.	Οι λειτουργίες cloud και ΤΝ χρειάζονται την εφαρμογή υπολογιστή.
+	Cloud and AI settings saved	Οι ρυθμίσεις cloud και ΤΝ αποθηκεύτηκαν
+	Connect Google Drive	Σύνδεση του Google Drive
+	Connected	Συνδεδεμένο
+	Connect…	Σύνδεση…
+	Count:	Πλήθος:
+	Delete Board	Διαγραφή πίνακα
+	Delete Board…	Διαγραφή πίνακα…
+	Delete this board and its images? This can't be undone.	Διαγραφή αυτού του πίνακα και των εικόνων του; Δεν αναιρείται.
+	Disconnect	Αποσύνδεση
+	Disconnect Google Drive	Αποσύνδεση του Google Drive
+	Disconnected	Αποσυνδεδεμένο
+	Dismiss	Απόρριψη
+	Dismiss Job	Απόρριψη εργασίας
+	Drive Folder:	Φάκελος Drive:
+	Drop images here, or add notes, colours and links on the right.	Αφήστε εικόνες εδώ ή προσθέστε σημειώσεις, χρώματα και συνδέσμους δεξιά.
+	Duplicate Board	Δημιουργία αντιγράφου πίνακα
+	Duplicate Board Items	Δημιουργία αντιγράφου στοιχείων πίνακα
+	Edit Board Item	Επεξεργασία στοιχείου πίνακα
+	Endpoint:	Τελικό σημείο:
+	Enter your OAuth client ID first	Εισαγάγετε πρώτα το αναγνωριστικό πελάτη OAuth
+	Export for Screens can upload what it exports to a Drive folder. Use your own OAuth client (Google Cloud console › Credentials › OAuth client ID › Desktop app); DLightroom can only see the files it creates.	Η Εξαγωγή για οθόνες μπορεί να ανεβάσει ό,τι εξάγει σε έναν φάκελο του Drive. Χρησιμοποιήστε δικό σας πελάτη OAuth (κονσόλα Google Cloud › Διαπιστευτήρια › Αναγνωριστικό πελάτη OAuth › Εφαρμογή υπολογιστή)· το DLightroom βλέπει μόνο τα αρχεία που δημιουργεί.
+	Find Matches	Εύρεση αντιστοιχιών
+	Find the matches to preview them	Βρείτε τις αντιστοιχίες για προεπισκόπηση
+	Fit Board in Window	Προσαρμογή πίνακα στο παράθυρο
+	From:	Προέλευση:
+	Generate Variations	Δημιουργία παραλλαγών
+	Generate sends this image to	Η δημιουργία στέλνει αυτήν την εικόνα σε:
+	Global Edit	Καθολική επεξεργασία
+	Google Drive	Google Drive
+	Google Drive Settings	Ρυθμίσεις Google Drive
+	Google Drive disconnected	Το Google Drive αποσυνδέθηκε
+	Google Drive: Disconnected	Google Drive: αποσυνδεδεμένο
+	Include Hidden Objects	Συμπερίληψη κρυφών αντικειμένων
+	Include Locked Objects	Συμπερίληψη κλειδωμένων αντικειμένων
+	Inspiration Boards	Πίνακες έμπνευσης
+	Inspiration Boards Folder	Φάκελος πινάκων έμπνευσης
+	Inspiration Boards keep their files in the app's settings folder, which this build doesn't have.	Οι πίνακες έμπνευσης κρατούν τα αρχεία τους στον φάκελο ρυθμίσεων της εφαρμογής, που αυτή η έκδοση δεν έχει.
+	Instance Overrides	Παρακάμψεις παρουσίας
+	Instance:	Παρουσία:
+	Instance: as the symbol	Παρουσία: όπως το σύμβολο
+	Match objects with the same	Εύρεση αντικειμένων με ίδιο
+	Missing image	Λείπει η εικόνα
+	Model:	Μοντέλο:
+	Move Board Items	Μετακίνηση στοιχείων πίνακα
+	New Board	Νέος πίνακας
+	No API key stored	Δεν έχει αποθηκευτεί κλειδί API
+	No boards yet. Create one to collect images, notes, colours and links.	Δεν υπάρχουν ακόμη πίνακες. Δημιουργήστε έναν για να συλλέξετε εικόνες, σημειώσεις, χρώματα και συνδέσμους.
+	Not set up: AI Variations use an image service you choose, with your own API key. Boards work fully without one.	Δεν έχει ρυθμιστεί: οι παραλλαγές ΤΝ χρησιμοποιούν μια υπηρεσία εικόνων της επιλογής σας, με δικό σας κλειδί API. Οι πίνακες λειτουργούν πλήρως και χωρίς αυτήν.
+	Note	Σημείωση
+	Note text	Κείμενο σημείωσης
+	Open in Browser	Άνοιγμα στο πρόγραμμα περιήγησης
+	Re-curve Neighbours	Νέα καμπύλωση γειτονικών
+	Redo Board Change	Επανάληψη αλλαγής πίνακα
+	Reference:	Αναφορά:
+	Remove Board Items	Αφαίρεση στοιχείων πίνακα
+	Remove Key	Αφαίρεση κλειδιού
+	Remove the Chosen Items	Αφαίρεση των επιλεγμένων στοιχείων
+	Rename Board	Μετονομασία πίνακα
+	Rename…	Μετονομασία…
+	Reset Instance Overrides	Επαναφορά παρακάμψεων παρουσίας
+	Retry	Επανάληψη
+	Retry Job	Επανάληψη εργασίας
+	Search:	Αναζήτηση:
+	Send the Board to the Document	Αποστολή του πίνακα στο έγγραφο
+	Send the Chosen Items to the Document	Αποστολή των επιλεγμένων στοιχείων στο έγγραφο
+	Send to Document	Αποστολή στο έγγραφο
+	Set Up…	Ρύθμιση…
+	Title:	Τίτλος:
+	Undo Board Change	Αναίρεση αλλαγής πίνακα
+	Untitled Board	Πίνακας χωρίς τίτλο
+	Upload to Google Drive	Αποστολή στο Google Drive
+	stored; type to replace	αποθηκευμένο· πληκτρολογήστε για αντικατάσταση
+	tint {color}	απόχρωση {color}
+	{count} matching objects ({hidden} hidden, {locked} locked)	{count} αντικείμενα που ταιριάζουν ({hidden} κρυφά, {locked} κλειδωμένα)
+	‹ Back to Document	‹ Επιστροφή στο έγγραφο
+@msg	AI variations need a provider: {e} (Cloud and AI Settings)	Οι παραλλαγές ΤΝ χρειάζονται πάροχο: {e} (Ρυθμίσεις cloud και ΤΝ)
+@msg	Added {added} image(s) to the board	Προστέθηκαν εικόνες στον πίνακα: {added}
+@msg	Asking {_1} for variations…	Αίτημα παραλλαγών στο {_1}…
+@msg	Exported {_1} file(s), but the upload didn't start: {e}	Εξήχθησαν αρχεία: {_1}, αλλά η αποστολή δεν ξεκίνησε: {e}
+@msg	Exported {_1} file(s); uploading them to Google Drive…	Εξήχθησαν αρχεία: {_1}· αποστέλλονται στο Google Drive…
+@msg	Find the matches and choose what to change first	Βρείτε πρώτα τις αντιστοιχίες και επιλέξτε τι θα αλλάξει
+@msg	Google Drive isn't connected: connect it in Cloud and AI Settings first	Το Google Drive δεν είναι συνδεδεμένο: συνδέστε το πρώτα στις Ρυθμίσεις cloud και ΤΝ
+@msg	Google didn't grant lasting access; remove DLightroom from your Google Account's third-party access and connect again	Η Google δεν έδωσε μόνιμη πρόσβαση· αφαιρέστε το DLightroom από την πρόσβαση τρίτων του Λογαριασμού σας Google και συνδεθείτε ξανά
+@msg	Inspiration Boards aren't set up here	Οι πίνακες έμπνευσης δεν έχουν ρυθμιστεί εδώ
+@msg	No document open	Κανένα ανοιχτό έγγραφο
+@msg	Open this address to sign in: {url}	Ανοίξτε αυτήν τη διεύθυνση για σύνδεση: {url}
+@msg	Select the object whose matches you want to edit	Επιλέξτε το αντικείμενο του οποίου τις αντιστοιχίες θέλετε να επεξεργαστείτε
+@msg	Sent {n} item(s) to the document	Στάλθηκαν στοιχεία στο έγγραφο: {n}

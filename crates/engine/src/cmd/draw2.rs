@@ -44,7 +44,7 @@ pub fn specs() -> Vec<CommandSpec> {
             "Curvature",
             [],
             None,
-            "{id, subpath?, op: \"move\"|\"insert\"|\"extend\"|\"close\", anchor?, segment?, t?, end?: \"start\"|\"end\", from?: \"keep\"|\"smooth\"|\"corner\", corner?, x?, y?} edit a path as the Curvature tool does, its shape kept elsewhere; the anchor edited becomes the direct-selected one → {anchor}. move: anchor to x, y, re-curving only its two segments (a smooth anchor takes the Curvature tool's handles, along the circle through it and its neighbours); insert: a smooth anchor at t on segment, the shape unchanged (with x, y: then moved there); extend: an open subpath goes on from its end (default) or start to a new end at x, y, curving into it unless corner is true; close: an open subpath closes from that end. The old end bends into the new segment as from says: keep its curve (default), smooth through its neighbours, or a corner",
+            "{id, subpath?, op: \"move\"|\"insert\"|\"extend\"|\"close\", anchor?, segment?, t?, end?: \"start\"|\"end\", from?: \"keep\"|\"smooth\"|\"corner\", corner?, x?, y?, recurve?: \"none\" (default)|\"neighbours\" (move: the smooth neighbours of the moved anchor re-curve through their own neighbours too; the Curvature tool's Re-curve Neighbours option)} edit a path as the Curvature tool does, its shape kept elsewhere; the anchor edited becomes the direct-selected one → {anchor}. move: anchor to x, y, re-curving only its two segments (a smooth anchor takes the Curvature tool's handles, along the circle through it and its neighbours); insert: a smooth anchor at t on segment, the shape unchanged (with x, y: then moved there); extend: an open subpath goes on from its end (default) or start to a new end at x, y, curving into it unless corner is true; close: an open subpath closes from that end. The old end bends into the new segment as from says: keep its curve (default), smooth through its neighbours, or a corner",
             has_doc,
             curvature_edit
         ),
@@ -676,7 +676,7 @@ enum CurvatureOp {
 }
 
 fn curvature_edit(s: &mut Session, p: &Value) -> Result<Value> {
-    use vectorcraft_tools::draw2::{EndCurve, curvature_close, curvature_extend, curvature_insert, curvature_move};
+    use vectorcraft_tools::draw2::{EndCurve, curvature_close, curvature_extend, curvature_insert, curvature_move, curvature_recurve_neighbours};
     const C: &str = "path.curvatureEdit";
     let id = id_param(p, "id").ok_or_else(|| bad(C, "missing id"))?;
     let si = p.get("subpath").and_then(Value::as_u64).unwrap_or(0) as usize;
@@ -696,6 +696,11 @@ fn curvature_edit(s: &mut Session, p: &Value) -> Result<Value> {
         Some(f) => EndCurve::parse(f).ok_or_else(|| bad(C, format!("unknown from {f:?}")))?,
     };
     let corner = bool_or(p, "corner", false);
+    let recurve = match str_param(p, "recurve") {
+        None | Some("none") => false,
+        Some("neighbours" | "neighbors") => true,
+        Some(r) => return Err(bad(C, format!("unknown recurve {r:?} (none or neighbours)"))),
+    };
     let op = match str_param(p, "op") {
         Some("move") => CurvatureOp::Move(usize_req(p, "anchor", C)?, to()?),
         Some("insert") => CurvatureOp::Insert(usize_req(p, "segment", C)?, f64_or(p, "t", 0.5), at),
@@ -711,7 +716,15 @@ fn curvature_edit(s: &mut Session, p: &Value) -> Result<Value> {
             return Err(EngineError::Other("path is already closed".into()));
         }
         let ai = match op {
-            CurvatureOp::Move(ai, q) => curvature_move(sp, ai, q).then_some(ai).ok_or_else(|| EngineError::Other("no such anchor".into()))?,
+            CurvatureOp::Move(ai, q) => {
+                if !curvature_move(sp, ai, q) {
+                    return Err(EngineError::Other("no such anchor".into()));
+                }
+                if recurve {
+                    curvature_recurve_neighbours(sp, ai);
+                }
+                ai
+            }
             CurvatureOp::Insert(seg, t, q) => {
                 let ai = curvature_insert(sp, seg, t).ok_or_else(|| EngineError::Other("no such segment".into()))?;
                 if let Some(q) = q {

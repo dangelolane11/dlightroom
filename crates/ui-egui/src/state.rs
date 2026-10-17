@@ -289,6 +289,9 @@ pub struct UiState {
     /// starts under the selection at every launch.
     #[serde(skip)]
     pub task_bar_place: TaskBarPlace,
+    /// The Inspiration Boards workspace (Window › Inspiration Boards). Not saved.
+    #[serde(skip)]
+    pub boards: crate::boards_view::BoardsUi,
     /// The locked objects under the pointer at the last right-click on the canvas, with the
     /// document's `uid`: the context menu's Unlock submenu lists them while the menu is open. Not
     /// saved.
@@ -726,6 +729,7 @@ impl Default for UiState {
             task_bar: true,
             task_bar_place: TaskBarPlace::default(),
             context_locked: None,
+            boards: Default::default(),
             slot_tool: Default::default(),
             floating_flyouts: vec![],
             toolbar_edits: ToolbarEdits::default(),

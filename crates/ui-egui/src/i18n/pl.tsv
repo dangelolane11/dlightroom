@@ -4837,3 +4837,135 @@ mark-style	Japanese	Japońskie
 	Movie Clip	Klip filmowy
 @msg	name is empty	nazwa jest pusta
 @msg	no symbol named `{n}`	brak symbolu o nazwie `{n}`
+
+# Advanced tools milestone (DLightroom): Global Edit, symbol instance overrides, Curvature's
+# Re-curve Neighbours, Inspiration Boards, AI Variations and Cloud and AI Settings.
+	AI Provider Settings	Ustawienia dostawcy SI
+	AI Variations	Warianty SI
+	AI Variations need the desktop app.	Warianty SI wymagają aplikacji komputerowej.
+	API Key:	Klucz API:
+	API key removed	Usunięto klucz API
+	API key stored in	Klucz API zapisany w:
+	Active Artboard	Aktywny obszar kompozycji
+	Add Color	Dodaj kolor
+	Add Color to Board	Dodaj kolor do tablicy
+	Add Image to Board	Dodaj obraz do tablicy
+	Add Images…	Dodaj obrazy…
+	Add Link	Dodaj łącze
+	Add Link to Board	Dodaj łącze do tablicy
+	Add Note	Dodaj notatkę
+	Add Note to Board	Dodaj notatkę do tablicy
+	Add Selection to Board	Dodaj zaznaczenie do tablicy
+	Add the Document's Selection	Dodaj zaznaczenie z dokumentu
+	Add to Board	Dodaj do tablicy
+	Address:	Adres:
+	All Artboards	Wszystkie obszary kompozycji
+	Also Upload to Google Drive	Prześlij też na Dysk Google
+	An OpenAI-compatible images endpoint (/images/variations) and your API key. DLightroom includes no AI service: images are sent only when you click Generate Variations on a board.	Punkt końcowy obrazów zgodny z OpenAI (/images/variations) i Twój klucz API. DLightroom nie zawiera żadnej usługi SI: obrazy są wysyłane tylko wtedy, gdy klikniesz Generuj warianty na tablicy.
+	Apply Global Edit	Zastosuj edycję globalną
+	Arrange Board Items	Uporządkuj elementy tablicy
+	Back to Document	Wróć do dokumentu
+	Background Jobs	Zadania w tle
+	Background Tasks	Zadania w tle
+	Board	Tablica
+	Board View	Widok tablicy
+	Cancel Job	Anuluj zadanie
+	Caption:	Podpis:
+	Change on every match	Zmień w każdym dopasowaniu
+	Choose or create a board first	Najpierw wybierz lub utwórz tablicę
+	Click an item to change it. Shift-click picks several; drag the corner handle to resize.	Kliknij element, aby go zmienić. Shift+kliknięcie wybiera kilka; przeciągnij uchwyt narożnika, aby zmienić rozmiar.
+	Client ID:	Identyfikator klienta:
+	Client Secret:	Klucz tajny klienta:
+	Cloud Settings File	Plik ustawień chmury
+	Cloud and AI Settings	Ustawienia chmury i SI
+	Cloud and AI Settings…	Ustawienia chmury i SI…
+	Cloud and AI Status	Stan chmury i SI
+	Cloud and AI features need the desktop app.	Funkcje chmury i SI wymagają aplikacji komputerowej.
+	Cloud and AI settings saved	Zapisano ustawienia chmury i SI
+	Connect Google Drive	Połącz z Dyskiem Google
+	Connected	Połączono
+	Connect…	Połącz…
+	Count:	Liczba:
+	Delete Board	Usuń tablicę
+	Delete Board…	Usuń tablicę…
+	Delete this board and its images? This can't be undone.	Usunąć tę tablicę i jej obrazy? Tej operacji nie można cofnąć.
+	Disconnect	Rozłącz
+	Disconnect Google Drive	Odłącz Dysk Google
+	Disconnected	Rozłączono
+	Dismiss	Odrzuć
+	Dismiss Job	Odrzuć zadanie
+	Drive Folder:	Folder na Dysku:
+	Drop images here, or add notes, colours and links on the right.	Upuść tu obrazy albo dodaj notatki, kolory i łącza po prawej.
+	Duplicate Board	Powiel tablicę
+	Duplicate Board Items	Powiel elementy tablicy
+	Edit Board Item	Edytuj element tablicy
+	Endpoint:	Punkt końcowy:
+	Enter your OAuth client ID first	Najpierw wpisz identyfikator klienta OAuth
+	Export for Screens can upload what it exports to a Drive folder. Use your own OAuth client (Google Cloud console › Credentials › OAuth client ID › Desktop app); DLightroom can only see the files it creates.	Eksport dla ekranów może przesłać wyeksportowane pliki do folderu na Dysku. Użyj własnego klienta OAuth (konsola Google Cloud › Dane logowania › Identyfikator klienta OAuth › Aplikacja komputerowa); DLightroom widzi tylko pliki, które sam utworzy.
+	Find Matches	Znajdź dopasowania
+	Find the matches to preview them	Znajdź dopasowania, aby je podejrzeć
+	Fit Board in Window	Dopasuj tablicę do okna
+	From:	Źródło:
+	Generate Variations	Generuj warianty
+	Generate sends this image to	Generowanie wysyła ten obraz do:
+	Global Edit	Edycja globalna
+	Google Drive	Dysk Google
+	Google Drive Settings	Ustawienia Dysku Google
+	Google Drive disconnected	Odłączono Dysk Google
+	Google Drive: Disconnected	Dysk Google: rozłączono
+	Include Hidden Objects	Uwzględnij ukryte obiekty
+	Include Locked Objects	Uwzględnij zablokowane obiekty
+	Inspiration Boards	Tablice inspiracji
+	Inspiration Boards Folder	Folder tablic inspiracji
+	Inspiration Boards keep their files in the app's settings folder, which this build doesn't have.	Tablice inspiracji przechowują pliki w folderze ustawień aplikacji, którego ta wersja nie ma.
+	Instance Overrides	Zmiany wystąpienia
+	Instance:	Wystąpienie:
+	Instance: as the symbol	Wystąpienie: jak symbol
+	Match objects with the same	Znajdź obiekty o takich samych cechach:
+	Missing image	Brak obrazu
+	Model:	Model:
+	Move Board Items	Przesuń elementy tablicy
+	New Board	Nowa tablica
+	No API key stored	Nie zapisano klucza API
+	No boards yet. Create one to collect images, notes, colours and links.	Brak tablic. Utwórz tablicę, aby zbierać obrazy, notatki, kolory i łącza.
+	Not set up: AI Variations use an image service you choose, with your own API key. Boards work fully without one.	Nie skonfigurowano: warianty SI korzystają z wybranej przez Ciebie usługi obrazów i Twojego klucza API. Tablice działają w pełni bez niej.
+	Note	Notatka
+	Note text	Tekst notatki
+	Open in Browser	Otwórz w przeglądarce
+	Re-curve Neighbours	Wygnij ponownie sąsiednie
+	Redo Board Change	Ponów zmianę tablicy
+	Reference:	Odniesienie:
+	Remove Board Items	Usuń elementy tablicy
+	Remove Key	Usuń klucz
+	Remove the Chosen Items	Usuń wybrane elementy
+	Rename Board	Zmień nazwę tablicy
+	Rename…	Zmień nazwę…
+	Reset Instance Overrides	Przywróć zmiany wystąpienia
+	Retry	Ponów
+	Retry Job	Ponów zadanie
+	Search:	Szukaj w:
+	Send the Board to the Document	Wyślij tablicę do dokumentu
+	Send the Chosen Items to the Document	Wyślij wybrane elementy do dokumentu
+	Send to Document	Wyślij do dokumentu
+	Set Up…	Skonfiguruj…
+	Title:	Tytuł:
+	Undo Board Change	Cofnij zmianę tablicy
+	Untitled Board	Tablica bez nazwy
+	Upload to Google Drive	Prześlij na Dysk Google
+	stored; type to replace	zapisano; wpisz, aby zastąpić
+	tint {color}	zabarwienie {color}
+	{count} matching objects ({hidden} hidden, {locked} locked)	Pasujące obiekty: {count} (ukryte: {hidden}, zablokowane: {locked})
+	‹ Back to Document	‹ Wróć do dokumentu
+@msg	AI variations need a provider: {e} (Cloud and AI Settings)	Warianty SI wymagają dostawcy: {e} (Ustawienia chmury i SI)
+@msg	Added {added} image(s) to the board	Dodano obrazy do tablicy: {added}
+@msg	Asking {_1} for variations…	Prośba o warianty do {_1}…
+@msg	Exported {_1} file(s), but the upload didn't start: {e}	Wyeksportowano pliki: {_1}, ale przesyłanie się nie rozpoczęło: {e}
+@msg	Exported {_1} file(s); uploading them to Google Drive…	Wyeksportowano pliki: {_1}; trwa przesyłanie na Dysk Google…
+@msg	Find the matches and choose what to change first	Najpierw znajdź dopasowania i wybierz, co zmienić
+@msg	Google Drive isn't connected: connect it in Cloud and AI Settings first	Dysk Google nie jest połączony: najpierw połącz go w Ustawieniach chmury i SI
+@msg	Google didn't grant lasting access; remove DLightroom from your Google Account's third-party access and connect again	Google nie przyznał stałego dostępu; usuń DLightroom z dostępu aplikacji innych firm na koncie Google i połącz ponownie
+@msg	Inspiration Boards aren't set up here	Tablice inspiracji nie są tu skonfigurowane
+@msg	No document open	Brak otwartego dokumentu
+@msg	Open this address to sign in: {url}	Otwórz ten adres, aby się zalogować: {url}
+@msg	Select the object whose matches you want to edit	Zaznacz obiekt, którego dopasowania chcesz edytować
+@msg	Sent {n} item(s) to the document	Wysłano elementy do dokumentu: {n}

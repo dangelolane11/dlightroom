@@ -4934,3 +4934,135 @@ mark-style	Japanese	Japonesas
 	Movie Clip	Clip de película
 @msg	name is empty	el nombre está vacío
 @msg	no symbol named `{n}`	no hay ningún símbolo llamado `{n}`
+
+# Advanced tools milestone (DLightroom): Global Edit, symbol instance overrides, Curvature's
+# Re-curve Neighbours, Inspiration Boards, AI Variations and Cloud and AI Settings.
+	AI Provider Settings	Ajustes del proveedor de IA
+	AI Variations	Variaciones con IA
+	AI Variations need the desktop app.	Las variaciones con IA necesitan la aplicación de escritorio.
+	API Key:	Clave de API:
+	API key removed	Clave de API eliminada
+	API key stored in	Clave de API guardada en
+	Active Artboard	Mesa de trabajo activa
+	Add Color	Añadir color
+	Add Color to Board	Añadir color al tablero
+	Add Image to Board	Añadir imagen al tablero
+	Add Images…	Añadir imágenes…
+	Add Link	Añadir enlace
+	Add Link to Board	Añadir enlace al tablero
+	Add Note	Añadir nota
+	Add Note to Board	Añadir nota al tablero
+	Add Selection to Board	Añadir selección al tablero
+	Add the Document's Selection	Añadir la selección del documento
+	Add to Board	Añadir al tablero
+	Address:	Dirección:
+	All Artboards	Todas las mesas de trabajo
+	Also Upload to Google Drive	Subir también a Google Drive
+	An OpenAI-compatible images endpoint (/images/variations) and your API key. DLightroom includes no AI service: images are sent only when you click Generate Variations on a board.	Un punto de conexión de imágenes compatible con OpenAI (/images/variations) y su clave de API. DLightroom no incluye ningún servicio de IA: las imágenes solo se envían cuando hace clic en Generar variaciones en un tablero.
+	Apply Global Edit	Aplicar edición global
+	Arrange Board Items	Organizar elementos del tablero
+	Back to Document	Volver al documento
+	Background Jobs	Trabajos en segundo plano
+	Background Tasks	Tareas en segundo plano
+	Board	Tablero
+	Board View	Vista del tablero
+	Cancel Job	Cancelar trabajo
+	Caption:	Pie de foto:
+	Change on every match	Cambiar en cada coincidencia
+	Choose or create a board first	Elija o cree primero un tablero
+	Click an item to change it. Shift-click picks several; drag the corner handle to resize.	Haga clic en un elemento para cambiarlo. Mayús+clic elige varios; arrastre el tirador de la esquina para cambiar el tamaño.
+	Client ID:	ID de cliente:
+	Client Secret:	Secreto de cliente:
+	Cloud Settings File	Archivo de ajustes de la nube
+	Cloud and AI Settings	Ajustes de nube e IA
+	Cloud and AI Settings…	Ajustes de nube e IA…
+	Cloud and AI Status	Estado de nube e IA
+	Cloud and AI features need the desktop app.	Las funciones de nube e IA necesitan la aplicación de escritorio.
+	Cloud and AI settings saved	Ajustes de nube e IA guardados
+	Connect Google Drive	Conectar Google Drive
+	Connected	Conectado
+	Connect…	Conectar…
+	Count:	Cantidad:
+	Delete Board	Eliminar tablero
+	Delete Board…	Eliminar tablero…
+	Delete this board and its images? This can't be undone.	¿Eliminar este tablero y sus imágenes? No se puede deshacer.
+	Disconnect	Desconectar
+	Disconnect Google Drive	Desconectar Google Drive
+	Disconnected	Desconectado
+	Dismiss	Descartar
+	Dismiss Job	Descartar trabajo
+	Drive Folder:	Carpeta de Drive:
+	Drop images here, or add notes, colours and links on the right.	Suelte imágenes aquí o añada notas, colores y enlaces a la derecha.
+	Duplicate Board	Duplicar tablero
+	Duplicate Board Items	Duplicar elementos del tablero
+	Edit Board Item	Editar elemento del tablero
+	Endpoint:	Punto de conexión:
+	Enter your OAuth client ID first	Introduzca primero su ID de cliente OAuth
+	Export for Screens can upload what it exports to a Drive folder. Use your own OAuth client (Google Cloud console › Credentials › OAuth client ID › Desktop app); DLightroom can only see the files it creates.	Exportar para pantallas puede subir lo que exporta a una carpeta de Drive. Use su propio cliente OAuth (consola de Google Cloud › Credenciales › ID de cliente de OAuth › Aplicación de escritorio); DLightroom solo puede ver los archivos que crea.
+	Find Matches	Buscar coincidencias
+	Find the matches to preview them	Busque las coincidencias para previsualizarlas
+	Fit Board in Window	Encajar tablero en la ventana
+	From:	Origen:
+	Generate Variations	Generar variaciones
+	Generate sends this image to	Generar envía esta imagen a
+	Global Edit	Edición global
+	Google Drive	Google Drive
+	Google Drive Settings	Ajustes de Google Drive
+	Google Drive disconnected	Google Drive desconectado
+	Google Drive: Disconnected	Google Drive: desconectado
+	Include Hidden Objects	Incluir objetos ocultos
+	Include Locked Objects	Incluir objetos bloqueados
+	Inspiration Boards	Tableros de inspiración
+	Inspiration Boards Folder	Carpeta de tableros de inspiración
+	Inspiration Boards keep their files in the app's settings folder, which this build doesn't have.	Los tableros de inspiración guardan sus archivos en la carpeta de ajustes de la aplicación, que esta compilación no tiene.
+	Instance Overrides	Modificaciones de la instancia
+	Instance:	Instancia:
+	Instance: as the symbol	Instancia: como el símbolo
+	Match objects with the same	Buscar objetos con el mismo
+	Missing image	Falta la imagen
+	Model:	Modelo:
+	Move Board Items	Mover elementos del tablero
+	New Board	Nuevo tablero
+	No API key stored	No hay clave de API guardada
+	No boards yet. Create one to collect images, notes, colours and links.	Aún no hay tableros. Cree uno para reunir imágenes, notas, colores y enlaces.
+	Not set up: AI Variations use an image service you choose, with your own API key. Boards work fully without one.	Sin configurar: las variaciones con IA usan un servicio de imágenes que usted elige, con su propia clave de API. Los tableros funcionan por completo sin él.
+	Note	Nota
+	Note text	Texto de la nota
+	Open in Browser	Abrir en el navegador
+	Re-curve Neighbours	Volver a curvar vecinos
+	Redo Board Change	Rehacer cambio del tablero
+	Reference:	Referencia:
+	Remove Board Items	Quitar elementos del tablero
+	Remove Key	Quitar clave
+	Remove the Chosen Items	Quitar los elementos elegidos
+	Rename Board	Cambiar nombre del tablero
+	Rename…	Cambiar nombre…
+	Reset Instance Overrides	Restablecer modificaciones de la instancia
+	Retry	Reintentar
+	Retry Job	Reintentar trabajo
+	Search:	Buscar en:
+	Send the Board to the Document	Enviar el tablero al documento
+	Send the Chosen Items to the Document	Enviar los elementos elegidos al documento
+	Send to Document	Enviar al documento
+	Set Up…	Configurar…
+	Title:	Título:
+	Undo Board Change	Deshacer cambio del tablero
+	Untitled Board	Tablero sin título
+	Upload to Google Drive	Subir a Google Drive
+	stored; type to replace	guardada; escriba para reemplazarla
+	tint {color}	tinte {color}
+	{count} matching objects ({hidden} hidden, {locked} locked)	{count} objetos coincidentes ({hidden} ocultos, {locked} bloqueados)
+	‹ Back to Document	‹ Volver al documento
+@msg	AI variations need a provider: {e} (Cloud and AI Settings)	Las variaciones con IA necesitan un proveedor: {e} (Ajustes de nube e IA)
+@msg	Added {added} image(s) to the board	{added} imagen(es) añadida(s) al tablero
+@msg	Asking {_1} for variations…	Pidiendo variaciones a {_1}…
+@msg	Exported {_1} file(s), but the upload didn't start: {e}	{_1} archivo(s) exportado(s), pero la subida no se inició: {e}
+@msg	Exported {_1} file(s); uploading them to Google Drive…	{_1} archivo(s) exportado(s); subiéndolos a Google Drive…
+@msg	Find the matches and choose what to change first	Busque primero las coincidencias y elija qué cambiar
+@msg	Google Drive isn't connected: connect it in Cloud and AI Settings first	Google Drive no está conectado: conéctelo primero en Ajustes de nube e IA
+@msg	Google didn't grant lasting access; remove DLightroom from your Google Account's third-party access and connect again	Google no concedió acceso duradero; quite DLightroom del acceso de terceros de su cuenta de Google y vuelva a conectarlo
+@msg	Inspiration Boards aren't set up here	Los tableros de inspiración no están configurados aquí
+@msg	No document open	No hay ningún documento abierto
+@msg	Open this address to sign in: {url}	Abra esta dirección para iniciar sesión: {url}
+@msg	Select the object whose matches you want to edit	Seleccione el objeto cuyas coincidencias quiere editar
+@msg	Sent {n} item(s) to the document	{n} elemento(s) enviado(s) al documento
