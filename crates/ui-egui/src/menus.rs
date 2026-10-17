@@ -2708,7 +2708,7 @@ pub fn menu_tree_named(english_names: bool) -> Vec<(&'static str, Vec<Item>)> {
                         c("Area Text Objects", "select.object.areaText"),
                     ],
                 ),
-                todo("Start Global Edit"),
+                c("Start Global Edit", "select.globalEdit.find"),
                 Sep,
                 c("Save Selection…", "select.save"),
                 c("Update Selection", "select.update"),
@@ -3427,6 +3427,13 @@ pub fn invoke(app: &mut VectorcraftApp, id: &str, p: Value) {
     if id == "select.save" && p.as_object().is_none_or(|o| o.is_empty()) {
         let name = app.session.active().map(|d| vectorcraft_engine::doc::SavedSelection::default_name(&d.doc.saved_selections)).unwrap_or_default();
         let _ = app.run("ui.paramDialog", json!({"command": id, "label": "Save Selection", "params": {"name": name}}));
+        return;
+    }
+    // Start Global Edit: its dialog, on the selected object.
+    if id == "select.globalEdit.find" && p.as_object().is_none_or(|o| o.is_empty()) {
+        if let Err(e) = crate::dialogs::global_edit::open(app) {
+            app.status(e);
+        }
         return;
     }
     // Edit Selection…: the saved selections in a list, to rename or delete.

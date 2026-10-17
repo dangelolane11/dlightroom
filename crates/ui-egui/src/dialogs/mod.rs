@@ -38,6 +38,7 @@ pub mod flattener_presets;
 mod form;
 pub(crate) mod free_distort;
 pub mod freehand;
+pub mod global_edit;
 mod gradient_stop;
 pub mod graph_data;
 pub mod graph_design;
@@ -313,6 +314,7 @@ registry! {
     BlendOptions: [blend_options::KIND] => blend_options::SPEC,
     BrushOptions: [brush_options::KIND] => brush_options::SPEC,
     EditSelection: [edit_selection::KIND] => edit_selection::SPEC,
+    GlobalEdit: [global_edit::KIND] => global_edit::SPEC,
     PerspectivePlane: [perspective_plane::KIND] => perspective_plane::SPEC,
     LayerOptions: [layer_options::KIND] => layer_options::SPEC,
     LayersPanelOptions: [layers_panel_options::KIND] => layers_panel_options::SPEC,
